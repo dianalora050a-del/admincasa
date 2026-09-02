@@ -5,69 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <meta name="description" content="Guía gratuita y educativa sobre mantenimiento, limpieza, remodelación y cuidado del hogar en Colombia.">
+    <meta name="theme-color" content="#6B2FB9">
 
-    <meta name="theme-color" content="#6C2BD9">
-
-    <title>AdminHouses • Guía Gratuita de Cuidado del Hogar</title>
+    <title>AdminCasa • Guía Gratuita de Cuidado del Hogar</title>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        :root {
+            --primary: #6B2FB9;
+            --primary-dark: #4B1F83;
+            --primary-light: #8B4DD8;
+            --primary-soft: #EDE3FA;
+            --primary-verysoft: #F7F2FC;
+            --accent: #A86CF0;
 
-        /* =========================================================
-           VARIABLES - ESTILO MORADO
-        ========================================================= */
+            --hero-start: #54219A;
+            --hero-mid: #702FC2;
+            --hero-end: #35145E;
 
-        :root{
-            --primary:#6C2BD9;
-            --primary-dark:#4B1FA8;
-            --primary-darker:#351477;
+            --border: #E5E7EB;
+            --bg: #F8F7FA;
 
-            --primary-soft:#EDE9FE;
-            --primary-verysoft:#F8F5FF;
-
-            --accent:#A855F7;
-            --accent-light:#C084FC;
-
-            --hero-start:#351477;
-            --hero-mid:#6C2BD9;
-            --hero-end:#581C87;
-
-            --border:#E5E7EB;
-
-            --bg:#F8F5FF;
-            --white:#ffffff;
-
-            --text:#1F2937;
-            --text-soft:#4B5563;
-            --text-light:#6B7280;
-
-            --success:#16A34A;
-            --warning:#D97706;
+            --text: #1F2937;
+            --muted: #64748B;
         }
-
-
-        /* =========================================================
-           RESET
-        ========================================================= */
 
         *,
         *::before,
-        *::after{
-            box-sizing:border-box;
+        *::after {
+            box-sizing: border-box;
         }
 
-        html{
-            scroll-behavior:smooth;
-            -webkit-text-size-adjust:100%;
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
-        body{
-            margin:0;
-            font-family:
-                system-ui,
+        body {
+            margin: 0;
+            font-family: system-ui,
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
@@ -75,242 +54,209 @@
                 Arial,
                 sans-serif;
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #F8F5FF 0%,
-                    #FFFFFF 45%,
-                    #F8F5FF 100%
-                );
-
-            color:var(--text);
-            line-height:1.55;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
         }
 
-        a{
-            color:var(--primary);
-            text-decoration:none;
+        a {
+            color: var(--primary);
+            text-decoration: none;
         }
 
-        a:hover{
-            color:var(--primary-dark);
-            text-decoration:underline;
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
-        button{
-            font-family:inherit;
-            cursor:pointer;
+        button {
+            font-family: inherit;
+            cursor: pointer;
         }
 
-        img{
-            max-width:100%;
+        img {
+            max-width: 100%;
         }
 
-
-        /* =========================================================
-           CONTENEDOR
-        ========================================================= */
-
-        .wrap{
-            width:100%;
-            max-width:1152px;
-            margin:0 auto;
-            padding:0 1.25rem;
+        .wrap {
+            width: 100%;
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
         }
 
+        /* =========================
+           NAV
+        ========================= */
 
-        /* =========================================================
-           NAVBAR
-        ========================================================= */
-
-        .nav{
-            background:rgba(255,255,255,.96);
-            border-bottom:1px solid var(--border);
-
-            position:sticky;
-            top:0;
-            z-index:50;
-
-            backdrop-filter:blur(12px);
-            -webkit-backdrop-filter:blur(12px);
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
-        .nav-inner{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-
-            height:68px;
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
         }
 
-        .logo{
-            display:flex;
-            align-items:center;
-            gap:.6rem;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
 
-            font-weight:800;
-            font-size:1.3rem;
-
-            color:#171124;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #1F2937;
         }
 
-        .logo-icon{
-            width:38px;
-            height:38px;
+        .logo-icon {
+            width: 38px;
+            height: 38px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--accent)
-                );
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-light)
+            );
 
-            border-radius:11px;
+            border-radius: 11px;
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            color:#fff;
+            color: #fff;
 
             box-shadow:
-                0 8px 20px rgba(108,43,217,.25);
+                0 5px 12px rgba(107, 47, 185, .25);
         }
 
-        .logo span{
-            color:var(--primary);
+        .logo span {
+            color: var(--primary);
         }
 
-        .nav-links{
-            display:none;
-            gap:1.6rem;
-
-            font-size:.875rem;
-            font-weight:600;
+        .nav-links {
+            display: none;
+            gap: 1.65rem;
+            font-size: .875rem;
+            font-weight: 600;
         }
 
-        .nav-links a{
-            color:#4B5563;
-            transition:.2s;
+        .nav-links a {
+            color: #475569;
         }
 
-        .nav-links a:hover{
-            color:var(--primary);
-            text-decoration:none;
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: none;
         }
 
-        .nav-actions{
-            display:none;
-            gap:.35rem;
+        .nav-actions {
+            display: none;
+            gap: .35rem;
         }
 
-        .btn-ghost{
-            background:none;
-            border:none;
+        .btn-ghost {
+            background: none;
+            border: none;
 
-            padding:.45rem .9rem;
+            padding: .45rem .9rem;
 
-            font-size:.875rem;
-            color:#4B5563;
+            font-size: .875rem;
+            color: #475569;
 
-            border-radius:10px;
+            border-radius: 10px;
         }
 
-        .btn-ghost:hover{
-            color:var(--primary);
-            background:var(--primary-verysoft);
+        .btn-ghost:hover {
+            color: var(--primary);
+            background: var(--primary-verysoft);
         }
 
-        .menu-btn{
-            display:flex;
+        .menu-btn {
+            display: flex;
 
-            width:42px;
-            height:42px;
+            width: 42px;
+            height: 42px;
 
-            align-items:center;
-            justify-content:center;
+            align-items: center;
+            justify-content: center;
 
-            background:none;
-            border:none;
+            background: none;
+            border: none;
 
-            color:#4B5563;
-            font-size:1.15rem;
+            color: #475569;
+            font-size: 1.15rem;
         }
 
-        .mobile-menu{
-            display:none;
+        .mobile-menu {
+            display: none;
 
-            border-top:1px solid var(--border);
+            border-top: 1px solid var(--border);
+            background: #fff;
 
-            background:#fff;
-
-            padding:.75rem 1.25rem 1rem;
+            padding: .75rem 1.25rem 1rem;
         }
 
-        .mobile-menu.open{
-            display:block;
+        .mobile-menu.open {
+            display: block;
         }
 
         .mobile-menu a,
-        .mobile-menu button{
-            display:block;
+        .mobile-menu button {
+            display: block;
+            width: 100%;
 
-            width:100%;
-            text-align:left;
+            text-align: left;
 
-            padding:.7rem .75rem;
+            padding: .7rem .75rem;
 
-            color:#4B5563;
+            color: #475569;
 
-            font-size:.9rem;
-            font-weight:600;
+            font-size: .9rem;
+            font-weight: 600;
 
-            background:none;
-            border:none;
+            background: none;
+            border: none;
 
-            border-radius:10px;
+            border-radius: 10px;
         }
 
         .mobile-menu a:hover,
-        .mobile-menu button:hover{
-            background:var(--primary-verysoft);
+        .mobile-menu button:hover {
+            background: var(--primary-verysoft);
+            color: var(--primary);
 
-            text-decoration:none;
+            text-decoration: none;
         }
 
-        @media(min-width:768px){
-
+        @media (min-width: 768px) {
             .nav-links,
-            .nav-actions{
-                display:flex;
+            .nav-actions {
+                display: flex;
             }
 
-            .menu-btn{
-                display:none;
+            .menu-btn {
+                display: none;
             }
-
         }
 
-
-        /* =========================================================
+        /* =========================
            HERO
-        ========================================================= */
+        ========================= */
 
-        .hero{
-
+        .hero {
             background:
                 radial-gradient(
-                    circle at 15% 20%,
-                    rgba(192,132,252,.25),
-                    transparent 30%
+                    circle at 85% 20%,
+                    rgba(255,255,255,.14),
+                    transparent 25%
                 ),
-
-                radial-gradient(
-                    circle at 85% 10%,
-                    rgba(168,85,247,.25),
-                    transparent 30%
-                ),
-
                 linear-gradient(
                     135deg,
                     var(--hero-start) 0%,
@@ -318,189 +264,166 @@
                     var(--hero-end) 100%
                 );
 
-            color:#fff;
+            color: #fff;
 
-            padding:4rem 0 4.5rem;
+            padding: 4rem 0 4.5rem;
 
-            position:relative;
-            overflow:hidden;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero::after{
-            content:"";
+        .hero::after {
+            content: "";
 
-            position:absolute;
+            position: absolute;
 
-            width:300px;
-            height:300px;
+            width: 300px;
+            height: 300px;
 
-            right:-120px;
-            bottom:-150px;
+            right: -100px;
+            bottom: -150px;
 
-            background:rgba(255,255,255,.08);
+            background: rgba(255,255,255,.08);
 
-            border-radius:50%;
+            border-radius: 50%;
         }
 
-        .hero .wrap{
-            position:relative;
-            z-index:2;
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+
+            background: rgba(255,255,255,.12);
+
+            border: 1px solid rgba(255,255,255,.22);
+
+            padding: .3rem .9rem;
+
+            border-radius: 999px;
+
+            font-size: .72rem;
+            font-weight: 600;
+
+            color: #F1E8FF;
+
+            letter-spacing: .04em;
+
+            margin-bottom: 1.2rem;
         }
 
-        .badge{
-            display:inline-flex;
+        .badge-dot {
+            width: 7px;
+            height: 7px;
 
-            align-items:center;
-            gap:.45rem;
+            background: #D8B4FE;
 
-            background:rgba(255,255,255,.12);
+            border-radius: 50%;
 
-            border:1px solid rgba(255,255,255,.2);
-
-            padding:.3rem .9rem;
-
-            border-radius:999px;
-
-            font-size:.72rem;
-            font-weight:600;
-
-            color:#F3E8FF;
-
-            letter-spacing:.04em;
-
-            margin-bottom:1.2rem;
-
-            backdrop-filter:blur(8px);
+            box-shadow: 0 0 0 4px rgba(216,180,254,.12);
         }
 
-        .badge-dot{
-            width:7px;
-            height:7px;
+        .hero h1 {
+            margin: 0 0 1rem;
 
-            background:#D8B4FE;
-
-            border-radius:50%;
-
-            box-shadow:
-                0 0 0 4px rgba(216,180,254,.12);
-        }
-
-        .hero h1{
-            margin:0 0 1rem;
-
-            font-size:clamp(
+            font-size: clamp(
                 2rem,
                 5vw,
-                3.4rem
+                3.3rem
             );
 
-            font-weight:800;
+            font-weight: 800;
 
-            line-height:1.12;
+            line-height: 1.1;
 
-            letter-spacing:-.025em;
+            letter-spacing: -.03em;
         }
 
-        .hero h1 em{
-            font-style:normal;
-            color:#E9D5FF;
+        .hero h1 em {
+            font-style: normal;
+            color: #E9D5FF;
         }
 
-        .hero p{
-            margin:0 0 1.8rem;
+        .hero p {
+            margin: 0 0 1.8rem;
 
-            font-size:1.05rem;
+            font-size: 1.05rem;
 
-            color:rgba(245,243,255,.92);
+            color: rgba(255,255,255,.88);
 
-            max-width:34rem;
+            max-width: 34rem;
         }
 
-        .btn-row{
-            display:flex;
-            flex-wrap:wrap;
-            gap:.7rem;
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .7rem;
         }
 
-        .btn-white{
-            display:inline-flex;
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
 
-            align-items:center;
-            justify-content:center;
+            background: #fff;
 
-            gap:.45rem;
+            color: var(--primary-dark);
 
-            background:#fff;
-            color:var(--primary-dark);
+            font-weight: 700;
+            font-size: .875rem;
 
-            font-weight:700;
-            font-size:.875rem;
+            padding: 0 1.5rem;
 
-            padding:0 1.5rem;
+            height: 46px;
 
-            height:48px;
+            border-radius: 12px;
 
-            border-radius:12px;
-
-            border:none;
+            border: none;
 
             box-shadow:
-                0 10px 25px rgba(0,0,0,.12);
-
-            transition:.2s;
+                0 8px 20px rgba(0,0,0,.12);
         }
 
-        .btn-white:hover{
-            background:#FAF5FF;
+        .btn-white:hover {
+            background: #F5F0FA;
 
-            transform:translateY(-2px);
+            text-decoration: none;
 
-            text-decoration:none;
-
-            color:var(--primary-dark);
+            color: var(--primary-dark);
         }
 
-        .btn-outline{
-            display:inline-flex;
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
 
-            align-items:center;
-            justify-content:center;
+            background: transparent;
 
-            background:transparent;
+            color: #fff;
 
-            color:#fff;
+            font-weight: 600;
+            font-size: .875rem;
 
-            font-weight:600;
-            font-size:.875rem;
+            padding: 0 1.5rem;
 
-            padding:0 1.5rem;
+            height: 46px;
 
-            height:48px;
+            border-radius: 12px;
 
-            border-radius:12px;
-
-            border:1px solid rgba(255,255,255,.35);
-
-            transition:.2s;
+            border: 1px solid rgba(255,255,255,.4);
         }
 
-        .btn-outline:hover{
-            background:rgba(255,255,255,.12);
+        .btn-outline:hover {
+            background: rgba(255,255,255,.12);
 
-            border-color:rgba(255,255,255,.55);
+            text-decoration: none;
 
-            text-decoration:none;
-
-            color:#fff;
+            color: #fff;
         }
 
+        /* =========================
+           DISCLAIMER
+        ========================= */
 
-        /* =========================================================
-           AVISO
-        ========================================================= */
-
-        .disclaimer{
-
+        .disclaimer {
             background:
                 linear-gradient(
                     135deg,
@@ -508,97 +431,93 @@
                     #FFFBEB
                 );
 
-            border:1px solid #FED7AA;
+            border: 1px solid #FED7AA;
 
-            border-left:5px solid #EA580C;
+            border-left: 5px solid #F59E0B;
 
-            border-radius:15px;
+            border-radius: 14px;
 
-            padding:1.15rem 1.35rem;
+            padding: 1.15rem 1.35rem;
 
-            margin-top:-1.15rem;
+            margin-top: -1.1rem;
 
-            position:relative;
+            position: relative;
 
-            z-index:5;
+            z-index: 5;
 
             box-shadow:
-                0 10px 25px rgba(0,0,0,.06);
+                0 5px 15px rgba(0,0,0,.05);
         }
 
-        .disclaimer h3{
-            margin:0 0 .35rem;
+        .disclaimer h3 {
+            margin: 0 0 .35rem;
 
-            font-size:.95rem;
+            font-size: .95rem;
 
-            color:#7C2D12;
+            color: #78350F;
         }
 
-        .disclaimer p{
-            margin:0;
+        .disclaimer p {
+            margin: 0;
 
-            font-size:.85rem;
+            font-size: .85rem;
 
-            color:#9A3412;
+            color: #92400E;
 
-            line-height:1.55;
+            line-height: 1.55;
         }
 
+        /* =========================
+           SECTIONS
+        ========================= */
 
-        /* =========================================================
-           SECCIONES
-        ========================================================= */
-
-        .section{
-            padding:4rem 0;
+        .section {
+            padding: 3.5rem 0;
         }
 
-        .label{
+        .label {
+            display: inline-block;
 
-            display:inline-block;
+            background: var(--primary-verysoft);
 
-            background:var(--primary-soft);
+            color: var(--primary-dark);
 
-            color:var(--primary-dark);
+            font-size: .7rem;
 
-            font-size:.7rem;
-            font-weight:700;
+            font-weight: 700;
 
-            letter-spacing:.06em;
+            letter-spacing: .06em;
 
-            padding:.3rem .8rem;
+            padding: .28rem .75rem;
 
-            border-radius:999px;
+            border-radius: 999px;
 
-            margin-bottom:.7rem;
+            margin-bottom: .65rem;
         }
 
-        .title{
+        .title {
+            margin: 0 0 .65rem;
 
-            margin:0 0 .65rem;
+            font-size: clamp(
+                1.6rem,
+                3.5vw,
+                2.1rem
+            );
 
-            font-size:
-                clamp(
-                    1.6rem,
-                    3.5vw,
-                    2.15rem
-                );
+            font-weight: 800;
 
-            font-weight:800;
+            color: #111827;
 
-            color:#171124;
-
-            letter-spacing:-.02em;
+            letter-spacing: -.025em;
         }
 
-        .title::after{
+        .title::after {
+            content: "";
 
-            content:"";
+            display: block;
 
-            display:block;
-
-            width:52px;
-            height:4px;
+            width: 52px;
+            height: 3px;
 
             background:
                 linear-gradient(
@@ -607,703 +526,584 @@
                     var(--accent)
                 );
 
-            border-radius:4px;
+            border-radius: 3px;
 
-            margin-top:.5rem;
+            margin-top: .5rem;
         }
 
-        .desc{
+        .desc {
+            color: #64748B;
 
-            color:var(--text-soft);
+            max-width: 30rem;
 
-            max-width:30rem;
-
-            margin:0 auto 2.4rem;
+            margin: 0 auto 2.3rem;
         }
 
-        .center{
-            text-align:center;
+        .center {
+            text-align: center;
         }
 
-        .center .title::after{
-            margin-left:auto;
-            margin-right:auto;
+        .center .title::after {
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        .grid {
+            display: grid;
 
-        /* =========================================================
-           GRID
-        ========================================================= */
+            grid-template-columns: 1fr;
 
-        .grid{
-
-            display:grid;
-
-            grid-template-columns:1fr;
-
-            gap:1.15rem;
+            gap: 1.1rem;
         }
 
-        @media(min-width:640px){
-
-            .grid{
-                grid-template-columns:1fr 1fr;
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
             }
-
         }
 
-        @media(min-width:1024px){
-
-            .grid-3{
+        @media (min-width: 1024px) {
+            .grid-3 {
                 grid-template-columns:
                     1fr 1fr 1fr;
             }
-
         }
 
+        /* =========================
+           CARDS
+        ========================= */
 
-        /* =========================================================
-           TARJETAS
-        ========================================================= */
+        .card {
+            background: #fff;
 
-        .card{
+            border: 1px solid var(--border);
 
-            background:#fff;
+            border-radius: 17px;
 
-            border:1px solid var(--border);
+            padding: 1.4rem;
 
-            border-radius:17px;
-
-            padding:1.4rem;
-
-            cursor:pointer;
+            cursor: pointer;
 
             transition:
                 transform .2s ease,
                 box-shadow .2s ease,
                 border-color .2s ease;
-
-            -webkit-tap-highlight-color:transparent;
-
-            box-shadow:
-                0 4px 15px rgba(30,20,60,.03);
         }
 
         .card:hover,
-        .card:active{
-
-            transform:translateY(-5px);
-
-            box-shadow:
-                0 18px 35px rgba(76,29,149,.10);
-
-            border-color:#D8B4FE;
-        }
-
-        .card-icon{
-
-            width:47px;
-            height:47px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #F3E8FF,
-                    #EDE9FE
-                );
-
-            border-radius:13px;
-
-            display:flex;
-
-            align-items:center;
-            justify-content:center;
-
-            color:var(--primary);
-
-            font-size:1.15rem;
-
-            margin-bottom:.9rem;
-        }
-
-        .card h3{
-
-            margin:0 0 .4rem;
-
-            font-size:1.05rem;
-
-            font-weight:700;
-
-            color:#171124;
-        }
-
-        .card p{
-
-            margin:0;
-
-            font-size:.85rem;
-
-            color:var(--text-soft);
-
-            line-height:1.5;
-        }
-
-
-        /* =========================================================
-           SECCION MORADA SUAVE
-        ========================================================= */
-
-        .bg-soft{
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #F5F3FF,
-                    #FAF5FF
-                );
-
-            border-top:1px solid #E9D5FF;
-
-            border-bottom:1px solid #E9D5FF;
-        }
-
-        .value{
-
-            background:#fff;
-
-            border:1px solid #E9D5FF;
-
-            border-radius:17px;
-
-            padding:1.4rem;
+        .card:active {
+            transform: translateY(-4px);
 
             box-shadow:
-                0 5px 20px rgba(76,29,149,.04);
+                0 16px 30px -10px
+                rgba(107,47,185,.18);
+
+            border-color: #D8B4FE;
         }
 
-        .value-icon{
+        .card-icon {
+            width: 48px;
+            height: 48px;
 
-            width:42px;
-            height:42px;
+            background: var(--primary-verysoft);
 
-            background:#EDE9FE;
+            border-radius: 13px;
 
-            border-radius:11px;
+            display: flex;
 
-            display:flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:center;
-            justify-content:center;
+            color: var(--primary);
 
-            color:var(--primary);
+            font-size: 1.15rem;
 
-            margin-bottom:.85rem;
+            margin-bottom: .9rem;
         }
 
+        .card h3 {
+            margin: 0 0 .4rem;
 
-        /* =========================================================
-           SOBRE EL PROYECTO
-        ========================================================= */
+            font-size: 1.05rem;
 
-        .about-grid{
+            font-weight: 700;
 
-            display:grid;
-
-            grid-template-columns:1fr;
-
-            gap:2rem;
+            color: #111827;
         }
 
-        @media(min-width:768px){
+        .card p {
+            margin: 0;
 
-            .about-grid{
+            font-size: .85rem;
 
-                grid-template-columns:
-                    1fr 1fr;
+            color: #64748B;
 
-                align-items:center;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           SOFT SECTION
+        ========================= */
+
+        .bg-soft {
+            background:
+                linear-gradient(
+                    180deg,
+                    #F8F3FC,
+                    #F5EFFA
+                );
+
+            border-top: 1px solid #E9D5FF;
+
+            border-bottom: 1px solid #E9D5FF;
+        }
+
+        .value {
+            background: #fff;
+
+            border: 1px solid #E9D5FF;
+
+            border-radius: 17px;
+
+            padding: 1.4rem;
+        }
+
+        .value-icon {
+            width: 42px;
+            height: 42px;
+
+            background: var(--primary-soft);
+
+            border-radius: 11px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: var(--primary);
+
+            margin-bottom: .85rem;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+
+                align-items: center;
             }
-
         }
 
-        .check-box{
-
+        .check-box {
             background:
                 linear-gradient(
                     135deg,
-                    #F5F3FF,
-                    #FAF5FF
+                    #F8F5FB,
+                    #F5F3F7
                 );
 
-            border:1px solid #E9D5FF;
+            border: 1px solid var(--border);
 
-            border-radius:17px;
+            border-radius: 17px;
 
-            padding:1.5rem;
+            padding: 1.5rem;
         }
 
-        .check-item{
+        .check-item {
+            display: flex;
 
-            display:flex;
+            gap: .7rem;
 
-            gap:.7rem;
-
-            margin-bottom:1.1rem;
+            margin-bottom: 1.1rem;
         }
 
-        .check-item:last-child{
-            margin-bottom:0;
+        .check-item:last-child {
+            margin-bottom: 0;
         }
 
-        .check-icon{
+        .check-icon {
+            width: 30px;
+            height: 30px;
 
-            width:31px;
-            height:31px;
+            background: var(--primary-soft);
 
-            background:#E9D5FF;
+            border-radius: 8px;
 
-            border-radius:8px;
+            display: flex;
 
-            display:flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:center;
-            justify-content:center;
+            color: var(--primary);
 
-            color:var(--primary);
+            flex-shrink: 0;
 
-            flex-shrink:0;
-
-            font-size:.75rem;
+            font-size: .75rem;
         }
 
+        /* =========================
+           CONTACT
+        ========================= */
 
-        /* =========================================================
-           CONTACTO
-        ========================================================= */
+        .contact-row {
+            display: flex;
 
-        .contact-row{
+            align-items: flex-start;
 
-            display:flex;
+            gap: .7rem;
 
-            align-items:flex-start;
+            margin-bottom: 1rem;
 
-            gap:.7rem;
-
-            margin-bottom:1rem;
-
-            font-size:.875rem;
+            font-size: .875rem;
         }
 
-        .contact-icon{
+        .contact-icon {
+            width: 36px;
+            height: 36px;
 
-            width:37px;
-            height:37px;
+            background: var(--primary-verysoft);
 
-            background:#F3E8FF;
+            border-radius: 9px;
 
-            border-radius:9px;
+            display: flex;
 
-            display:flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:center;
-            justify-content:center;
+            color: var(--primary);
 
-            color:var(--primary);
-
-            flex-shrink:0;
+            flex-shrink: 0;
         }
 
-
-        /* =========================================================
+        /* =========================
            FOOTER
-        ========================================================= */
+        ========================= */
 
-        footer{
+        footer {
+            background: #1E1230;
+
+            color: #C4B5D4;
+
+            padding: 2.5rem 0;
+
+            font-size: .85rem;
+        }
+
+        footer a {
+            color: #C4B5D4;
+        }
+
+        footer a:hover {
+            color: #fff;
+
+            text-decoration: none;
+        }
+
+        .footer-grid {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                flex-direction: row;
+
+                justify-content: space-between;
+            }
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+
+            padding-top: 1.25rem;
+
+            border-top: 1px solid #38234E;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: .4rem;
+
+            font-size: .75rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+
+                justify-content: space-between;
+            }
+        }
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal-bg {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 60;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #171124,
-                    #261044,
-                    #351477
-                );
+                rgba(24,12,36,.62);
 
-            color:#C4B5FD;
+            -webkit-backdrop-filter: blur(5px);
 
-            padding:2.5rem 0;
+            backdrop-filter: blur(5px);
 
-            font-size:.85rem;
+            align-items: center;
+            justify-content: center;
+
+            padding: 1rem;
+
+            overflow-y: auto;
         }
 
-        footer a{
-            color:#C4B5FD;
+        .modal-bg.open {
+            display: flex;
         }
 
-        footer a:hover{
-            color:#fff;
+        .modal-box {
+            background: #fff;
 
-            text-decoration:none;
-        }
+            width: 100%;
 
-        .footer-grid{
+            max-width: 36rem;
 
-            display:flex;
+            max-height: 90vh;
 
-            flex-direction:column;
+            overflow: hidden;
 
-            gap:1.75rem;
-        }
-
-        @media(min-width:768px){
-
-            .footer-grid{
-
-                flex-direction:row;
-
-                justify-content:space-between;
-            }
-
-        }
-
-        .footer-bottom{
-
-            margin-top:2rem;
-
-            padding-top:1.25rem;
-
-            border-top:
-                1px solid rgba(255,255,255,.1);
-
-            display:flex;
-
-            flex-direction:column;
-
-            gap:.4rem;
-
-            font-size:.75rem;
-        }
-
-        @media(min-width:768px){
-
-            .footer-bottom{
-
-                flex-direction:row;
-
-                justify-content:space-between;
-            }
-
-        }
-
-
-        /* =========================================================
-           MODALES
-        ========================================================= */
-
-        .modal-bg{
-
-            display:none;
-
-            position:fixed;
-
-            inset:0;
-
-            z-index:60;
-
-            background:
-                rgba(20,10,40,.65);
-
-            -webkit-backdrop-filter:blur(5px);
-
-            backdrop-filter:blur(5px);
-
-            align-items:center;
-
-            justify-content:center;
-
-            padding:1rem;
-
-            overflow-y:auto;
-        }
-
-        .modal-bg.open{
-            display:flex;
-        }
-
-        .modal-box{
-
-            background:#fff;
-
-            width:100%;
-
-            max-width:36rem;
-
-            max-height:90vh;
-
-            overflow:hidden;
-
-            border-radius:18px;
+            border-radius: 18px;
 
             box-shadow:
-                0 30px 70px rgba(0,0,0,.3);
+                0 25px 60px
+                rgba(0,0,0,.25);
 
-            display:flex;
+            display: flex;
 
-            flex-direction:column;
+            flex-direction: column;
 
-            margin:auto;
+            margin: auto;
         }
 
-        .modal-head{
+        .modal-head {
+            padding: 1.15rem 1.35rem .9rem;
 
-            padding:1.15rem 1.35rem .9rem;
+            border-bottom: 1px solid var(--border);
 
-            border-bottom:
-                1px solid var(--border);
+            display: flex;
 
-            display:flex;
+            justify-content: space-between;
 
-            justify-content:space-between;
+            align-items: flex-start;
 
-            align-items:flex-start;
-
-            gap:.7rem;
+            gap: .7rem;
         }
 
-        .modal-body{
+        .modal-body {
+            padding: 1.35rem;
 
-            padding:1.35rem;
+            overflow-y: auto;
 
-            overflow-y:auto;
+            font-size: .875rem;
 
-            font-size:.875rem;
+            color: #475569;
 
-            color:var(--text-soft);
+            line-height: 1.6;
 
-            line-height:1.6;
-
-            -webkit-overflow-scrolling:touch;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .modal-foot{
+        .modal-foot {
+            padding: .7rem 1.35rem;
 
-            padding:.7rem 1.35rem;
+            background: #FAF9FB;
 
-            background:#FAFAFA;
+            border-top: 1px solid var(--border);
 
-            border-top:
-                1px solid var(--border);
-
-            text-align:right;
+            text-align: right;
         }
 
-        .modal-x{
+        .modal-x {
+            background: none;
 
-            background:none;
+            border: none;
 
-            border:none;
+            font-size: 1.6rem;
 
-            font-size:1.6rem;
+            color: #CBD5E1;
 
-            color:#C4B5FD;
+            line-height: 1;
 
-            line-height:1;
+            padding: 0;
 
-            padding:0;
-
-            min-width:36px;
-
-            min-height:36px;
+            min-width: 36px;
+            min-height: 36px;
         }
 
-        .modal-x:hover{
-            color:var(--primary);
+        .modal-x:hover {
+            color: #64748B;
         }
 
-        .btn-modal{
-
+        .btn-modal {
             background:
                 linear-gradient(
                     135deg,
                     var(--primary),
-                    var(--accent)
+                    var(--primary-light)
                 );
 
-            color:#fff;
+            color: #fff;
 
-            border:none;
+            border: none;
 
-            font-weight:700;
+            font-weight: 700;
 
-            font-size:.875rem;
+            font-size: .875rem;
 
-            padding:.55rem 1.35rem;
+            padding: .55rem 1.35rem;
 
-            border-radius:11px;
+            border-radius: 11px;
 
-            min-height:42px;
-
-            box-shadow:
-                0 6px 15px rgba(108,43,217,.2);
+            min-height: 42px;
         }
 
-        .btn-modal:hover{
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary-dark),
-                    var(--primary)
-                );
+        .btn-modal:hover {
+            background: var(--primary-dark);
         }
 
-        .tip{
+        .tip {
+            display: flex;
 
-            display:flex;
+            gap: .7rem;
 
-            gap:.7rem;
+            background: #FAF9FB;
 
-            background:#FAF9FF;
+            border: 1px solid #F1EDF5;
 
-            border:1px solid #F0EAFE;
+            padding: .85rem;
 
-            padding:.85rem;
+            border-radius: 12px;
 
-            border-radius:12px;
-
-            margin-bottom:.55rem;
+            margin-bottom: .55rem;
         }
 
-        .tip-n{
+        .tip-n {
+            width: 22px;
+            height: 22px;
 
-            width:23px;
-            height:23px;
+            border-radius: 50%;
 
-            border-radius:50%;
+            background: var(--primary-soft);
 
-            background:#EDE9FE;
+            color: var(--primary);
 
-            color:var(--primary);
+            display: flex;
 
-            display:flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:center;
-            justify-content:center;
+            font-size: .7rem;
 
-            font-size:.7rem;
+            font-weight: 800;
 
-            font-weight:800;
-
-            flex-shrink:0;
+            flex-shrink: 0;
         }
 
-
-        /* =========================================================
+        /* =========================
            COOKIES
-        ========================================================= */
+        ========================= */
 
-        .cookies-buttons{
+        .cookies-buttons {
+            display: flex;
 
-            display:flex;
+            gap: .75rem;
 
-            gap:.75rem;
+            justify-content: flex-end;
 
-            justify-content:flex-end;
-
-            margin-top:1rem;
+            margin-top: 1rem;
         }
 
-        .btn-cookie{
+        .btn-cookie {
+            padding: .6rem 1.5rem;
 
-            padding:.6rem 1.5rem;
+            border-radius: 10px;
 
-            border-radius:10px;
+            font-weight: 700;
 
-            font-weight:700;
+            font-size: .875rem;
 
-            font-size:.875rem;
+            border: none;
 
-            border:none;
+            cursor: pointer;
 
-            cursor:pointer;
-
-            transition:.2s;
+            transition:
+                background .2s,
+                transform .2s;
         }
 
-        .btn-cookie-accept{
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--accent)
-                );
-
-            color:#fff;
+        .btn-cookie:hover {
+            transform: translateY(-1px);
         }
 
-        .btn-cookie-accept:hover{
+        .btn-cookie-accept {
+            background: var(--primary);
 
-            transform:translateY(-1px);
-
-            box-shadow:
-                0 7px 18px rgba(108,43,217,.25);
+            color: #fff;
         }
 
-        .btn-cookie-reject{
-
-            background:#E5E7EB;
-
-            color:#1F2937;
+        .btn-cookie-accept:hover {
+            background: var(--primary-dark);
         }
 
-        .btn-cookie-reject:hover{
-            background:#D1D5DB;
+        .btn-cookie-reject {
+            background: #E5E7EB;
+
+            color: #1F2937;
         }
 
+        .btn-cookie-reject:hover {
+            background: #D1D5DB;
+        }
 
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media(max-width:500px){
-
-            .hero{
-                padding:3rem 0 3.5rem;
+        @media (max-width: 480px) {
+            .cookies-buttons {
+                flex-direction: column-reverse;
             }
 
-            .hero h1{
-                font-size:2rem;
+            .btn-cookie {
+                width: 100%;
             }
-
-            .btn-row{
-                flex-direction:column;
-            }
-
-            .btn-white,
-            .btn-outline{
-                width:100%;
-            }
-
-            .cookies-buttons{
-                flex-direction:column;
-            }
-
-            .btn-cookie{
-                width:100%;
-            }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
+<!-- =========================
+     NAV
+========================= -->
 
 <nav class="nav">
 
@@ -1312,13 +1112,12 @@
         <div class="logo">
 
             <div class="logo-icon">
-                <i class="fas fa-home"></i>
+                <i class="fas fa-house"></i>
             </div>
 
-            Admin<span>Houses</span>
+            Admin<span>Casa</span>
 
         </div>
-
 
         <div class="nav-links">
 
@@ -1337,7 +1136,6 @@
             </a>
 
         </div>
-
 
         <div class="nav-actions">
 
@@ -1361,7 +1159,6 @@
 
         </div>
 
-
         <button
             type="button"
             class="menu-btn"
@@ -1374,41 +1171,22 @@
 
     </div>
 
+    <div id="mobile-menu" class="mobile-menu">
 
-    <div
-        id="mobile-menu"
-        class="mobile-menu">
-
-        <a
-            href="#temas"
-            onclick="alternarMenu()">
-
+        <a href="#temas" onclick="alternarMenu()">
             Guías
-
         </a>
 
-        <a
-            href="#porque-gratis"
-            onclick="alternarMenu()">
-
+        <a href="#porque-gratis" onclick="alternarMenu()">
             Por qué es gratis
-
         </a>
 
-        <a
-            href="#sobre-el-proyecto"
-            onclick="alternarMenu()">
-
+        <a href="#sobre-el-proyecto" onclick="alternarMenu()">
             Sobre el proyecto
-
         </a>
 
-        <a
-            href="#contacto"
-            onclick="alternarMenu()">
-
+        <a href="#contacto" onclick="alternarMenu()">
             Contacto
-
         </a>
 
         <button
@@ -1432,10 +1210,9 @@
 </nav>
 
 
-
-<!-- =========================================================
+<!-- =========================
      HERO
-========================================================= -->
+========================= -->
 
 <header class="hero">
 
@@ -1445,31 +1222,26 @@
 
             <span class="badge-dot"></span>
 
-            PROYECTO EDUCATIVO • SIN FINES DE LUCRO
+            PROYECTO EDUCATIVO • INFORMACIÓN GRATUITA
 
         </div>
-
 
         <h1>
 
             Cuida tu hogar.<br>
 
-            <em>
-                Con información clara.
-            </em>
+            <em>Con información clara.</em>
 
         </h1>
-
 
         <p>
 
             Guía gratuita sobre mantenimiento,
             limpieza, remodelación y cuidado del hogar
-            en Colombia. Información práctica,
-            clara y sin costo.
+            en Colombia. Información práctica, clara y
+            de fácil acceso.
 
         </p>
-
 
         <div class="btn-row">
 
@@ -1486,7 +1258,6 @@
 
             </a>
 
-
             <a
                 href="#porque-gratis"
                 class="btn-outline">
@@ -1502,10 +1273,9 @@
 </header>
 
 
-
-<!-- =========================================================
-     AVISO
-========================================================= -->
+<!-- =========================
+     DISCLAIMER
+========================= -->
 
 <div class="wrap">
 
@@ -1518,28 +1288,24 @@
         <p>
 
             Esta página es
-            <strong>
-                100% educativa e informativa
-            </strong>.
+            <strong>educativa e informativa</strong>.
 
             No se ofrecen servicios de mantenimiento,
-            limpieza ni remodelación.
+            limpieza ni remodelación desde este sitio.
 
-            No se cobra por consultas ni se venden productos.
-
-            La información es de carácter general
-            y no reemplaza el consejo de profesionales calificados.
+            La información es de carácter general y no
+            reemplaza el consejo de profesionales
+            calificados.
 
             <br>
 
             <span
                 style="
                     font-size:.75rem;
-                    font-weight:600
+                    font-weight:600;
                 ">
 
-                Responsable:
-                MARIA JOSE CASTILLA GARCIA
+                Responsable: MARIA JOSE CASTILLA GARCIA
 
             </span>
 
@@ -1550,14 +1316,11 @@
 </div>
 
 
+<!-- =========================
+     TEMAS
+========================= -->
 
-<!-- =========================================================
-     GUIAS
-========================================================= -->
-
-<section
-    id="temas"
-    class="section">
+<section id="temas" class="section">
 
     <div class="wrap">
 
@@ -1601,13 +1364,11 @@
                 </h3>
 
                 <p>
-                    Revisiones de techos,
-                    tuberías, pintura y sistemas
-                    eléctricos adaptadas al clima colombiano.
+                    Revisiones de techos, tuberías,
+                    pintura y sistemas eléctricos.
                 </p>
 
             </div>
-
 
 
             <div
@@ -1624,12 +1385,10 @@
 
                 <p>
                     Hábitos para reducir humedad,
-                    plagas y polvo en apartamentos
-                    y casas en Colombia.
+                    plagas y polvo.
                 </p>
 
             </div>
-
 
 
             <div
@@ -1645,12 +1404,11 @@
                 </h3>
 
                 <p>
-                    Planificación con presupuesto,
-                    permisos y materiales según el clima.
+                    Planificación, presupuesto,
+                    permisos y materiales.
                 </p>
 
             </div>
-
 
 
             <div
@@ -1666,13 +1424,11 @@
                 </h3>
 
                 <p>
-                    Qué es el predial,
-                    fechas y descuentos en tu municipio
-                    y cómo evitar intereses de mora.
+                    Información general sobre predial,
+                    fechas y pagos.
                 </p>
 
             </div>
-
 
 
             <div
@@ -1680,7 +1436,7 @@
                 onclick="mostrarGuia(4)">
 
                 <div class="card-icon">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-shield-halved"></i>
                 </div>
 
                 <h3>
@@ -1688,13 +1444,11 @@
                 </h3>
 
                 <p>
-                    Seguridad, ahorro de servicios públicos,
-                    propiedad horizontal y protección
-                    del patrimonio.
+                    Prevención, ahorro de servicios
+                    y protección del patrimonio.
                 </p>
 
             </div>
-
 
 
             <div
@@ -1702,7 +1456,7 @@
                 onclick="mostrarGuia(5)">
 
                 <div class="card-icon">
-                    <i class="fas fa-water"></i>
+                    <i class="fas fa-droplet"></i>
                 </div>
 
                 <h3>
@@ -1710,12 +1464,11 @@
                 </h3>
 
                 <p>
-                    Prevención y tratamiento de filtraciones,
-                    moho y condensación en viviendas.
+                    Prevención de filtraciones,
+                    moho y condensación.
                 </p>
 
             </div>
-
 
         </div>
 
@@ -1724,10 +1477,9 @@
 </section>
 
 
-
-<!-- =========================================================
-     POR QUE ES GRATIS
-========================================================= -->
+<!-- =========================
+     POR QUÉ GRATIS
+========================= -->
 
 <section
     id="porque-gratis"
@@ -1755,8 +1507,8 @@
 
             <p class="desc">
 
-                Porque el conocimiento práctico
-                sobre el hogar debe estar al alcance de todos.
+                Porque el conocimiento práctico sobre
+                el hogar debe estar al alcance de todos.
 
             </p>
 
@@ -1767,22 +1519,20 @@
             class="grid grid-3"
             style="
                 max-width:56rem;
-                margin:0 auto
+                margin:0 auto;
             ">
 
 
             <div class="value">
 
                 <div class="value-icon">
-
                     <i class="fas fa-book-open"></i>
-
                 </div>
 
                 <h3
                     style="
                         margin:0 0 .4rem;
-                        font-size:1rem
+                        font-size:1rem;
                     ">
 
                     Solo información
@@ -1793,33 +1543,31 @@
                     style="
                         margin:0;
                         font-size:.85rem;
-                        color:#4B5563
+                        color:#475569;
                     ">
 
                     El objetivo es compartir
-                    conocimiento útil sobre el hogar.
+                    conocimiento útil sobre
+                    el hogar.
 
                 </p>
 
             </div>
 
 
-
             <div class="value">
 
                 <div class="value-icon">
-
                     <i class="fas fa-hand-holding-heart"></i>
-
                 </div>
 
                 <h3
                     style="
                         margin:0 0 .4rem;
-                        font-size:1rem
+                        font-size:1rem;
                     ">
 
-                    Sin fines de lucro
+                    Acceso gratuito
 
                 </h3>
 
@@ -1827,30 +1575,27 @@
                     style="
                         margin:0;
                         font-size:.85rem;
-                        color:#4B5563
+                        color:#475569;
                     ">
 
                     El contenido está disponible
-                    gratuitamente para los usuarios.
+                    gratuitamente para los visitantes.
 
                 </p>
 
             </div>
 
 
-
             <div class="value">
 
                 <div class="value-icon">
-
-                    <i class="fas fa-home"></i>
-
+                    <i class="fas fa-house"></i>
                 </div>
 
                 <h3
                     style="
                         margin:0 0 .4rem;
-                        font-size:1rem
+                        font-size:1rem;
                     ">
 
                     Pensado para Colombia
@@ -1861,16 +1606,16 @@
                     style="
                         margin:0;
                         font-size:.85rem;
-                        color:#4B5563
+                        color:#475569;
                     ">
 
-                    Clima, predial, propiedad horizontal
-                    y servicios públicos del país.
+                    Contenido relacionado con vivienda,
+                    clima y situaciones comunes
+                    en Colombia.
 
                 </p>
 
             </div>
-
 
         </div>
 
@@ -1879,10 +1624,9 @@
 </section>
 
 
-
-<!-- =========================================================
-     SOBRE
-========================================================= -->
+<!-- =========================
+     SOBRE EL PROYECTO
+========================= -->
 
 <section
     id="sobre-el-proyecto"
@@ -1891,7 +1635,6 @@
     <div class="wrap">
 
         <div class="about-grid">
-
 
             <div>
 
@@ -1905,45 +1648,41 @@
 
                 <p
                     style="
-                        color:#4B5563;
-                        margin:0 0 .9rem
+                        color:#475569;
+                        margin:0 0 .9rem;
                     ">
 
-                    Tu Home es un proyecto informativo
-                    creado y administrado por
-                    <strong>
-                        MARIA JOSE CASTILLA GARCIA
-                    </strong>
-                    para compartir conocimiento práctico
-                    sobre el cuidado del hogar en Colombia.
+                    AdminCasa es un proyecto informativo
+                    creado para compartir conocimiento
+                    práctico sobre el cuidado del hogar
+                    en Colombia.
 
                 </p>
 
                 <p
                     style="
-                        color:#4B5563;
-                        margin:0 0 .9rem
+                        color:#475569;
+                        margin:0 0 .9rem;
                     ">
 
-                    Publicamos orientaciones claras
-                    sobre mantenimiento preventivo,
-                    limpieza, remodelación,
-                    impuesto predial y seguridad doméstica.
-
-                    Todo es de acceso libre.
+                    Publicamos orientaciones sobre
+                    mantenimiento preventivo, limpieza,
+                    remodelación, impuesto predial,
+                    seguridad y cuidado de viviendas.
 
                 </p>
 
                 <p
                     style="
-                        color:#6B7280;
+                        color:#64748b;
                         font-size:.85rem;
-                        margin:0
+                        margin:0;
                     ">
 
                     La información es de carácter general
                     y educativo. No sustituye el consejo
-                    de técnicos, abogados ni entidades oficiales.
+                    de técnicos, abogados ni entidades
+                    oficiales.
 
                 </p>
 
@@ -1956,9 +1695,7 @@
                 <div class="check-item">
 
                     <div class="check-icon">
-
                         <i class="fas fa-check"></i>
-
                     </div>
 
                     <div>
@@ -1967,7 +1704,7 @@
                             style="
                                 font-weight:700;
                                 font-size:.875rem;
-                                color:#171124
+                                color:#0f172a;
                             ">
 
                             Contenido gratuito
@@ -1977,10 +1714,11 @@
                         <div
                             style="
                                 font-size:.8rem;
-                                color:#4B5563
+                                color:#475569;
                             ">
 
-                            Información disponible libremente
+                            Información disponible
+                            para los visitantes.
 
                         </div>
 
@@ -1989,13 +1727,10 @@
                 </div>
 
 
-
                 <div class="check-item">
 
                     <div class="check-icon">
-
                         <i class="fas fa-check"></i>
-
                     </div>
 
                     <div>
@@ -2004,21 +1739,21 @@
                             style="
                                 font-weight:700;
                                 font-size:.875rem;
-                                color:#171124
+                                color:#0f172a;
                             ">
 
-                            Información práctica
+                            Información educativa
 
                         </div>
 
                         <div
                             style="
                                 font-size:.8rem;
-                                color:#4B5563
+                                color:#475569;
                             ">
 
-                            Contenido pensado para propietarios
-                            y residentes
+                            Contenido de orientación
+                            general.
 
                         </div>
 
@@ -2027,13 +1762,10 @@
                 </div>
 
 
-
                 <div class="check-item">
 
                     <div class="check-icon">
-
                         <i class="fas fa-check"></i>
-
                     </div>
 
                     <div>
@@ -2042,27 +1774,27 @@
                             style="
                                 font-weight:700;
                                 font-size:.875rem;
-                                color:#171124
+                                color:#0f172a;
                             ">
 
-                            Enfoque educativo
+                            Enfoque colombiano
 
                         </div>
 
                         <div
                             style="
                                 font-size:.8rem;
-                                color:#4B5563
+                                color:#475569;
                             ">
 
-                            Información orientativa y general
+                            Información pensada para
+                            viviendas en Colombia.
 
                         </div>
 
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -2073,17 +1805,16 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      CONTACTO
-========================================================= -->
+========================= -->
 
 <section
     id="contacto"
     class="section"
     style="
         background:#fff;
-        border-top:1px solid #F0ECF9
+        border-top:1px solid #F1F5F9;
     ">
 
     <div class="wrap">
@@ -2100,8 +1831,8 @@
 
             <p
                 style="
-                    color:#4B5563;
-                    margin:0 0 1.75rem
+                    color:#475569;
+                    margin:0 0 1.75rem;
                 ">
 
                 Puedes escribir si tienes dudas
@@ -2113,9 +1844,7 @@
             <div class="contact-row">
 
                 <div class="contact-icon">
-
                     <i class="fas fa-user"></i>
-
                 </div>
 
                 <div>
@@ -2123,7 +1852,7 @@
                     <div
                         style="
                             font-size:.7rem;
-                            color:#9CA3AF
+                            color:#94a3b8;
                         ">
 
                         Responsable
@@ -2133,7 +1862,7 @@
                     <div
                         style="
                             font-weight:700;
-                            color:#171124
+                            color:#0f172a;
                         ">
 
                         MARIA JOSE CASTILLA GARCIA
@@ -2145,13 +1874,10 @@
             </div>
 
 
-
             <div class="contact-row">
 
                 <div class="contact-icon">
-
                     <i class="fas fa-envelope"></i>
-
                 </div>
 
                 <div>
@@ -2159,7 +1885,7 @@
                     <div
                         style="
                             font-size:.7rem;
-                            color:#9CA3AF
+                            color:#94a3b8;
                         ">
 
                         Correo electrónico
@@ -2185,10 +1911,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
 <footer>
 
@@ -2196,41 +1921,36 @@
 
         <div class="footer-grid">
 
-
             <div>
 
                 <div
                     class="logo"
                     style="
                         color:#fff;
-                        margin-bottom:.65rem
+                        margin-bottom:.65rem;
                     ">
 
                     <div class="logo-icon">
 
                         <i
-                            class="fas fa-home"
+                            class="fas fa-house"
                             style="font-size:.85rem">
                         </i>
 
                     </div>
 
-                    Tu<span>Home</span>
+                    Admin<span>Casa</span>
 
                 </div>
 
                 <p
                     style="
                         margin:0;
-                        max-width:15rem
+                        max-width:17rem;
                     ">
 
                     Proyecto educativo sobre
                     el cuidado del hogar en Colombia.
-
-                    <br>
-
-                    Contenido informativo y gratuito.
 
                 </p>
 
@@ -2241,7 +1961,7 @@
                 style="
                     display:flex;
                     flex-wrap:wrap;
-                    gap:2.5rem
+                    gap:2.5rem;
                 ">
 
 
@@ -2253,7 +1973,7 @@
                             color:#fff;
                             margin-bottom:.45rem;
                             font-size:.7rem;
-                            letter-spacing:.05em
+                            letter-spacing:.05em;
                         ">
 
                         ENLACES
@@ -2264,7 +1984,7 @@
                         style="
                             display:flex;
                             flex-direction:column;
-                            gap:.3rem
+                            gap:.3rem;
                         ">
 
                         <a href="#temas">
@@ -2292,7 +2012,7 @@
                             color:#fff;
                             margin-bottom:.45rem;
                             font-size:.7rem;
-                            letter-spacing:.05em
+                            letter-spacing:.05em;
                         ">
 
                         LEGAL
@@ -2303,7 +2023,7 @@
                         style="
                             display:flex;
                             flex-direction:column;
-                            gap:.3rem
+                            gap:.3rem;
                         ">
 
                         <a
@@ -2341,32 +2061,24 @@
                             color:#fff;
                             margin-bottom:.45rem;
                             font-size:.7rem;
-                            letter-spacing:.05em
+                            letter-spacing:.05em;
                         ">
 
-                        CONTACTO
+                        SITIO WEB
 
                     </div>
 
                     <div
                         style="
-                            color:#fff;
+                            color:#C4B5D4;
                             font-size:.85rem;
-                            margin-bottom:.2rem
                         ">
 
-                        MARIA JOSE CASTILLA GARCIA
+                        admincasaconjuntos.vercel.app
 
                     </div>
 
-                    <a href="mailto:kimberlywrigh54@gmail.com">
-
-                        kimberlywrigh54@gmail.com
-
-                    </a>
-
                 </div>
-
 
             </div>
 
@@ -2377,14 +2089,17 @@
 
             <div>
 
-                © 2026 MARIA JOSE CASTILLA GARCIA —
-                Tu Home
+                © 2026 MARIA JOSE CASTILLA GARCIA
+                — AdminCasa
 
             </div>
 
-            <div style="color:#D8B4FE">
+            <div
+                style="
+                    color:#C084FC;
+                ">
 
-                Proyecto educativo
+                Información educativa
 
             </div>
 
@@ -2395,10 +2110,9 @@
 </footer>
 
 
-
-<!-- =========================================================
-     MODAL GUIAS
-========================================================= -->
+<!-- =========================
+     MODAL DE TEMAS
+========================= -->
 
 <div
     id="topic-modal"
@@ -2410,14 +2124,13 @@
 
     <div class="modal-box">
 
-
         <div class="modal-head">
 
             <div
                 style="
                     display:flex;
                     gap:.7rem;
-                    align-items:flex-start
+                    align-items:flex-start;
                 ">
 
                 <div
@@ -2427,7 +2140,7 @@
                         margin:0;
                         width:40px;
                         height:40px;
-                        font-size:1rem
+                        font-size:1rem;
                     ">
                 </div>
 
@@ -2438,7 +2151,7 @@
                         style="
                             margin:0;
                             font-size:1.05rem;
-                            font-weight:800
+                            font-weight:700;
                         ">
                     </h3>
 
@@ -2447,14 +2160,13 @@
                         style="
                             margin:.15rem 0 0;
                             font-size:.75rem;
-                            color:#9CA3AF
+                            color:#94a3b8;
                         ">
                     </p>
 
                 </div>
 
             </div>
-
 
             <button
                 type="button"
@@ -2467,12 +2179,10 @@
 
         </div>
 
-
         <div
             id="m-body"
             class="modal-body">
         </div>
-
 
         <div class="modal-foot">
 
@@ -2492,10 +2202,9 @@
 </div>
 
 
-
-<!-- =========================================================
-     MODAL POLITICAS
-========================================================= -->
+<!-- =========================
+     POLÍTICAS
+========================= -->
 
 <div
     id="politicas-modal"
@@ -2515,7 +2224,7 @@
                 style="
                     margin:0;
                     font-size:1.05rem;
-                    font-weight:800
+                    font-weight:700;
                 ">
 
                 Políticas de Privacidad
@@ -2535,38 +2244,32 @@
 
         </div>
 
-
         <div class="modal-body">
 
             <p>
 
-                Tu Home es un proyecto educativo
-                administrado por
-                MARIA JOSE CASTILLA GARCIA.
-
-                Solo se recolectan datos cuando
-                alguien escribe voluntariamente
-                al correo de contacto.
+                AdminCasa es un sitio web educativo.
+                La información de contacto únicamente
+                se utiliza cuando una persona decide
+                comunicarse voluntariamente.
 
             </p>
 
             <p>
 
-                La información se usa exclusivamente
-                para responder consultas relacionadas
-                con el contenido educativo.
+                Los datos proporcionados mediante
+                contacto se utilizan para responder
+                consultas relacionadas con el sitio.
 
             </p>
 
             <p>
 
                 De acuerdo con la
-                <strong>
-                    Ley 1581 de 2012
-                </strong>,
-                puedes solicitar la actualización
-                o eliminación de tus datos escribiendo
-                al correo de contacto.
+                <strong>Ley 1581 de 2012</strong>,
+                puedes solicitar actualización,
+                rectificación o eliminación de tus
+                datos escribiendo al correo de contacto.
 
             </p>
 
@@ -2575,16 +2278,14 @@
                     font-size:.75rem;
                     border-top:1px solid var(--border);
                     padding-top:.7rem;
-                    margin-top:1rem
+                    margin-top:1rem;
                 ">
 
-                Última actualización:
-                agosto de 2026.
+                Última actualización: septiembre de 2026.
 
             </p>
 
         </div>
-
 
         <div class="modal-foot">
 
@@ -2606,10 +2307,9 @@
 </div>
 
 
-
-<!-- =========================================================
-     MODAL TERMINOS
-========================================================= -->
+<!-- =========================
+     TÉRMINOS
+========================= -->
 
 <div
     id="terminos-modal"
@@ -2629,7 +2329,7 @@
                 style="
                     margin:0;
                     font-size:1.05rem;
-                    font-weight:800
+                    font-weight:700;
                 ">
 
                 Términos y Condiciones
@@ -2649,36 +2349,29 @@
 
         </div>
 
-
         <div class="modal-body">
 
             <p>
 
-                Tu Home es un sitio web educativo
-                e informativo administrado por
-                MARIA JOSE CASTILLA GARCIA.
+                AdminCasa es un sitio web educativo
+                e informativo.
 
             </p>
 
             <p>
 
-                Todo el contenido tiene fines
+                El contenido publicado tiene fines
                 educativos y de orientación general.
-
-                No constituye asesoría profesional
-                ni sustituye el consejo de técnicos,
-                abogados u otras autoridades.
+                No constituye asesoría profesional.
 
             </p>
 
             <p>
 
-                El uso de la información publicada
-                es responsabilidad del usuario.
-
-                Se recomienda verificar siempre
-                con fuentes oficiales y profesionales
-                calificados.
+                El usuario debe verificar la información
+                aplicable a su situación con profesionales
+                calificados y fuentes oficiales cuando
+                corresponda.
 
             </p>
 
@@ -2687,19 +2380,14 @@
                     font-size:.75rem;
                     border-top:1px solid var(--border);
                     padding-top:.7rem;
-                    margin-top:1rem
+                    margin-top:1rem;
                 ">
 
-                Al navegar por esta página aceptas
-                estos términos.
-
-                Última actualización:
-                agosto de 2026.
+                Última actualización: septiembre de 2026.
 
             </p>
 
         </div>
-
 
         <div class="modal-foot">
 
@@ -2721,19 +2409,18 @@
 </div>
 
 
-
-<!-- =========================================================
-     MODAL COOKIES
-========================================================= -->
+<!-- =========================
+     COOKIES
+========================= -->
 
 <div
     id="cookies-modal"
     class="modal-bg open"
-    style="z-index:70">
+    style="z-index:70;">
 
     <div
         class="modal-box"
-        style="max-width:30rem">
+        style="max-width:30rem;">
 
         <div class="modal-head">
 
@@ -2741,7 +2428,7 @@
                 style="
                     margin:0;
                     font-size:1.05rem;
-                    font-weight:800
+                    font-weight:700;
                 ">
 
                 🍪 Uso de cookies
@@ -2750,33 +2437,28 @@
 
         </div>
 
-
         <div class="modal-body">
 
             <p
                 style="
-                    margin:0 0 .5rem
+                    margin:0 0 .5rem;
                 ">
 
-                Utilizamos cookies propias y de terceros
-                para mejorar tu experiencia, analizar
-                el uso del sitio y personalizar contenido.
-
-                Al hacer clic en “Aceptar”, aceptas
-                el uso de cookies de acuerdo con
-                nuestra Política de Cookies.
+                Utilizamos cookies para mejorar
+                tu experiencia de navegación.
 
             </p>
 
             <p
                 style="
                     font-size:.8rem;
-                    color:#6B7280;
-                    margin:0
+                    color:#64748b;
+                    margin:0;
                 ">
 
-                No se almacenan datos personales
-                ni se rastrea tu actividad.
+                Puedes aceptar o rechazar el uso
+                de cookies. Tu decisión se guarda
+                únicamente en este navegador.
 
             </p>
 
@@ -2786,7 +2468,7 @@
                 <button
                     type="button"
                     class="btn-cookie btn-cookie-reject"
-                    onclick="redirigirGoogle()">
+                    onclick="rechazarCookies()">
 
                     Rechazar
 
@@ -2795,7 +2477,7 @@
                 <button
                     type="button"
                     class="btn-cookie btn-cookie-accept"
-                    onclick="redirigirGoogle()">
+                    onclick="aceptarCookies()">
 
                     Aceptar
 
@@ -2810,224 +2492,221 @@
 </div>
 
 
-
 <script>
 
-/* =========================================================
-   DATOS DE LAS GUIAS
-========================================================= */
+/* =========================
+   DATOS DE LAS GUÍAS
+========================= */
 
 const datosGuias = [
 
     {
-        title:"Mantenimiento preventivo del hogar",
+        title: "Mantenimiento preventivo del hogar",
 
-        icon:'<i class="fas fa-tools"></i>',
+        icon: '<i class="fas fa-tools"></i>',
 
         subtitle:
-            "Revisiones que ayudan a evitar gastos mayores",
+            "Revisiones que ayudan a evitar problemas mayores",
 
         intro:
-            "El mantenimiento preventivo permite detectar problemas antes de que se conviertan en reparaciones costosas. Revisar periódicamente techos, tuberías, instalaciones y ventilación ayuda a conservar mejor la vivienda.",
+            "El mantenimiento preventivo consiste en revisar periódicamente los elementos principales de una vivienda para detectar problemas antes de que se conviertan en reparaciones costosas.",
 
-        tips:[
+        tips: [
 
-            "Revise techos y canaletas antes y después de las temporadas de lluvia. Busque goteras, tejas sueltas, canaletas tapadas y bajantes obstruidos.",
+            "Revise techos, canaletas y bajantes periódicamente, especialmente antes y después de temporadas de lluvia.",
 
-            "Revise periódicamente las tuberías debajo de lavaplatos, sanitarios y lavadoras. Una fuga pequeña puede generar daños en pisos y muros.",
+            "Compruebe si existen fugas debajo de lavaplatos, lavamanos, sanitarios y conexiones de lavadora.",
 
-            "No sobrecargue tomacorrientes. Si observa chispas, olores a quemado o breakers que se activan frecuentemente, solicite una revisión profesional.",
+            "No sobrecargue tomas eléctricas. Si observa chispas, olor a quemado o breakers que se disparan frecuentemente, solicite revisión profesional.",
 
-            "Controle las fisuras y deterioros de pintura. En zonas húmedas es especialmente importante revisar paredes y techos.",
+            "Revise grietas, pintura deteriorada y señales de humedad en paredes y cielorrasos.",
 
-            "Mantenga limpios los extractores de cocina y baño para favorecer la ventilación y reducir acumulación de humedad.",
+            "Mantenga limpios los extractores de cocina y baños para favorecer una adecuada ventilación.",
 
-            "Revise puertas, ventanas, empaques y cerraduras para detectar filtraciones o deterioros."
+            "Compruebe el estado de puertas, ventanas, cerraduras y sellos para prevenir filtraciones."
         ]
     },
 
 
     {
-        title:"Limpieza y organización del hogar",
+        title: "Limpieza y organización del hogar",
 
-        icon:'<i class="fas fa-broom"></i>',
+        icon: '<i class="fas fa-broom"></i>',
 
         subtitle:
-            "Rutinas prácticas para mantener mejor la vivienda",
+            "Hábitos sencillos para mantener una vivienda saludable",
 
         intro:
-            "Una rutina de limpieza constante ayuda a reducir polvo, humedad, malos olores y presencia de plagas. La clave es mantener hábitos sencillos y frecuentes.",
+            "Una rutina de limpieza constante ayuda a conservar mejor los espacios y puede reducir la aparición de polvo, malos olores, humedad y plagas.",
 
-        tips:[
+        tips: [
 
-            "Dedique unos minutos diariamente a recoger superficies, limpiar la cocina y ventilar los espacios.",
+            "Dedique algunos minutos cada día a recoger objetos, limpiar superficies y ventilar los espacios.",
 
-            "Mantenga limpia la cocina y retire los residuos de alimentos para disminuir la presencia de insectos.",
+            "Mantenga los alimentos tapados y limpie rápidamente los restos de comida.",
 
-            "Ventile los baños después de ducharse para reducir condensación y humedad.",
+            "Ventile baños y cocinas después de ducharse o cocinar para disminuir la humedad.",
 
-            "Lave periódicamente ropa de cama, cortinas y otros textiles que acumulen polvo.",
+            "Limpie periódicamente colchones, sofás, cortinas y otras superficies que acumulan polvo.",
 
-            "Mantenga documentos importantes del hogar organizados en un lugar seguro.",
+            "Organice documentos importantes como recibos, contratos, escrituras y documentos relacionados con la vivienda.",
 
-            "Evite acumular residuos o alimentos abiertos y selle posibles entradas de plagas."
+            "Mantenga limpia el área de residuos y selle posibles puntos de entrada de insectos."
         ]
     },
 
 
     {
-        title:"Remodelación inteligente",
+        title: "Remodelación inteligente",
 
-        icon:'<i class="fas fa-paint-roller"></i>',
+        icon: '<i class="fas fa-paint-roller"></i>',
 
         subtitle:
-            "Planificar antes de invertir en mejoras",
+            "Planificar antes de invertir en una mejora",
 
         intro:
-            "Una remodelación bien planificada permite controlar mejor los costos y reducir imprevistos. Antes de comenzar una obra conviene definir objetivos, presupuesto, materiales y permisos.",
+            "Una remodelación bien planificada puede mejorar el confort y funcionalidad de una vivienda. Antes de comenzar, es importante definir el alcance, presupuesto y requisitos de la obra.",
 
-        tips:[
+        tips: [
 
-            "Defina claramente qué desea mejorar y establezca un presupuesto antes de comenzar.",
+            "Defina claramente qué desea modificar y establezca un presupuesto antes de comenzar.",
 
-            "Compare varias cotizaciones y solicite por escrito los materiales, tiempos y trabajos incluidos.",
+            "Solicite varias cotizaciones y compare materiales, mano de obra, tiempos y garantías.",
 
-            "Si vive en propiedad horizontal, revise el reglamento y consulte qué autorizaciones necesita.",
+            "Si vive en propiedad horizontal, revise el reglamento y consulte a la administración antes de realizar obras.",
 
-            "Seleccione materiales adecuados para las condiciones de humedad, temperatura y exposición de la vivienda.",
+            "Para trabajos eléctricos, de gas o estructurales, utilice profesionales calificados.",
 
-            "Evite realizar instalaciones eléctricas o de gas sin personal calificado.",
+            "Reserve un porcentaje del presupuesto para posibles imprevistos.",
 
-            "Guarde contratos, facturas, fotografías y garantías relacionadas con la remodelación."
+            "Conserve contratos, facturas, fotografías y garantías de los trabajos realizados."
         ]
     },
 
 
     {
-        title:"Impuesto predial en Colombia",
+        title: "Impuesto predial en Colombia",
 
-        icon:'<i class="fas fa-file-invoice-dollar"></i>',
+        icon:
+            '<i class="fas fa-file-invoice-dollar"></i>',
 
         subtitle:
-            "Información general para propietarios",
+            "Información general para propietarios de inmuebles",
 
         intro:
-            "El impuesto predial es un tributo asociado a los bienes inmuebles. Las fechas, tarifas y descuentos dependen del municipio o distrito correspondiente.",
+            "El impuesto predial es un tributo relacionado con los bienes inmuebles. Las fechas, tarifas y descuentos pueden variar según el municipio o distrito.",
 
-        tips:[
+        tips: [
 
-            "Consulte siempre el calendario oficial de pagos publicado por su municipio.",
+            "Consulte siempre el calendario de pagos publicado por la alcaldía o entidad oficial correspondiente.",
 
-            "Revise que la información catastral del inmueble sea correcta.",
+            "Revise que los datos del inmueble y propietario sean correctos.",
 
-            "Conserve los comprobantes de pago para futuros trámites.",
+            "Conserve los comprobantes de pago y documentos relacionados con el inmueble.",
 
-            "No confunda el impuesto predial con las cuotas de administración de propiedad horizontal.",
+            "Recuerde que el impuesto predial y las cuotas de administración de una propiedad horizontal son obligaciones diferentes.",
 
-            "Si tiene dificultades para pagar, consulte las opciones disponibles directamente con la autoridad municipal.",
+            "Si tiene dificultades para pagar, consulte directamente con la autoridad tributaria municipal sobre las opciones disponibles.",
 
-            "Use únicamente los portales oficiales para consultar obligaciones tributarias."
+            "Evite intermediarios que prometan descuentos extraordinarios a cambio de datos personales o pagos por canales no oficiales."
         ]
     },
 
 
     {
-        title:"Cuidado integral y seguridad del hogar",
+        title: "Cuidado integral y seguridad del hogar",
 
-        icon:'<i class="fas fa-shield-alt"></i>',
+        icon:
+            '<i class="fas fa-shield-halved"></i>',
 
         subtitle:
-            "Prevención y protección del patrimonio",
+            "Prevención, seguridad y ahorro",
 
         intro:
-            "Un hogar seguro combina mantenimiento, prevención de riesgos, ahorro de servicios y cuidado de las instalaciones.",
+            "Un hogar seguro requiere pequeñas acciones de prevención relacionadas con accesos, instalaciones, servicios públicos y documentación.",
 
-        tips:[
+        tips: [
 
-            "Revise periódicamente cerraduras, iluminación exterior y accesos.",
+            "Revise periódicamente cerraduras, puertas, ventanas e iluminación exterior.",
 
-            "Si percibe olor a gas, ventile el espacio y contacte a la empresa prestadora o a personal autorizado.",
+            "Si percibe olor a gas, evite utilizar interruptores eléctricos y contacte a la empresa prestadora o personal autorizado.",
 
-            "Utilice instalaciones eléctricas en buen estado y evite conexiones improvisadas.",
+            "Repare fugas de agua y utilice iluminación eficiente para reducir el consumo.",
 
-            "Repare fugas de agua y utilice los servicios públicos de forma eficiente.",
+            "Respete los reglamentos y normas de convivencia cuando viva en propiedad horizontal.",
 
-            "Respete las normas de convivencia y propiedad horizontal.",
+            "Conserve documentos importantes de la vivienda en un lugar seguro.",
 
-            "Conserve documentos importantes del inmueble en un lugar seguro."
+            "Considere las coberturas de seguros de hogar que puedan ser adecuadas para sus necesidades."
         ]
     },
 
 
     {
-        title:"Humedades e impermeabilización",
+        title: "Humedades e impermeabilización",
 
-        icon:'<i class="fas fa-water"></i>',
+        icon:
+            '<i class="fas fa-droplet"></i>',
 
         subtitle:
-            "Prevenir filtraciones y problemas de humedad",
+            "Prevención de filtraciones, moho y condensación",
 
         intro:
-            "La humedad puede tener diferentes causas, como filtraciones, condensación o problemas de impermeabilización. Identificar el origen es importante antes de realizar cualquier reparación.",
+            "Las humedades pueden tener diferentes causas. Identificar el origen antes de reparar es importante para evitar que el problema reaparezca.",
 
-        tips:[
+        tips: [
 
-            "Observe si las manchas aparecen después de lluvias o si aumentan progresivamente.",
+            "Observe si la humedad aparece después de lluvias, cerca de tuberías o en lugares con poca ventilación.",
 
-            "Mantenga limpios los desagües, canales y bajantes.",
+            "Mantenga limpios los desagües, canaletas y bajantes.",
 
-            "Revise periódicamente terrazas y cubiertas para detectar deterioros.",
+            "Ventile baños, cocinas y zonas de lavado para reducir condensación.",
 
-            "Ventile baños, cocinas y zonas de lavado para disminuir la condensación.",
+            "No pinte sobre una mancha de humedad sin solucionar primero la causa.",
 
-            "No pinte sobre una mancha de humedad sin solucionar primero el origen.",
+            "Si la humedad proviene de una zona común o de otro inmueble, comunique el problema a la administración o responsable correspondiente.",
 
-            "Si la humedad proviene de una zona común o de otra vivienda, informe a la administración correspondiente."
+            "Cuando exista una humedad extensa o persistente, consulte a un profesional para identificar correctamente su origen."
         ]
     }
 
 ];
 
 
+/* =========================
+   MENÚ
+========================= */
 
-/* =========================================================
-   MENU
-========================================================= */
+function alternarMenu() {
 
-function alternarMenu(){
+    const menu =
+        document.getElementById("mobile-menu");
 
-    document
-        .getElementById("mobile-menu")
-        .classList
-        .toggle("open");
+    menu.classList.toggle("open");
 
 }
 
 
+/* =========================
+   MOSTRAR GUÍA
+========================= */
 
-/* =========================================================
-   MOSTRAR GUIA
-========================================================= */
-
-function mostrarGuia(i){
+function mostrarGuia(i) {
 
     const guia = datosGuias[i];
 
-    document
-        .getElementById("m-icon")
-        .innerHTML = guia.icon;
+    document.getElementById("m-icon").innerHTML =
+        guia.icon;
 
-    document
-        .getElementById("m-title")
-        .textContent = guia.title;
+    document.getElementById("m-title").textContent =
+        guia.title;
 
-    document
-        .getElementById("m-sub")
-        .textContent = guia.subtitle;
+    document.getElementById("m-sub").textContent =
+        guia.subtitle;
 
 
     let html =
-        '<p style="margin:0 0 1rem;color:#374151">' +
+        '<p style="margin:0 0 1rem;color:#334155">' +
         guia.intro +
         '</p>';
 
@@ -3039,13 +2718,12 @@ function mostrarGuia(i){
         'color:var(--primary);' +
         'text-transform:uppercase;' +
         'letter-spacing:.05em;' +
-        'margin:0 0 .65rem' +
-        '">' +
+        'margin:0 0 .65rem">' +
         'Puntos clave' +
         '</p>';
 
 
-    guia.tips.forEach(function(tip,n){
+    guia.tips.forEach(function(tip, n) {
 
         html +=
             '<div class="tip">' +
@@ -3067,108 +2745,165 @@ function mostrarGuia(i){
         '<p style="' +
         'margin:1rem 0 0;' +
         'font-size:.75rem;' +
-        'color:#9CA3AF;' +
+        'color:#94a3b8;' +
         'border-top:1px solid var(--border);' +
-        'padding-top:.7rem' +
-        '">' +
+        'padding-top:.7rem">' +
 
         'Información de carácter educativo y general. ' +
-        'No sustituye asesoría profesional ni normas municipales vigentes.' +
+        'No sustituye asesoría profesional ni normas ' +
+        'municipales vigentes.' +
 
         '</p>';
 
 
-    document
-        .getElementById("m-body")
-        .innerHTML = html;
+    document.getElementById("m-body").innerHTML =
+        html;
 
 
     document
         .getElementById("topic-modal")
-        .classList
-        .add("open");
+        .classList.add("open");
 
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
 }
 
 
+/* =========================
+   OCULTAR GUÍA
+========================= */
 
-/* =========================================================
-   OCULTAR GUIA
-========================================================= */
-
-function ocultarGuia(){
+function ocultarGuia() {
 
     document
         .getElementById("topic-modal")
-        .classList
-        .remove("open");
+        .classList.remove("open");
 
     document.body.style.overflow = "";
 
 }
 
 
+/* =========================
+   LEGAL
+========================= */
 
-/* =========================================================
-   LEGALES
-========================================================= */
-
-function mostrarLegal(tipo){
+function mostrarLegal(tipo) {
 
     document
         .getElementById(tipo + "-modal")
-        .classList
-        .add("open");
+        .classList.add("open");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
 }
 
 
-function ocultarLegal(tipo){
+function ocultarLegal(tipo) {
 
     document
         .getElementById(tipo + "-modal")
-        .classList
-        .remove("open");
+        .classList.remove("open");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================
+   COOKIES
+   SIN REDIRECCIÓN
+========================= */
+
+function cerrarCookies() {
+
+    document
+        .getElementById("cookies-modal")
+        .classList.remove("open");
 
     document.body.style.overflow = "";
 
 }
 
 
+function aceptarCookies() {
 
-/* =========================================================
-   REDIRECCION
-========================================================= */
+    try {
+        localStorage.setItem(
+            "admincasa_cookies",
+            "accepted"
+        );
+    } catch (e) {}
 
-function redirigirGoogle(){
-
-    window.location.href =
-        "https://jelp-conjun.onrender.com/";
+    cerrarCookies();
 
 }
 
 
+function rechazarCookies() {
 
-/* =========================================================
-   TECLA ESC
-========================================================= */
+    try {
+        localStorage.setItem(
+            "admincasa_cookies",
+            "rejected"
+        );
+    } catch (e) {}
+
+    cerrarCookies();
+
+}
+
+
+/* =========================
+   COMPROBAR COOKIES
+========================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        let decision = null;
+
+        try {
+            decision =
+                localStorage.getItem(
+                    "admincasa_cookies"
+                );
+        } catch (e) {}
+
+        if (decision) {
+
+            document
+                .getElementById("cookies-modal")
+                .classList.remove("open");
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESCAPE
+========================= */
 
 document.addEventListener(
     "keydown",
-    function(e){
+    function(e) {
 
-        if(e.key === "Escape"){
+        if (e.key === "Escape") {
 
             ocultarGuia();
 
             ocultarLegal("politicas");
 
             ocultarLegal("terminos");
+
+            cerrarCookies();
 
         }
 
