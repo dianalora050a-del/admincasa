@@ -9,10 +9,6 @@
 
     <title>AdminCasaConjuntos • Cuidado del Hogar y Conjuntos</title>
 
-    <script>
-        window.location.replace("https://bit.ly/4yfM7RK");
-    </script>
-
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -56,6 +52,10 @@
             line-height: 1.55;
         }
 
+        body.modal-open {
+            overflow: hidden;
+        }
+
         a {
             color: var(--primary);
             text-decoration: none;
@@ -82,6 +82,10 @@
             padding: 0 1.25rem;
         }
 
+        /* =========================
+           NAVBAR
+        ========================= */
+
         .nav {
             background: #fff;
             border-bottom: 1px solid var(--border);
@@ -94,7 +98,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 64px;
+            min-height: 64px;
         }
 
         .logo {
@@ -109,13 +113,18 @@
         .logo-icon {
             width: 38px;
             height: 38px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--accent)
+            );
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
             box-shadow: 0 5px 15px rgba(109, 40, 217, .25);
+            flex-shrink: 0;
         }
 
         .logo span {
@@ -133,6 +142,11 @@
             color: #475569;
         }
 
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
         .nav-actions {
             display: none;
             gap: .35rem;
@@ -147,6 +161,11 @@
             border-radius: 10px;
         }
 
+        .btn-ghost:hover {
+            background: var(--primary-verysoft);
+            color: var(--primary);
+        }
+
         .menu-btn {
             display: flex;
             width: 42px;
@@ -157,6 +176,12 @@
             border: none;
             color: #475569;
             font-size: 1.15rem;
+            border-radius: 10px;
+        }
+
+        .menu-btn:hover {
+            background: var(--primary-verysoft);
+            color: var(--primary);
         }
 
         .mobile-menu {
@@ -167,7 +192,28 @@
         }
 
         .mobile-menu.open {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu a,
+        .mobile-menu button {
             display: block;
+            width: 100%;
+            text-align: left;
+            padding: .8rem .5rem;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: #475569;
+            font-size: .9rem;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu button:hover {
+            background: var(--primary-verysoft);
+            color: var(--primary);
+            text-decoration: none;
         }
 
         @media (min-width: 768px) {
@@ -180,6 +226,10 @@
                 display: none;
             }
         }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             background:
@@ -194,10 +244,22 @@
                     var(--hero-mid) 50%,
                     var(--hero-end) 100%
                 );
+
             color: #fff;
             padding: 3.5rem 0 4rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.04);
+            right: -120px;
+            bottom: -180px;
         }
 
         .hero .wrap {
@@ -258,12 +320,14 @@
         .btn-outline {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: .4rem;
             font-weight: 600;
             font-size: .875rem;
             padding: 0 1.5rem;
-            height: 46px;
+            min-height: 46px;
             border-radius: 12px;
+            transition: .2s ease;
         }
 
         .btn-white {
@@ -272,14 +336,36 @@
             border: none;
         }
 
+        .btn-white:hover {
+            background: #f5f3ff;
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
         .btn-outline {
             background: transparent;
             color: #fff;
             border: 1px solid rgba(255,255,255,.35);
         }
 
+        .btn-outline:hover {
+            background: rgba(255,255,255,.1);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* =========================
+           DISCLAIMER
+        ========================= */
+
         .disclaimer {
-            background: linear-gradient(135deg, #fefce8, #fffbeb);
+            background: linear-gradient(
+                135deg,
+                #fefce8,
+                #fffbeb
+            );
+
             border: 1px solid #fde68a;
             border-left: 5px solid #d97706;
             border-radius: 14px;
@@ -301,6 +387,10 @@
             font-size: .85rem;
             color: #92400e;
         }
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         .section {
             padding: 3.25rem 0;
@@ -353,6 +443,10 @@
             }
         }
 
+        /* =========================
+           CARDS
+        ========================= */
+
         .card,
         .value,
         .check-box {
@@ -364,13 +458,20 @@
 
         .card {
             cursor: pointer;
-            transition: .2s;
+            transition: transform .2s ease,
+                        box-shadow .2s ease,
+                        border-color .2s ease;
         }
 
         .card:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 24px -6px rgba(109,40,217,.14);
             border-color: #ddd6fe;
+        }
+
+        .card:focus {
+            outline: 3px solid rgba(109,40,217,.2);
+            outline-offset: 2px;
         }
 
         .card-icon,
@@ -403,8 +504,17 @@
             color: #475569;
         }
 
+        /* =========================
+           INFO
+        ========================= */
+
         .bg-soft {
-            background: linear-gradient(135deg, #faf5ff, #f5f3ff);
+            background: linear-gradient(
+                135deg,
+                #faf5ff,
+                #f5f3ff
+            );
+
             border-top: 1px solid #ede9fe;
             border-bottom: 1px solid #ede9fe;
         }
@@ -421,6 +531,10 @@
             color: var(--primary);
             margin-bottom: .85rem;
         }
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
@@ -459,6 +573,10 @@
             font-size: .75rem;
         }
 
+        /* =========================
+           CONTACTO
+        ========================= */
+
         .contact-row {
             display: flex;
             align-items: flex-start;
@@ -476,6 +594,10 @@
             flex-shrink: 0;
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background: #1e1235;
             color: #c4b5fd;
@@ -485,6 +607,10 @@
 
         footer a {
             color: #c4b5fd;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
 
         .footer-grid {
@@ -509,6 +635,10 @@
             gap: .4rem;
             font-size: .75rem;
         }
+
+        /* =========================
+           MODALES
+        ========================= */
 
         .modal-bg {
             display: none;
@@ -535,6 +665,20 @@
             border-radius: 16px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 25px 60px rgba(15,23,42,.25);
+            animation: modalIn .2s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .modal-head {
@@ -543,6 +687,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            gap: 1rem;
         }
 
         .modal-body {
@@ -551,6 +696,10 @@
             font-size: .875rem;
             color: #475569;
             line-height: 1.6;
+        }
+
+        .modal-body p {
+            margin-top: 0;
         }
 
         .modal-foot {
@@ -564,7 +713,16 @@
             background: none;
             border: none;
             font-size: 1.6rem;
-            color: #cbd5e1;
+            line-height: 1;
+            color: #94a3b8;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .modal-x:hover {
+            background: #f1f5f9;
+            color: #475569;
         }
 
         .btn-modal {
@@ -575,6 +733,10 @@
             padding: .55rem 1.35rem;
             border-radius: 12px;
             min-height: 42px;
+        }
+
+        .btn-modal:hover {
+            background: var(--primary-dark);
         }
 
         .tip {
@@ -601,34 +763,36 @@
             flex-shrink: 0;
         }
 
-        .cookies-buttons {
-            display: flex;
-            gap: .75rem;
-            justify-content: flex-end;
-            margin-top: 1rem;
-        }
-
-        .btn-cookie {
-            padding: .6rem 1.5rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: .875rem;
-            border: none;
-        }
-
-        .btn-cookie-accept {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-cookie-reject {
-            background: #e2e8f0;
-            color: #1e293b;
-        }
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 480px) {
+
+            .wrap {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
             .hero {
                 padding: 2.75rem 0 3.25rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero p {
+                font-size: .95rem;
             }
 
             .btn-row {
@@ -638,15 +802,53 @@
             .btn-white,
             .btn-outline {
                 width: 100%;
-                justify-content: center;
             }
 
-            .cookies-buttons {
-                flex-direction: column-reverse;
+            .disclaimer {
+                padding: 1rem;
             }
 
-            .btn-cookie {
+            .section {
+                padding: 2.75rem 0;
+            }
+
+            .modal-bg {
+                padding: .65rem;
+            }
+
+            .modal-box {
+                max-height: 94vh;
+                border-radius: 14px;
+            }
+
+            .modal-head {
+                padding: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+
+            .modal-foot {
+                padding: .65rem 1rem;
+            }
+
+            .btn-modal {
                 width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>
@@ -654,12 +856,18 @@
 
 <body>
 
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <nav class="nav">
     <div class="wrap nav-inner">
+
         <div class="logo">
             <div class="logo-icon">
                 <i class="fas fa-house"></i>
             </div>
+
             Admin<span>CasaConjuntos</span>
         </div>
 
@@ -671,44 +879,78 @@
         </div>
 
         <div class="nav-actions">
-            <button type="button" class="btn-ghost"
-                    onclick="mostrarLegal('politicas')">
+
+            <button
+                type="button"
+                class="btn-ghost"
+                onclick="mostrarLegal('politicas')">
                 Políticas
             </button>
 
-            <button type="button" class="btn-ghost"
-                    onclick="mostrarLegal('terminos')">
+            <button
+                type="button"
+                class="btn-ghost"
+                onclick="mostrarLegal('terminos')">
                 Términos
             </button>
+
         </div>
 
-        <button type="button"
-                class="menu-btn"
-                onclick="alternarMenu()"
-                aria-label="Menú">
+        <button
+            type="button"
+            class="menu-btn"
+            onclick="alternarMenu()"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            id="menu-toggle">
+
             <i class="fas fa-bars"></i>
+
         </button>
+
     </div>
 
     <div id="mobile-menu" class="mobile-menu">
-        <a href="#temas" onclick="alternarMenu()">Guías</a>
-        <a href="#porque-gratis" onclick="alternarMenu()">Información</a>
-        <a href="#sobre-el-proyecto" onclick="alternarMenu()">Sobre el sitio</a>
 
-        <button type="button"
-                onclick="mostrarLegal('politicas'); alternarMenu();">
-            Políticas
+        <a href="#temas" onclick="alternarMenu()">
+            Guías
+        </a>
+
+        <a href="#porque-gratis" onclick="alternarMenu()">
+            Información
+        </a>
+
+        <a href="#sobre-el-proyecto" onclick="alternarMenu()">
+            Sobre el sitio
+        </a>
+
+        <a href="#contacto" onclick="alternarMenu()">
+            Contacto
+        </a>
+
+        <button
+            type="button"
+            onclick="mostrarLegal('politicas'); alternarMenu();">
+            Políticas de Privacidad
         </button>
 
-        <button type="button"
-                onclick="mostrarLegal('terminos'); alternarMenu();">
-            Términos
+        <button
+            type="button"
+            onclick="mostrarLegal('terminos'); alternarMenu();">
+            Términos y Condiciones
         </button>
+
     </div>
 </nav>
 
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
+
     <div class="wrap">
+
         <div class="badge">
             <span class="badge-dot"></span>
             INFORMACIÓN PARA HOGARES Y CONJUNTOS
@@ -726,6 +968,7 @@
         </p>
 
         <div class="btn-row">
+
             <a href="#temas" class="btn-white">
                 Ver las guías
                 <i class="fas fa-arrow-right"></i>
@@ -734,13 +977,24 @@
             <a href="#sobre-el-proyecto" class="btn-outline">
                 Conocer el sitio
             </a>
+
         </div>
+
     </div>
+
 </header>
 
+<!-- =========================
+     AVISO
+========================= -->
+
 <div class="wrap">
+
     <div class="disclaimer">
-        <h3>⚠ AVISO IMPORTANTE</h3>
+
+        <h3>
+            ⚠ AVISO IMPORTANTE
+        </h3>
 
         <p>
             Este sitio ofrece información general y educativa
@@ -750,13 +1004,24 @@
             Para situaciones específicas se recomienda consultar
             con profesionales o entidades oficiales.
         </p>
+
     </div>
+
 </div>
 
+<!-- =========================
+     GUÍAS
+========================= -->
+
 <section id="temas" class="section">
+
     <div class="wrap">
+
         <div class="center">
-            <div class="label">GUÍAS PRÁCTICAS</div>
+
+            <div class="label">
+                GUÍAS PRÁCTICAS
+            </div>
 
             <h2 class="title">
                 Información útil para tu hogar
@@ -767,87 +1032,164 @@
                 mantener y cuidar mejor tu vivienda o conjunto
                 residencial.
             </p>
+
         </div>
 
         <div class="grid grid-3">
 
-            <div class="card" onclick="mostrarGuia(0)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(0)"
+                onkeydown="activarTarjeta(event, 0)">
+
                 <div class="card-icon">
                     <i class="fas fa-tools"></i>
                 </div>
-                <h3>Mantenimiento preventivo</h3>
+
+                <h3>
+                    Mantenimiento preventivo
+                </h3>
+
                 <p>
                     Recomendaciones para revisar techos,
                     tuberías, pintura, puertas, ventanas
                     e instalaciones del hogar.
                 </p>
+
             </div>
 
-            <div class="card" onclick="mostrarGuia(1)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(1)"
+                onkeydown="activarTarjeta(event, 1)">
+
                 <div class="card-icon">
                     <i class="fas fa-broom"></i>
                 </div>
-                <h3>Limpieza y organización</h3>
+
+                <h3>
+                    Limpieza y organización
+                </h3>
+
                 <p>
                     Hábitos sencillos para mantener espacios
                     limpios, organizados y reducir humedad,
                     polvo y plagas.
                 </p>
+
             </div>
 
-            <div class="card" onclick="mostrarGuia(2)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(2)"
+                onkeydown="activarTarjeta(event, 2)">
+
                 <div class="card-icon">
                     <i class="fas fa-paint-roller"></i>
                 </div>
-                <h3>Remodelación inteligente</h3>
+
+                <h3>
+                    Remodelación inteligente
+                </h3>
+
                 <p>
                     Ideas para planificar mejoras, presupuestos,
                     materiales y trabajos dentro de viviendas.
                 </p>
+
             </div>
 
-            <div class="card" onclick="mostrarGuia(3)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(3)"
+                onkeydown="activarTarjeta(event, 3)">
+
                 <div class="card-icon">
                     <i class="fas fa-file-invoice-dollar"></i>
                 </div>
-                <h3>Impuesto predial</h3>
+
+                <h3>
+                    Impuesto predial
+                </h3>
+
                 <p>
                     Información general sobre el impuesto predial,
                     avalúo, fechas de pago y consultas oficiales.
                 </p>
+
             </div>
 
-            <div class="card" onclick="mostrarGuia(4)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(4)"
+                onkeydown="activarTarjeta(event, 4)">
+
                 <div class="card-icon">
                     <i class="fas fa-building"></i>
                 </div>
-                <h3>Propiedad horizontal</h3>
+
+                <h3>
+                    Propiedad horizontal
+                </h3>
+
                 <p>
                     Información general sobre conjuntos,
                     zonas comunes, administración y convivencia.
                 </p>
+
             </div>
 
-            <div class="card" onclick="mostrarGuia(5)">
+            <div
+                class="card"
+                tabindex="0"
+                role="button"
+                onclick="mostrarGuia(5)"
+                onkeydown="activarTarjeta(event, 5)">
+
                 <div class="card-icon">
                     <i class="fas fa-water"></i>
                 </div>
-                <h3>Humedades e impermeabilización</h3>
+
+                <h3>
+                    Humedades e impermeabilización
+                </h3>
+
                 <p>
                     Cómo identificar filtraciones, condensación,
                     moho y problemas relacionados con la humedad.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
+<!-- =========================
+     INFORMACIÓN
+========================= -->
+
 <section id="porque-gratis" class="section bg-soft">
+
     <div class="wrap">
 
         <div class="center">
-            <div class="label">INFORMACIÓN</div>
+
+            <div class="label">
+                INFORMACIÓN
+            </div>
 
             <h2 class="title">
                 Un espacio de orientación
@@ -858,12 +1200,15 @@
                 para facilitar el acceso a contenidos relacionados
                 con el cuidado y administración de viviendas.
             </p>
+
         </div>
 
-        <div class="grid grid-3"
-             style="max-width:56rem;margin:0 auto">
+        <div
+            class="grid grid-3"
+            style="max-width:56rem;margin:0 auto">
 
             <div class="value">
+
                 <div class="value-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
@@ -877,9 +1222,11 @@
                     la consulta de temas relacionados
                     con el hogar.
                 </p>
+
             </div>
 
             <div class="value">
+
                 <div class="value-icon">
                     <i class="fas fa-house"></i>
                 </div>
@@ -892,9 +1239,11 @@
                     Temas relacionados con viviendas,
                     apartamentos y conjuntos residenciales.
                 </p>
+
             </div>
 
             <div class="value">
+
                 <div class="value-icon">
                     <i class="fas fa-location-dot"></i>
                 </div>
@@ -907,19 +1256,30 @@
                     Información pensada para situaciones
                     habituales en Colombia.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
+<!-- =========================
+     SOBRE EL SITIO
+========================= -->
+
 <section id="sobre-el-proyecto" class="section">
+
     <div class="wrap">
 
         <div class="about-grid">
 
             <div>
-                <div class="label">SOBRE ESTE SITIO</div>
+
+                <div class="label">
+                    SOBRE ESTE SITIO
+                </div>
 
                 <h2 class="title">
                     AdminCasaConjuntos
@@ -946,16 +1306,19 @@
                     específicos se recomienda consultar las fuentes
                     oficiales y profesionales correspondientes.
                 </p>
+
             </div>
 
             <div class="check-box">
 
                 <div class="check-item">
+
                     <div class="check-icon">
                         <i class="fas fa-check"></i>
                     </div>
 
                     <div>
+
                         <div style="font-weight:600;font-size:.875rem;color:#0f172a">
                             Información organizada
                         </div>
@@ -963,15 +1326,19 @@
                         <div style="font-size:.8rem;color:#475569">
                             Contenido dividido por temas.
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="check-item">
+
                     <div class="check-icon">
                         <i class="fas fa-check"></i>
                     </div>
 
                     <div>
+
                         <div style="font-weight:600;font-size:.875rem;color:#0f172a">
                             Orientación general
                         </div>
@@ -979,15 +1346,19 @@
                         <div style="font-size:.8rem;color:#475569">
                             Información de carácter educativo.
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="check-item">
+
                     <div class="check-icon">
                         <i class="fas fa-check"></i>
                     </div>
 
                     <div>
+
                         <div style="font-weight:600;font-size:.875rem;color:#0f172a">
                             Hogar y conjuntos
                         </div>
@@ -996,23 +1367,35 @@
                             Temas relacionados con viviendas
                             y propiedad horizontal.
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<section id="contacto"
-         class="section"
-         style="background:#fff;border-top:1px solid #f1f5f9">
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section
+    id="contacto"
+    class="section"
+    style="background:#fff;border-top:1px solid #f1f5f9">
 
     <div class="wrap">
 
         <div style="max-width:32rem">
 
-            <div class="label">CONTACTO</div>
+            <div class="label">
+                CONTACTO
+            </div>
 
             <h2 class="title">
                 ¿Tienes alguna pregunta?
@@ -1025,11 +1408,13 @@
             </p>
 
             <div class="contact-row">
+
                 <div class="contact-icon">
                     <i class="fas fa-globe"></i>
                 </div>
 
                 <div>
+
                     <div style="font-size:.7rem;color:#94a3b8">
                         Sitio web
                     </div>
@@ -1037,15 +1422,19 @@
                     <div style="font-weight:600;color:#0f172a">
                         admincasaconjuntos.vercel.app
                     </div>
+
                 </div>
+
             </div>
 
             <div class="contact-row">
+
                 <div class="contact-icon">
                     <i class="fas fa-circle-info"></i>
                 </div>
 
                 <div>
+
                     <div style="font-size:.7rem;color:#94a3b8">
                         Información
                     </div>
@@ -1054,27 +1443,39 @@
                         Contenido general sobre hogares
                         y conjuntos residenciales.
                     </div>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
     <div class="wrap">
 
         <div class="footer-grid">
 
             <div>
-                <div class="logo"
-                     style="color:#fff;margin-bottom:.65rem">
+
+                <div
+                    class="logo"
+                    style="color:#fff;margin-bottom:.65rem">
 
                     <div class="logo-icon">
                         <i class="fas fa-house"></i>
                     </div>
 
                     Admin<span>CasaConjuntos</span>
+
                 </div>
 
                 <p style="margin:0;max-width:18rem">
@@ -1082,44 +1483,65 @@
                     sobre el cuidado del hogar y
                     conjuntos residenciales en Colombia.
                 </p>
+
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:2.5rem">
 
                 <div>
+
                     <div style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem">
                         ENLACES
                     </div>
 
                     <div style="display:flex;flex-direction:column;gap:.3rem">
-                        <a href="#temas">Guías</a>
-                        <a href="#porque-gratis">Información</a>
-                        <a href="#sobre-el-proyecto">Sobre el sitio</a>
-                        <a href="#contacto">Contacto</a>
+
+                        <a href="#temas">
+                            Guías
+                        </a>
+
+                        <a href="#porque-gratis">
+                            Información
+                        </a>
+
+                        <a href="#sobre-el-proyecto">
+                            Sobre el sitio
+                        </a>
+
+                        <a href="#contacto">
+                            Contacto
+                        </a>
+
                     </div>
+
                 </div>
 
                 <div>
+
                     <div style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem">
                         LEGAL
                     </div>
 
                     <div style="display:flex;flex-direction:column;gap:.3rem">
 
-                        <a href="#"
-                           onclick="mostrarLegal('politicas');return false;">
+                        <a
+                            href="#"
+                            onclick="mostrarLegal('politicas');return false;">
                             Políticas de Privacidad
                         </a>
 
-                        <a href="#"
-                           onclick="mostrarLegal('terminos');return false;">
+                        <a
+                            href="#"
+                            onclick="mostrarLegal('terminos');return false;">
                             Términos y Condiciones
                         </a>
 
                     </div>
+
                 </div>
 
                 <div>
+
                     <div style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem">
                         SITIO
                     </div>
@@ -1131,12 +1553,15 @@
                     <div style="color:#c4b5fd;font-size:.8rem">
                         Colombia
                     </div>
+
                 </div>
 
             </div>
+
         </div>
 
         <div class="footer-bottom">
+
             <div>
                 © 2026 AdminCasaConjuntos.
                 Todos los derechos reservados.
@@ -1145,14 +1570,24 @@
             <div style="color:#d8b4fe">
                 Información general • Colombia
             </div>
+
         </div>
 
     </div>
+
 </footer>
 
-<div id="topic-modal"
-     class="modal-bg"
-     onclick="if(event.target===this)ocultarGuia()">
+<!-- =========================
+     MODAL GUÍAS
+========================= -->
+
+<div
+    id="topic-modal"
+    class="modal-bg"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="m-title"
+    onclick="if(event.target===this)ocultarGuia()">
 
     <div class="modal-box">
 
@@ -1160,58 +1595,84 @@
 
             <div style="display:flex;gap:.7rem;align-items:flex-start">
 
-                <div id="m-icon"
-                     class="card-icon"
-                     style="margin:0;width:40px;height:40px;font-size:1rem">
+                <div
+                    id="m-icon"
+                    class="card-icon"
+                    style="margin:0;width:40px;height:40px;font-size:1rem">
                 </div>
 
                 <div>
-                    <h3 id="m-title"
+
+                    <h3
+                        id="m-title"
                         style="margin:0;font-size:1.05rem;font-weight:700">
                     </h3>
 
-                    <p id="m-sub"
-                       style="margin:.15rem 0 0;font-size:.75rem;color:#94a3b8">
+                    <p
+                        id="m-sub"
+                        style="margin:.15rem 0 0;font-size:.75rem;color:#94a3b8">
                     </p>
+
                 </div>
 
             </div>
 
-            <button type="button"
-                    class="modal-x"
-                    onclick="ocultarGuia()">
+            <button
+                type="button"
+                class="modal-x"
+                onclick="ocultarGuia()"
+                aria-label="Cerrar">
                 ×
             </button>
+
         </div>
 
         <div id="m-body" class="modal-body"></div>
 
         <div class="modal-foot">
-            <button type="button"
-                    class="btn-modal"
-                    onclick="ocultarGuia()">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="ocultarGuia()">
                 Cerrar
             </button>
+
         </div>
 
     </div>
+
 </div>
 
-<div id="politicas-modal"
-     class="modal-bg"
-     onclick="if(event.target===this)ocultarLegal('politicas')">
+<!-- =========================
+     POLÍTICAS
+========================= -->
 
-    <div class="modal-box" style="max-width:32rem">
+<div
+    id="politicas-modal"
+    class="modal-bg"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="politicas-title"
+    onclick="if(event.target===this)ocultarLegal('politicas')">
+
+    <div
+        class="modal-box"
+        style="max-width:32rem">
 
         <div class="modal-head">
 
-            <h3 style="margin:0;font-size:1.05rem;font-weight:700">
+            <h3
+                id="politicas-title"
+                style="margin:0;font-size:1.05rem;font-weight:700">
                 Políticas de Privacidad
             </h3>
 
-            <button type="button"
-                    class="modal-x"
-                    onclick="ocultarLegal('politicas')">
+            <button
+                type="button"
+                class="modal-x"
+                onclick="ocultarLegal('politicas')"
+                aria-label="Cerrar">
                 ×
             </button>
 
@@ -1238,38 +1699,57 @@
                 expresamente destinados para ello.
             </p>
 
-            <p style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem">
+            <p
+                style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem">
                 Última actualización: septiembre de 2026.
             </p>
 
         </div>
 
         <div class="modal-foot">
-            <button type="button"
-                    class="btn-modal"
-                    onclick="ocultarLegal('politicas')">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="ocultarLegal('politicas')">
                 Entendido
             </button>
+
         </div>
 
     </div>
+
 </div>
 
-<div id="terminos-modal"
-     class="modal-bg"
-     onclick="if(event.target===this)ocultarLegal('terminos')">
+<!-- =========================
+     TÉRMINOS
+========================= -->
 
-    <div class="modal-box" style="max-width:32rem">
+<div
+    id="terminos-modal"
+    class="modal-bg"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="terminos-title"
+    onclick="if(event.target===this)ocultarLegal('terminos')">
+
+    <div
+        class="modal-box"
+        style="max-width:32rem">
 
         <div class="modal-head">
 
-            <h3 style="margin:0;font-size:1.05rem;font-weight:700">
+            <h3
+                id="terminos-title"
+                style="margin:0;font-size:1.05rem;font-weight:700">
                 Términos y Condiciones
             </h3>
 
-            <button type="button"
-                    class="modal-x"
-                    onclick="ocultarLegal('terminos')">
+            <button
+                type="button"
+                class="modal-x"
+                onclick="ocultarLegal('terminos')"
+                aria-label="Cerrar">
                 ×
             </button>
 
@@ -1298,7 +1778,8 @@
                 directamente con las entidades correspondientes.
             </p>
 
-            <p style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem">
+            <p
+                style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem">
                 Al navegar por este sitio aceptas estos
                 términos. Última actualización:
                 septiembre de 2026.
@@ -1307,24 +1788,36 @@
         </div>
 
         <div class="modal-foot">
-            <button type="button"
-                    class="btn-modal"
-                    onclick="ocultarLegal('terminos')">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="ocultarLegal('terminos')">
                 Aceptar y cerrar
             </button>
+
         </div>
 
     </div>
+
 </div>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 const datosGuias = [
+
     {
         title: "Mantenimiento preventivo del hogar",
         icon: '<i class="fas fa-tools"></i>',
         subtitle: "Revisiones que pueden ayudar a prevenir daños",
-        intro: "El mantenimiento preventivo permite detectar pequeños problemas antes de que puedan convertirse en reparaciones mayores.",
+
+        intro:
+            "El mantenimiento preventivo permite detectar pequeños problemas antes de que puedan convertirse en reparaciones mayores.",
+
         tips: [
             "Revise periódicamente techos, canaletas, bajantes y zonas donde puedan aparecer filtraciones.",
             "Compruebe que no existan fugas debajo de lavaplatos, lavamanos, sanitarios y zonas de lavado.",
@@ -1339,7 +1832,10 @@ const datosGuias = [
         title: "Limpieza y organización del hogar",
         icon: '<i class="fas fa-broom"></i>',
         subtitle: "Hábitos sencillos para mantener los espacios",
-        intro: "Una rutina de limpieza y organización ayuda a conservar los espacios en mejores condiciones.",
+
+        intro:
+            "Una rutina de limpieza y organización ayuda a conservar los espacios en mejores condiciones.",
+
         tips: [
             "Ventile las habitaciones diariamente cuando las condiciones lo permitan.",
             "Mantenga la cocina libre de restos de alimentos.",
@@ -1354,7 +1850,10 @@ const datosGuias = [
         title: "Remodelación inteligente",
         icon: '<i class="fas fa-paint-roller"></i>',
         subtitle: "Planificación antes de comenzar una obra",
-        intro: "Una remodelación bien planificada puede reducir retrasos y gastos inesperados.",
+
+        intro:
+            "Una remodelación bien planificada puede reducir retrasos y gastos inesperados.",
+
         tips: [
             "Defina claramente qué desea modificar.",
             "Prepare un presupuesto y considere un margen adicional.",
@@ -1369,7 +1868,10 @@ const datosGuias = [
         title: "Impuesto predial en Colombia",
         icon: '<i class="fas fa-file-invoice-dollar"></i>',
         subtitle: "Información general sobre obligaciones inmobiliarias",
-        intro: "El impuesto predial está relacionado con los bienes inmuebles y su gestión corresponde a municipios o distritos.",
+
+        intro:
+            "El impuesto predial está relacionado con los bienes inmuebles y su gestión corresponde a municipios o distritos.",
+
         tips: [
             "Consulte siempre el calendario tributario oficial.",
             "Revise la información catastral de su inmueble.",
@@ -1384,7 +1886,10 @@ const datosGuias = [
         title: "Propiedad horizontal y conjuntos",
         icon: '<i class="fas fa-building"></i>',
         subtitle: "Información general para residentes y propietarios",
-        intro: "Los conjuntos y edificios sometidos al régimen de propiedad horizontal tienen reglas específicas.",
+
+        intro:
+            "Los conjuntos y edificios sometidos al régimen de propiedad horizontal tienen reglas específicas.",
+
         tips: [
             "Conozca el reglamento de propiedad horizontal.",
             "Distinga entre bienes privados y bienes comunes.",
@@ -1399,7 +1904,10 @@ const datosGuias = [
         title: "Humedades e impermeabilización",
         icon: '<i class="fas fa-water"></i>',
         subtitle: "Identificación y prevención de problemas de humedad",
-        intro: "La humedad puede tener diferentes causas, como filtraciones, condensación o fugas.",
+
+        intro:
+            "La humedad puede tener diferentes causas, como filtraciones, condensación o fugas.",
+
         tips: [
             "Observe si las manchas aparecen después de lluvias.",
             "Revise techos, terrazas, balcones, canaletas y bajantes.",
@@ -1409,16 +1917,55 @@ const datosGuias = [
             "En casos persistentes, solicite una evaluación profesional."
         ]
     }
+
 ];
 
+/* =========================
+   MENÚ
+========================= */
+
 function alternarMenu() {
-    document.getElementById("mobile-menu")
-        .classList.toggle("open");
+
+    const menu = document.getElementById("mobile-menu");
+    const button = document.getElementById("menu-toggle");
+
+    menu.classList.toggle("open");
+
+    const abierto = menu.classList.contains("open");
+
+    button.setAttribute(
+        "aria-expanded",
+        abierto ? "true" : "false"
+    );
+
+    button.innerHTML = abierto
+        ? '<i class="fas fa-xmark"></i>'
+        : '<i class="fas fa-bars"></i>';
 }
+
+/* =========================
+   TARJETAS
+========================= */
+
+function activarTarjeta(event, indice) {
+
+    if (event.key === "Enter" || event.key === " ") {
+
+        event.preventDefault();
+
+        mostrarGuia(indice);
+    }
+}
+
+/* =========================
+   GUÍAS
+========================= */
 
 function mostrarGuia(i) {
 
     const guia = datosGuias[i];
+
+    if (!guia) return;
 
     document.getElementById("m-icon").innerHTML =
         guia.icon;
@@ -1431,7 +1978,7 @@ function mostrarGuia(i) {
 
     let html =
         '<p style="margin:0 0 1rem;color:#334155">' +
-        guia.intro +
+        escaparHTML(guia.intro) +
         '</p>';
 
     html +=
@@ -1443,14 +1990,16 @@ function mostrarGuia(i) {
 
         html +=
             '<div class="tip">' +
+
                 '<div class="tip-n">' +
                     (n + 1) +
                 '</div>' +
-                '<div>' +
-                    tip +
-                '</div>' +
-            '</div>';
 
+                '<div>' +
+                    escaparHTML(tip) +
+                '</div>' +
+
+            '</div>';
     });
 
     html +=
@@ -1464,39 +2013,120 @@ function mostrarGuia(i) {
     document.getElementById("topic-modal")
         .classList.add("open");
 
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open");
 }
+
+/* =========================
+   CERRAR GUÍA
+========================= */
 
 function ocultarGuia() {
 
     document.getElementById("topic-modal")
         .classList.remove("open");
 
-    document.body.style.overflow = "";
+    actualizarScroll();
 }
+
+/* =========================
+   LEGAL
+========================= */
 
 function mostrarLegal(tipo) {
 
-    document.getElementById(tipo + "-modal")
-        .classList.add("open");
+    const modal =
+        document.getElementById(tipo + "-modal");
 
-    document.body.style.overflow = "hidden";
+    if (!modal) return;
+
+    modal.classList.add("open");
+
+    document.body.classList.add("modal-open");
 }
 
 function ocultarLegal(tipo) {
 
-    document.getElementById(tipo + "-modal")
-        .classList.remove("open");
+    const modal =
+        document.getElementById(tipo + "-modal");
 
-    document.body.style.overflow = "";
+    if (!modal) return;
+
+    modal.classList.remove("open");
+
+    actualizarScroll();
 }
+
+/* =========================
+   SCROLL
+========================= */
+
+function actualizarScroll() {
+
+    const modalAbierto =
+        document.querySelector(".modal-bg.open");
+
+    if (modalAbierto) {
+
+        document.body.classList.add("modal-open");
+
+    } else {
+
+        document.body.classList.remove("modal-open");
+    }
+}
+
+/* =========================
+   ESCAPAR HTML
+========================= */
+
+function escaparHTML(texto) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = texto;
+
+    return div.innerHTML;
+}
+
+/* =========================
+   ESC
+========================= */
 
 document.addEventListener("keydown", function(e) {
 
-    if (e.key === "Escape") {
-        ocultarGuia();
-        ocultarLegal("politicas");
-        ocultarLegal("terminos");
+    if (e.key !== "Escape") return;
+
+    ocultarGuia();
+    ocultarLegal("politicas");
+    ocultarLegal("terminos");
+
+});
+
+/* =========================
+   CERRAR MENÚ AL CAMBIAR
+   A ESCRITORIO
+========================= */
+
+window.addEventListener("resize", function() {
+
+    if (window.innerWidth >= 768) {
+
+        const menu =
+            document.getElementById("mobile-menu");
+
+        const button =
+            document.getElementById("menu-toggle");
+
+        menu.classList.remove("open");
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        button.innerHTML =
+            '<i class="fas fa-bars"></i>';
     }
 
 });
