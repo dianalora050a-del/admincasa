@@ -1,0 +1,3181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="description" content="Guía gratuita y educativa sobre mantenimiento, limpieza, remodelación y cuidado del hogar en Colombia.">
+
+    <meta name="theme-color" content="#6C2BD9">
+
+    <title>AdminHouses • Guía Gratuita de Cuidado del Hogar</title>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES - ESTILO MORADO
+        ========================================================= */
+
+        :root{
+            --primary:#6C2BD9;
+            --primary-dark:#4B1FA8;
+            --primary-darker:#351477;
+
+            --primary-soft:#EDE9FE;
+            --primary-verysoft:#F8F5FF;
+
+            --accent:#A855F7;
+            --accent-light:#C084FC;
+
+            --hero-start:#351477;
+            --hero-mid:#6C2BD9;
+            --hero-end:#581C87;
+
+            --border:#E5E7EB;
+
+            --bg:#F8F5FF;
+            --white:#ffffff;
+
+            --text:#1F2937;
+            --text-soft:#4B5563;
+            --text-light:#6B7280;
+
+            --success:#16A34A;
+            --warning:#D97706;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after{
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+            -webkit-text-size-adjust:100%;
+        }
+
+        body{
+            margin:0;
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #F8F5FF 0%,
+                    #FFFFFF 45%,
+                    #F8F5FF 100%
+                );
+
+            color:var(--text);
+            line-height:1.55;
+        }
+
+        a{
+            color:var(--primary);
+            text-decoration:none;
+        }
+
+        a:hover{
+            color:var(--primary-dark);
+            text-decoration:underline;
+        }
+
+        button{
+            font-family:inherit;
+            cursor:pointer;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+
+        /* =========================================================
+           CONTENEDOR
+        ========================================================= */
+
+        .wrap{
+            width:100%;
+            max-width:1152px;
+            margin:0 auto;
+            padding:0 1.25rem;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .nav{
+            background:rgba(255,255,255,.96);
+            border-bottom:1px solid var(--border);
+
+            position:sticky;
+            top:0;
+            z-index:50;
+
+            backdrop-filter:blur(12px);
+            -webkit-backdrop-filter:blur(12px);
+        }
+
+        .nav-inner{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            height:68px;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:.6rem;
+
+            font-weight:800;
+            font-size:1.3rem;
+
+            color:#171124;
+        }
+
+        .logo-icon{
+            width:38px;
+            height:38px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            border-radius:11px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            color:#fff;
+
+            box-shadow:
+                0 8px 20px rgba(108,43,217,.25);
+        }
+
+        .logo span{
+            color:var(--primary);
+        }
+
+        .nav-links{
+            display:none;
+            gap:1.6rem;
+
+            font-size:.875rem;
+            font-weight:600;
+        }
+
+        .nav-links a{
+            color:#4B5563;
+            transition:.2s;
+        }
+
+        .nav-links a:hover{
+            color:var(--primary);
+            text-decoration:none;
+        }
+
+        .nav-actions{
+            display:none;
+            gap:.35rem;
+        }
+
+        .btn-ghost{
+            background:none;
+            border:none;
+
+            padding:.45rem .9rem;
+
+            font-size:.875rem;
+            color:#4B5563;
+
+            border-radius:10px;
+        }
+
+        .btn-ghost:hover{
+            color:var(--primary);
+            background:var(--primary-verysoft);
+        }
+
+        .menu-btn{
+            display:flex;
+
+            width:42px;
+            height:42px;
+
+            align-items:center;
+            justify-content:center;
+
+            background:none;
+            border:none;
+
+            color:#4B5563;
+            font-size:1.15rem;
+        }
+
+        .mobile-menu{
+            display:none;
+
+            border-top:1px solid var(--border);
+
+            background:#fff;
+
+            padding:.75rem 1.25rem 1rem;
+        }
+
+        .mobile-menu.open{
+            display:block;
+        }
+
+        .mobile-menu a,
+        .mobile-menu button{
+            display:block;
+
+            width:100%;
+            text-align:left;
+
+            padding:.7rem .75rem;
+
+            color:#4B5563;
+
+            font-size:.9rem;
+            font-weight:600;
+
+            background:none;
+            border:none;
+
+            border-radius:10px;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu button:hover{
+            background:var(--primary-verysoft);
+
+            text-decoration:none;
+        }
+
+        @media(min-width:768px){
+
+            .nav-links,
+            .nav-actions{
+                display:flex;
+            }
+
+            .menu-btn{
+                display:none;
+            }
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero{
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(192,132,252,.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 10%,
+                    rgba(168,85,247,.25),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    var(--hero-start) 0%,
+                    var(--hero-mid) 50%,
+                    var(--hero-end) 100%
+                );
+
+            color:#fff;
+
+            padding:4rem 0 4.5rem;
+
+            position:relative;
+            overflow:hidden;
+        }
+
+        .hero::after{
+            content:"";
+
+            position:absolute;
+
+            width:300px;
+            height:300px;
+
+            right:-120px;
+            bottom:-150px;
+
+            background:rgba(255,255,255,.08);
+
+            border-radius:50%;
+        }
+
+        .hero .wrap{
+            position:relative;
+            z-index:2;
+        }
+
+        .badge{
+            display:inline-flex;
+
+            align-items:center;
+            gap:.45rem;
+
+            background:rgba(255,255,255,.12);
+
+            border:1px solid rgba(255,255,255,.2);
+
+            padding:.3rem .9rem;
+
+            border-radius:999px;
+
+            font-size:.72rem;
+            font-weight:600;
+
+            color:#F3E8FF;
+
+            letter-spacing:.04em;
+
+            margin-bottom:1.2rem;
+
+            backdrop-filter:blur(8px);
+        }
+
+        .badge-dot{
+            width:7px;
+            height:7px;
+
+            background:#D8B4FE;
+
+            border-radius:50%;
+
+            box-shadow:
+                0 0 0 4px rgba(216,180,254,.12);
+        }
+
+        .hero h1{
+            margin:0 0 1rem;
+
+            font-size:clamp(
+                2rem,
+                5vw,
+                3.4rem
+            );
+
+            font-weight:800;
+
+            line-height:1.12;
+
+            letter-spacing:-.025em;
+        }
+
+        .hero h1 em{
+            font-style:normal;
+            color:#E9D5FF;
+        }
+
+        .hero p{
+            margin:0 0 1.8rem;
+
+            font-size:1.05rem;
+
+            color:rgba(245,243,255,.92);
+
+            max-width:34rem;
+        }
+
+        .btn-row{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.7rem;
+        }
+
+        .btn-white{
+            display:inline-flex;
+
+            align-items:center;
+            justify-content:center;
+
+            gap:.45rem;
+
+            background:#fff;
+            color:var(--primary-dark);
+
+            font-weight:700;
+            font-size:.875rem;
+
+            padding:0 1.5rem;
+
+            height:48px;
+
+            border-radius:12px;
+
+            border:none;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.12);
+
+            transition:.2s;
+        }
+
+        .btn-white:hover{
+            background:#FAF5FF;
+
+            transform:translateY(-2px);
+
+            text-decoration:none;
+
+            color:var(--primary-dark);
+        }
+
+        .btn-outline{
+            display:inline-flex;
+
+            align-items:center;
+            justify-content:center;
+
+            background:transparent;
+
+            color:#fff;
+
+            font-weight:600;
+            font-size:.875rem;
+
+            padding:0 1.5rem;
+
+            height:48px;
+
+            border-radius:12px;
+
+            border:1px solid rgba(255,255,255,.35);
+
+            transition:.2s;
+        }
+
+        .btn-outline:hover{
+            background:rgba(255,255,255,.12);
+
+            border-color:rgba(255,255,255,.55);
+
+            text-decoration:none;
+
+            color:#fff;
+        }
+
+
+        /* =========================================================
+           AVISO
+        ========================================================= */
+
+        .disclaimer{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #FFF7ED,
+                    #FFFBEB
+                );
+
+            border:1px solid #FED7AA;
+
+            border-left:5px solid #EA580C;
+
+            border-radius:15px;
+
+            padding:1.15rem 1.35rem;
+
+            margin-top:-1.15rem;
+
+            position:relative;
+
+            z-index:5;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.06);
+        }
+
+        .disclaimer h3{
+            margin:0 0 .35rem;
+
+            font-size:.95rem;
+
+            color:#7C2D12;
+        }
+
+        .disclaimer p{
+            margin:0;
+
+            font-size:.85rem;
+
+            color:#9A3412;
+
+            line-height:1.55;
+        }
+
+
+        /* =========================================================
+           SECCIONES
+        ========================================================= */
+
+        .section{
+            padding:4rem 0;
+        }
+
+        .label{
+
+            display:inline-block;
+
+            background:var(--primary-soft);
+
+            color:var(--primary-dark);
+
+            font-size:.7rem;
+            font-weight:700;
+
+            letter-spacing:.06em;
+
+            padding:.3rem .8rem;
+
+            border-radius:999px;
+
+            margin-bottom:.7rem;
+        }
+
+        .title{
+
+            margin:0 0 .65rem;
+
+            font-size:
+                clamp(
+                    1.6rem,
+                    3.5vw,
+                    2.15rem
+                );
+
+            font-weight:800;
+
+            color:#171124;
+
+            letter-spacing:-.02em;
+        }
+
+        .title::after{
+
+            content:"";
+
+            display:block;
+
+            width:52px;
+            height:4px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            border-radius:4px;
+
+            margin-top:.5rem;
+        }
+
+        .desc{
+
+            color:var(--text-soft);
+
+            max-width:30rem;
+
+            margin:0 auto 2.4rem;
+        }
+
+        .center{
+            text-align:center;
+        }
+
+        .center .title::after{
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
+        /* =========================================================
+           GRID
+        ========================================================= */
+
+        .grid{
+
+            display:grid;
+
+            grid-template-columns:1fr;
+
+            gap:1.15rem;
+        }
+
+        @media(min-width:640px){
+
+            .grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+        @media(min-width:1024px){
+
+            .grid-3{
+                grid-template-columns:
+                    1fr 1fr 1fr;
+            }
+
+        }
+
+
+        /* =========================================================
+           TARJETAS
+        ========================================================= */
+
+        .card{
+
+            background:#fff;
+
+            border:1px solid var(--border);
+
+            border-radius:17px;
+
+            padding:1.4rem;
+
+            cursor:pointer;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                border-color .2s ease;
+
+            -webkit-tap-highlight-color:transparent;
+
+            box-shadow:
+                0 4px 15px rgba(30,20,60,.03);
+        }
+
+        .card:hover,
+        .card:active{
+
+            transform:translateY(-5px);
+
+            box-shadow:
+                0 18px 35px rgba(76,29,149,.10);
+
+            border-color:#D8B4FE;
+        }
+
+        .card-icon{
+
+            width:47px;
+            height:47px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #F3E8FF,
+                    #EDE9FE
+                );
+
+            border-radius:13px;
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            color:var(--primary);
+
+            font-size:1.15rem;
+
+            margin-bottom:.9rem;
+        }
+
+        .card h3{
+
+            margin:0 0 .4rem;
+
+            font-size:1.05rem;
+
+            font-weight:700;
+
+            color:#171124;
+        }
+
+        .card p{
+
+            margin:0;
+
+            font-size:.85rem;
+
+            color:var(--text-soft);
+
+            line-height:1.5;
+        }
+
+
+        /* =========================================================
+           SECCION MORADA SUAVE
+        ========================================================= */
+
+        .bg-soft{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #F5F3FF,
+                    #FAF5FF
+                );
+
+            border-top:1px solid #E9D5FF;
+
+            border-bottom:1px solid #E9D5FF;
+        }
+
+        .value{
+
+            background:#fff;
+
+            border:1px solid #E9D5FF;
+
+            border-radius:17px;
+
+            padding:1.4rem;
+
+            box-shadow:
+                0 5px 20px rgba(76,29,149,.04);
+        }
+
+        .value-icon{
+
+            width:42px;
+            height:42px;
+
+            background:#EDE9FE;
+
+            border-radius:11px;
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            color:var(--primary);
+
+            margin-bottom:.85rem;
+        }
+
+
+        /* =========================================================
+           SOBRE EL PROYECTO
+        ========================================================= */
+
+        .about-grid{
+
+            display:grid;
+
+            grid-template-columns:1fr;
+
+            gap:2rem;
+        }
+
+        @media(min-width:768px){
+
+            .about-grid{
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                align-items:center;
+            }
+
+        }
+
+        .check-box{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #F5F3FF,
+                    #FAF5FF
+                );
+
+            border:1px solid #E9D5FF;
+
+            border-radius:17px;
+
+            padding:1.5rem;
+        }
+
+        .check-item{
+
+            display:flex;
+
+            gap:.7rem;
+
+            margin-bottom:1.1rem;
+        }
+
+        .check-item:last-child{
+            margin-bottom:0;
+        }
+
+        .check-icon{
+
+            width:31px;
+            height:31px;
+
+            background:#E9D5FF;
+
+            border-radius:8px;
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            color:var(--primary);
+
+            flex-shrink:0;
+
+            font-size:.75rem;
+        }
+
+
+        /* =========================================================
+           CONTACTO
+        ========================================================= */
+
+        .contact-row{
+
+            display:flex;
+
+            align-items:flex-start;
+
+            gap:.7rem;
+
+            margin-bottom:1rem;
+
+            font-size:.875rem;
+        }
+
+        .contact-icon{
+
+            width:37px;
+            height:37px;
+
+            background:#F3E8FF;
+
+            border-radius:9px;
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            color:var(--primary);
+
+            flex-shrink:0;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #171124,
+                    #261044,
+                    #351477
+                );
+
+            color:#C4B5FD;
+
+            padding:2.5rem 0;
+
+            font-size:.85rem;
+        }
+
+        footer a{
+            color:#C4B5FD;
+        }
+
+        footer a:hover{
+            color:#fff;
+
+            text-decoration:none;
+        }
+
+        .footer-grid{
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:1.75rem;
+        }
+
+        @media(min-width:768px){
+
+            .footer-grid{
+
+                flex-direction:row;
+
+                justify-content:space-between;
+            }
+
+        }
+
+        .footer-bottom{
+
+            margin-top:2rem;
+
+            padding-top:1.25rem;
+
+            border-top:
+                1px solid rgba(255,255,255,.1);
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:.4rem;
+
+            font-size:.75rem;
+        }
+
+        @media(min-width:768px){
+
+            .footer-bottom{
+
+                flex-direction:row;
+
+                justify-content:space-between;
+            }
+
+        }
+
+
+        /* =========================================================
+           MODALES
+        ========================================================= */
+
+        .modal-bg{
+
+            display:none;
+
+            position:fixed;
+
+            inset:0;
+
+            z-index:60;
+
+            background:
+                rgba(20,10,40,.65);
+
+            -webkit-backdrop-filter:blur(5px);
+
+            backdrop-filter:blur(5px);
+
+            align-items:center;
+
+            justify-content:center;
+
+            padding:1rem;
+
+            overflow-y:auto;
+        }
+
+        .modal-bg.open{
+            display:flex;
+        }
+
+        .modal-box{
+
+            background:#fff;
+
+            width:100%;
+
+            max-width:36rem;
+
+            max-height:90vh;
+
+            overflow:hidden;
+
+            border-radius:18px;
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,.3);
+
+            display:flex;
+
+            flex-direction:column;
+
+            margin:auto;
+        }
+
+        .modal-head{
+
+            padding:1.15rem 1.35rem .9rem;
+
+            border-bottom:
+                1px solid var(--border);
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:flex-start;
+
+            gap:.7rem;
+        }
+
+        .modal-body{
+
+            padding:1.35rem;
+
+            overflow-y:auto;
+
+            font-size:.875rem;
+
+            color:var(--text-soft);
+
+            line-height:1.6;
+
+            -webkit-overflow-scrolling:touch;
+        }
+
+        .modal-foot{
+
+            padding:.7rem 1.35rem;
+
+            background:#FAFAFA;
+
+            border-top:
+                1px solid var(--border);
+
+            text-align:right;
+        }
+
+        .modal-x{
+
+            background:none;
+
+            border:none;
+
+            font-size:1.6rem;
+
+            color:#C4B5FD;
+
+            line-height:1;
+
+            padding:0;
+
+            min-width:36px;
+
+            min-height:36px;
+        }
+
+        .modal-x:hover{
+            color:var(--primary);
+        }
+
+        .btn-modal{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            color:#fff;
+
+            border:none;
+
+            font-weight:700;
+
+            font-size:.875rem;
+
+            padding:.55rem 1.35rem;
+
+            border-radius:11px;
+
+            min-height:42px;
+
+            box-shadow:
+                0 6px 15px rgba(108,43,217,.2);
+        }
+
+        .btn-modal:hover{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+        }
+
+        .tip{
+
+            display:flex;
+
+            gap:.7rem;
+
+            background:#FAF9FF;
+
+            border:1px solid #F0EAFE;
+
+            padding:.85rem;
+
+            border-radius:12px;
+
+            margin-bottom:.55rem;
+        }
+
+        .tip-n{
+
+            width:23px;
+            height:23px;
+
+            border-radius:50%;
+
+            background:#EDE9FE;
+
+            color:var(--primary);
+
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+
+            font-size:.7rem;
+
+            font-weight:800;
+
+            flex-shrink:0;
+        }
+
+
+        /* =========================================================
+           COOKIES
+        ========================================================= */
+
+        .cookies-buttons{
+
+            display:flex;
+
+            gap:.75rem;
+
+            justify-content:flex-end;
+
+            margin-top:1rem;
+        }
+
+        .btn-cookie{
+
+            padding:.6rem 1.5rem;
+
+            border-radius:10px;
+
+            font-weight:700;
+
+            font-size:.875rem;
+
+            border:none;
+
+            cursor:pointer;
+
+            transition:.2s;
+        }
+
+        .btn-cookie-accept{
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            color:#fff;
+        }
+
+        .btn-cookie-accept:hover{
+
+            transform:translateY(-1px);
+
+            box-shadow:
+                0 7px 18px rgba(108,43,217,.25);
+        }
+
+        .btn-cookie-reject{
+
+            background:#E5E7EB;
+
+            color:#1F2937;
+        }
+
+        .btn-cookie-reject:hover{
+            background:#D1D5DB;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media(max-width:500px){
+
+            .hero{
+                padding:3rem 0 3.5rem;
+            }
+
+            .hero h1{
+                font-size:2rem;
+            }
+
+            .btn-row{
+                flex-direction:column;
+            }
+
+            .btn-white,
+            .btn-outline{
+                width:100%;
+            }
+
+            .cookies-buttons{
+                flex-direction:column;
+            }
+
+            .btn-cookie{
+                width:100%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="nav">
+
+    <div class="wrap nav-inner">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fas fa-home"></i>
+            </div>
+
+            Admin<span>Houses</span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#temas">Guías</a>
+
+            <a href="#porque-gratis">
+                Por qué es gratis
+            </a>
+
+            <a href="#sobre-el-proyecto">
+                Sobre el proyecto
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+        </div>
+
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="btn-ghost"
+                onclick="mostrarLegal('politicas')">
+
+                Políticas
+
+            </button>
+
+            <button
+                type="button"
+                class="btn-ghost"
+                onclick="mostrarLegal('terminos')">
+
+                Términos
+
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="menu-btn"
+            onclick="alternarMenu()"
+            aria-label="Menú">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="mobile-menu"
+        class="mobile-menu">
+
+        <a
+            href="#temas"
+            onclick="alternarMenu()">
+
+            Guías
+
+        </a>
+
+        <a
+            href="#porque-gratis"
+            onclick="alternarMenu()">
+
+            Por qué es gratis
+
+        </a>
+
+        <a
+            href="#sobre-el-proyecto"
+            onclick="alternarMenu()">
+
+            Sobre el proyecto
+
+        </a>
+
+        <a
+            href="#contacto"
+            onclick="alternarMenu()">
+
+            Contacto
+
+        </a>
+
+        <button
+            type="button"
+            onclick="mostrarLegal('politicas'); alternarMenu();">
+
+            Políticas
+
+        </button>
+
+        <button
+            type="button"
+            onclick="mostrarLegal('terminos'); alternarMenu();">
+
+            Términos
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="wrap">
+
+        <div class="badge">
+
+            <span class="badge-dot"></span>
+
+            PROYECTO EDUCATIVO • SIN FINES DE LUCRO
+
+        </div>
+
+
+        <h1>
+
+            Cuida tu hogar.<br>
+
+            <em>
+                Con información clara.
+            </em>
+
+        </h1>
+
+
+        <p>
+
+            Guía gratuita sobre mantenimiento,
+            limpieza, remodelación y cuidado del hogar
+            en Colombia. Información práctica,
+            clara y sin costo.
+
+        </p>
+
+
+        <div class="btn-row">
+
+            <a
+                href="#temas"
+                class="btn-white">
+
+                Ver las guías
+
+                <i
+                    class="fas fa-arrow-right"
+                    style="font-size:.7rem">
+                </i>
+
+            </a>
+
+
+            <a
+                href="#porque-gratis"
+                class="btn-outline">
+
+                ¿Por qué es gratis?
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     AVISO
+========================================================= -->
+
+<div class="wrap">
+
+    <div class="disclaimer">
+
+        <h3>
+            ⚠ AVISO IMPORTANTE — SOLO EDUCATIVO
+        </h3>
+
+        <p>
+
+            Esta página es
+            <strong>
+                100% educativa e informativa
+            </strong>.
+
+            No se ofrecen servicios de mantenimiento,
+            limpieza ni remodelación.
+
+            No se cobra por consultas ni se venden productos.
+
+            La información es de carácter general
+            y no reemplaza el consejo de profesionales calificados.
+
+            <br>
+
+            <span
+                style="
+                    font-size:.75rem;
+                    font-weight:600
+                ">
+
+                Responsable:
+                MARIA JOSE CASTILLA GARCIA
+
+            </span>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     GUIAS
+========================================================= -->
+
+<section
+    id="temas"
+    class="section">
+
+    <div class="wrap">
+
+        <div class="center">
+
+            <div class="label">
+                GUÍAS PRÁCTICAS
+            </div>
+
+            <h2
+                class="title"
+                style="display:inline-block">
+
+                Información útil para tu hogar
+
+            </h2>
+
+            <p class="desc">
+
+                Orientaciones claras para cuidar mejor
+                tu vivienda en el contexto colombiano.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-3">
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(0)">
+
+                <div class="card-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+
+                <h3>
+                    Mantenimiento preventivo
+                </h3>
+
+                <p>
+                    Revisiones de techos,
+                    tuberías, pintura y sistemas
+                    eléctricos adaptadas al clima colombiano.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(1)">
+
+                <div class="card-icon">
+                    <i class="fas fa-broom"></i>
+                </div>
+
+                <h3>
+                    Limpieza y organización
+                </h3>
+
+                <p>
+                    Hábitos para reducir humedad,
+                    plagas y polvo en apartamentos
+                    y casas en Colombia.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(2)">
+
+                <div class="card-icon">
+                    <i class="fas fa-paint-roller"></i>
+                </div>
+
+                <h3>
+                    Remodelación inteligente
+                </h3>
+
+                <p>
+                    Planificación con presupuesto,
+                    permisos y materiales según el clima.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(3)">
+
+                <div class="card-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+
+                <h3>
+                    Impuesto predial
+                </h3>
+
+                <p>
+                    Qué es el predial,
+                    fechas y descuentos en tu municipio
+                    y cómo evitar intereses de mora.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(4)">
+
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+
+                <h3>
+                    Cuidado y seguridad
+                </h3>
+
+                <p>
+                    Seguridad, ahorro de servicios públicos,
+                    propiedad horizontal y protección
+                    del patrimonio.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="card"
+                onclick="mostrarGuia(5)">
+
+                <div class="card-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+
+                <h3>
+                    Humedades e impermeabilización
+                </h3>
+
+                <p>
+                    Prevención y tratamiento de filtraciones,
+                    moho y condensación en viviendas.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     POR QUE ES GRATIS
+========================================================= -->
+
+<section
+    id="porque-gratis"
+    class="section bg-soft">
+
+    <div class="wrap">
+
+        <div class="center">
+
+            <div
+                class="label"
+                style="background:#fff">
+
+                TRANSPARENCIA
+
+            </div>
+
+            <h2
+                class="title"
+                style="display:inline-block">
+
+                ¿Por qué es gratis?
+
+            </h2>
+
+            <p class="desc">
+
+                Porque el conocimiento práctico
+                sobre el hogar debe estar al alcance de todos.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="grid grid-3"
+            style="
+                max-width:56rem;
+                margin:0 auto
+            ">
+
+
+            <div class="value">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-book-open"></i>
+
+                </div>
+
+                <h3
+                    style="
+                        margin:0 0 .4rem;
+                        font-size:1rem
+                    ">
+
+                    Solo información
+
+                </h3>
+
+                <p
+                    style="
+                        margin:0;
+                        font-size:.85rem;
+                        color:#4B5563
+                    ">
+
+                    El objetivo es compartir
+                    conocimiento útil sobre el hogar.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="value">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-hand-holding-heart"></i>
+
+                </div>
+
+                <h3
+                    style="
+                        margin:0 0 .4rem;
+                        font-size:1rem
+                    ">
+
+                    Sin fines de lucro
+
+                </h3>
+
+                <p
+                    style="
+                        margin:0;
+                        font-size:.85rem;
+                        color:#4B5563
+                    ">
+
+                    El contenido está disponible
+                    gratuitamente para los usuarios.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="value">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-home"></i>
+
+                </div>
+
+                <h3
+                    style="
+                        margin:0 0 .4rem;
+                        font-size:1rem
+                    ">
+
+                    Pensado para Colombia
+
+                </h3>
+
+                <p
+                    style="
+                        margin:0;
+                        font-size:.85rem;
+                        color:#4B5563
+                    ">
+
+                    Clima, predial, propiedad horizontal
+                    y servicios públicos del país.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SOBRE
+========================================================= -->
+
+<section
+    id="sobre-el-proyecto"
+    class="section">
+
+    <div class="wrap">
+
+        <div class="about-grid">
+
+
+            <div>
+
+                <div class="label">
+                    SOBRE ESTE SITIO
+                </div>
+
+                <h2 class="title">
+                    Un espacio educativo
+                </h2>
+
+                <p
+                    style="
+                        color:#4B5563;
+                        margin:0 0 .9rem
+                    ">
+
+                    Tu Home es un proyecto informativo
+                    creado y administrado por
+                    <strong>
+                        MARIA JOSE CASTILLA GARCIA
+                    </strong>
+                    para compartir conocimiento práctico
+                    sobre el cuidado del hogar en Colombia.
+
+                </p>
+
+                <p
+                    style="
+                        color:#4B5563;
+                        margin:0 0 .9rem
+                    ">
+
+                    Publicamos orientaciones claras
+                    sobre mantenimiento preventivo,
+                    limpieza, remodelación,
+                    impuesto predial y seguridad doméstica.
+
+                    Todo es de acceso libre.
+
+                </p>
+
+                <p
+                    style="
+                        color:#6B7280;
+                        font-size:.85rem;
+                        margin:0
+                    ">
+
+                    La información es de carácter general
+                    y educativo. No sustituye el consejo
+                    de técnicos, abogados ni entidades oficiales.
+
+                </p>
+
+            </div>
+
+
+            <div class="check-box">
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <div
+                            style="
+                                font-weight:700;
+                                font-size:.875rem;
+                                color:#171124
+                            ">
+
+                            Contenido gratuito
+
+                        </div>
+
+                        <div
+                            style="
+                                font-size:.8rem;
+                                color:#4B5563
+                            ">
+
+                            Información disponible libremente
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <div
+                            style="
+                                font-weight:700;
+                                font-size:.875rem;
+                                color:#171124
+                            ">
+
+                            Información práctica
+
+                        </div>
+
+                        <div
+                            style="
+                                font-size:.8rem;
+                                color:#4B5563
+                            ">
+
+                            Contenido pensado para propietarios
+                            y residentes
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <div
+                            style="
+                                font-weight:700;
+                                font-size:.875rem;
+                                color:#171124
+                            ">
+
+                            Enfoque educativo
+
+                        </div>
+
+                        <div
+                            style="
+                                font-size:.8rem;
+                                color:#4B5563
+                            ">
+
+                            Información orientativa y general
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACTO
+========================================================= -->
+
+<section
+    id="contacto"
+    class="section"
+    style="
+        background:#fff;
+        border-top:1px solid #F0ECF9
+    ">
+
+    <div class="wrap">
+
+        <div style="max-width:28rem">
+
+            <div class="label">
+                CONTACTO
+            </div>
+
+            <h2 class="title">
+                ¿Tienes alguna pregunta?
+            </h2>
+
+            <p
+                style="
+                    color:#4B5563;
+                    margin:0 0 1.75rem
+                ">
+
+                Puedes escribir si tienes dudas
+                sobre el contenido educativo.
+
+            </p>
+
+
+            <div class="contact-row">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <div
+                        style="
+                            font-size:.7rem;
+                            color:#9CA3AF
+                        ">
+
+                        Responsable
+
+                    </div>
+
+                    <div
+                        style="
+                            font-weight:700;
+                            color:#171124
+                        ">
+
+                        MARIA JOSE CASTILLA GARCIA
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-row">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+                <div>
+
+                    <div
+                        style="
+                            font-size:.7rem;
+                            color:#9CA3AF
+                        ">
+
+                        Correo electrónico
+
+                    </div>
+
+                    <a
+                        href="mailto:kimberlywrigh54@gmail.com"
+                        style="font-weight:600">
+
+                        kimberlywrigh54@gmail.com
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="wrap">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div
+                    class="logo"
+                    style="
+                        color:#fff;
+                        margin-bottom:.65rem
+                    ">
+
+                    <div class="logo-icon">
+
+                        <i
+                            class="fas fa-home"
+                            style="font-size:.85rem">
+                        </i>
+
+                    </div>
+
+                    Tu<span>Home</span>
+
+                </div>
+
+                <p
+                    style="
+                        margin:0;
+                        max-width:15rem
+                    ">
+
+                    Proyecto educativo sobre
+                    el cuidado del hogar en Colombia.
+
+                    <br>
+
+                    Contenido informativo y gratuito.
+
+                </p>
+
+            </div>
+
+
+            <div
+                style="
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:2.5rem
+                ">
+
+
+                <div>
+
+                    <div
+                        style="
+                            font-weight:700;
+                            color:#fff;
+                            margin-bottom:.45rem;
+                            font-size:.7rem;
+                            letter-spacing:.05em
+                        ">
+
+                        ENLACES
+
+                    </div>
+
+                    <div
+                        style="
+                            display:flex;
+                            flex-direction:column;
+                            gap:.3rem
+                        ">
+
+                        <a href="#temas">
+                            Guías
+                        </a>
+
+                        <a href="#porque-gratis">
+                            Por qué es gratis
+                        </a>
+
+                        <a href="#contacto">
+                            Contacto
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div
+                        style="
+                            font-weight:700;
+                            color:#fff;
+                            margin-bottom:.45rem;
+                            font-size:.7rem;
+                            letter-spacing:.05em
+                        ">
+
+                        LEGAL
+
+                    </div>
+
+                    <div
+                        style="
+                            display:flex;
+                            flex-direction:column;
+                            gap:.3rem
+                        ">
+
+                        <a
+                            href="#"
+                            onclick="
+                                mostrarLegal('politicas');
+                                return false;
+                            ">
+
+                            Políticas de Privacidad
+
+                        </a>
+
+                        <a
+                            href="#"
+                            onclick="
+                                mostrarLegal('terminos');
+                                return false;
+                            ">
+
+                            Términos y Condiciones
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div
+                        style="
+                            font-weight:700;
+                            color:#fff;
+                            margin-bottom:.45rem;
+                            font-size:.7rem;
+                            letter-spacing:.05em
+                        ">
+
+                        CONTACTO
+
+                    </div>
+
+                    <div
+                        style="
+                            color:#fff;
+                            font-size:.85rem;
+                            margin-bottom:.2rem
+                        ">
+
+                        MARIA JOSE CASTILLA GARCIA
+
+                    </div>
+
+                    <a href="mailto:kimberlywrigh54@gmail.com">
+
+                        kimberlywrigh54@gmail.com
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+
+                © 2026 MARIA JOSE CASTILLA GARCIA —
+                Tu Home
+
+            </div>
+
+            <div style="color:#D8B4FE">
+
+                Proyecto educativo
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MODAL GUIAS
+========================================================= -->
+
+<div
+    id="topic-modal"
+    class="modal-bg"
+    onclick="
+        if(event.target===this)
+        ocultarGuia()
+    ">
+
+    <div class="modal-box">
+
+
+        <div class="modal-head">
+
+            <div
+                style="
+                    display:flex;
+                    gap:.7rem;
+                    align-items:flex-start
+                ">
+
+                <div
+                    id="m-icon"
+                    class="card-icon"
+                    style="
+                        margin:0;
+                        width:40px;
+                        height:40px;
+                        font-size:1rem
+                    ">
+                </div>
+
+                <div>
+
+                    <h3
+                        id="m-title"
+                        style="
+                            margin:0;
+                            font-size:1.05rem;
+                            font-weight:800
+                        ">
+                    </h3>
+
+                    <p
+                        id="m-sub"
+                        style="
+                            margin:.15rem 0 0;
+                            font-size:.75rem;
+                            color:#9CA3AF
+                        ">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-x"
+                onclick="ocultarGuia()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="m-body"
+            class="modal-body">
+        </div>
+
+
+        <div class="modal-foot">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="ocultarGuia()">
+
+                Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL POLITICAS
+========================================================= -->
+
+<div
+    id="politicas-modal"
+    class="modal-bg"
+    onclick="
+        if(event.target===this)
+        ocultarLegal('politicas')
+    ">
+
+    <div
+        class="modal-box"
+        style="max-width:32rem">
+
+        <div class="modal-head">
+
+            <h3
+                style="
+                    margin:0;
+                    font-size:1.05rem;
+                    font-weight:800
+                ">
+
+                Políticas de Privacidad
+
+            </h3>
+
+            <button
+                type="button"
+                class="modal-x"
+                onclick="
+                    ocultarLegal('politicas')
+                ">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p>
+
+                Tu Home es un proyecto educativo
+                administrado por
+                MARIA JOSE CASTILLA GARCIA.
+
+                Solo se recolectan datos cuando
+                alguien escribe voluntariamente
+                al correo de contacto.
+
+            </p>
+
+            <p>
+
+                La información se usa exclusivamente
+                para responder consultas relacionadas
+                con el contenido educativo.
+
+            </p>
+
+            <p>
+
+                De acuerdo con la
+                <strong>
+                    Ley 1581 de 2012
+                </strong>,
+                puedes solicitar la actualización
+                o eliminación de tus datos escribiendo
+                al correo de contacto.
+
+            </p>
+
+            <p
+                style="
+                    font-size:.75rem;
+                    border-top:1px solid var(--border);
+                    padding-top:.7rem;
+                    margin-top:1rem
+                ">
+
+                Última actualización:
+                agosto de 2026.
+
+            </p>
+
+        </div>
+
+
+        <div class="modal-foot">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="
+                    ocultarLegal('politicas')
+                ">
+
+                Entendido
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL TERMINOS
+========================================================= -->
+
+<div
+    id="terminos-modal"
+    class="modal-bg"
+    onclick="
+        if(event.target===this)
+        ocultarLegal('terminos')
+    ">
+
+    <div
+        class="modal-box"
+        style="max-width:32rem">
+
+        <div class="modal-head">
+
+            <h3
+                style="
+                    margin:0;
+                    font-size:1.05rem;
+                    font-weight:800
+                ">
+
+                Términos y Condiciones
+
+            </h3>
+
+            <button
+                type="button"
+                class="modal-x"
+                onclick="
+                    ocultarLegal('terminos')
+                ">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p>
+
+                Tu Home es un sitio web educativo
+                e informativo administrado por
+                MARIA JOSE CASTILLA GARCIA.
+
+            </p>
+
+            <p>
+
+                Todo el contenido tiene fines
+                educativos y de orientación general.
+
+                No constituye asesoría profesional
+                ni sustituye el consejo de técnicos,
+                abogados u otras autoridades.
+
+            </p>
+
+            <p>
+
+                El uso de la información publicada
+                es responsabilidad del usuario.
+
+                Se recomienda verificar siempre
+                con fuentes oficiales y profesionales
+                calificados.
+
+            </p>
+
+            <p
+                style="
+                    font-size:.75rem;
+                    border-top:1px solid var(--border);
+                    padding-top:.7rem;
+                    margin-top:1rem
+                ">
+
+                Al navegar por esta página aceptas
+                estos términos.
+
+                Última actualización:
+                agosto de 2026.
+
+            </p>
+
+        </div>
+
+
+        <div class="modal-foot">
+
+            <button
+                type="button"
+                class="btn-modal"
+                onclick="
+                    ocultarLegal('terminos')
+                ">
+
+                Aceptar y cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL COOKIES
+========================================================= -->
+
+<div
+    id="cookies-modal"
+    class="modal-bg open"
+    style="z-index:70">
+
+    <div
+        class="modal-box"
+        style="max-width:30rem">
+
+        <div class="modal-head">
+
+            <h3
+                style="
+                    margin:0;
+                    font-size:1.05rem;
+                    font-weight:800
+                ">
+
+                🍪 Uso de cookies
+
+            </h3>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <p
+                style="
+                    margin:0 0 .5rem
+                ">
+
+                Utilizamos cookies propias y de terceros
+                para mejorar tu experiencia, analizar
+                el uso del sitio y personalizar contenido.
+
+                Al hacer clic en “Aceptar”, aceptas
+                el uso de cookies de acuerdo con
+                nuestra Política de Cookies.
+
+            </p>
+
+            <p
+                style="
+                    font-size:.8rem;
+                    color:#6B7280;
+                    margin:0
+                ">
+
+                No se almacenan datos personales
+                ni se rastrea tu actividad.
+
+            </p>
+
+
+            <div class="cookies-buttons">
+
+                <button
+                    type="button"
+                    class="btn-cookie btn-cookie-reject"
+                    onclick="redirigirGoogle()">
+
+                    Rechazar
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-cookie btn-cookie-accept"
+                    onclick="redirigirGoogle()">
+
+                    Aceptar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   DATOS DE LAS GUIAS
+========================================================= */
+
+const datosGuias = [
+
+    {
+        title:"Mantenimiento preventivo del hogar",
+
+        icon:'<i class="fas fa-tools"></i>',
+
+        subtitle:
+            "Revisiones que ayudan a evitar gastos mayores",
+
+        intro:
+            "El mantenimiento preventivo permite detectar problemas antes de que se conviertan en reparaciones costosas. Revisar periódicamente techos, tuberías, instalaciones y ventilación ayuda a conservar mejor la vivienda.",
+
+        tips:[
+
+            "Revise techos y canaletas antes y después de las temporadas de lluvia. Busque goteras, tejas sueltas, canaletas tapadas y bajantes obstruidos.",
+
+            "Revise periódicamente las tuberías debajo de lavaplatos, sanitarios y lavadoras. Una fuga pequeña puede generar daños en pisos y muros.",
+
+            "No sobrecargue tomacorrientes. Si observa chispas, olores a quemado o breakers que se activan frecuentemente, solicite una revisión profesional.",
+
+            "Controle las fisuras y deterioros de pintura. En zonas húmedas es especialmente importante revisar paredes y techos.",
+
+            "Mantenga limpios los extractores de cocina y baño para favorecer la ventilación y reducir acumulación de humedad.",
+
+            "Revise puertas, ventanas, empaques y cerraduras para detectar filtraciones o deterioros."
+        ]
+    },
+
+
+    {
+        title:"Limpieza y organización del hogar",
+
+        icon:'<i class="fas fa-broom"></i>',
+
+        subtitle:
+            "Rutinas prácticas para mantener mejor la vivienda",
+
+        intro:
+            "Una rutina de limpieza constante ayuda a reducir polvo, humedad, malos olores y presencia de plagas. La clave es mantener hábitos sencillos y frecuentes.",
+
+        tips:[
+
+            "Dedique unos minutos diariamente a recoger superficies, limpiar la cocina y ventilar los espacios.",
+
+            "Mantenga limpia la cocina y retire los residuos de alimentos para disminuir la presencia de insectos.",
+
+            "Ventile los baños después de ducharse para reducir condensación y humedad.",
+
+            "Lave periódicamente ropa de cama, cortinas y otros textiles que acumulen polvo.",
+
+            "Mantenga documentos importantes del hogar organizados en un lugar seguro.",
+
+            "Evite acumular residuos o alimentos abiertos y selle posibles entradas de plagas."
+        ]
+    },
+
+
+    {
+        title:"Remodelación inteligente",
+
+        icon:'<i class="fas fa-paint-roller"></i>',
+
+        subtitle:
+            "Planificar antes de invertir en mejoras",
+
+        intro:
+            "Una remodelación bien planificada permite controlar mejor los costos y reducir imprevistos. Antes de comenzar una obra conviene definir objetivos, presupuesto, materiales y permisos.",
+
+        tips:[
+
+            "Defina claramente qué desea mejorar y establezca un presupuesto antes de comenzar.",
+
+            "Compare varias cotizaciones y solicite por escrito los materiales, tiempos y trabajos incluidos.",
+
+            "Si vive en propiedad horizontal, revise el reglamento y consulte qué autorizaciones necesita.",
+
+            "Seleccione materiales adecuados para las condiciones de humedad, temperatura y exposición de la vivienda.",
+
+            "Evite realizar instalaciones eléctricas o de gas sin personal calificado.",
+
+            "Guarde contratos, facturas, fotografías y garantías relacionadas con la remodelación."
+        ]
+    },
+
+
+    {
+        title:"Impuesto predial en Colombia",
+
+        icon:'<i class="fas fa-file-invoice-dollar"></i>',
+
+        subtitle:
+            "Información general para propietarios",
+
+        intro:
+            "El impuesto predial es un tributo asociado a los bienes inmuebles. Las fechas, tarifas y descuentos dependen del municipio o distrito correspondiente.",
+
+        tips:[
+
+            "Consulte siempre el calendario oficial de pagos publicado por su municipio.",
+
+            "Revise que la información catastral del inmueble sea correcta.",
+
+            "Conserve los comprobantes de pago para futuros trámites.",
+
+            "No confunda el impuesto predial con las cuotas de administración de propiedad horizontal.",
+
+            "Si tiene dificultades para pagar, consulte las opciones disponibles directamente con la autoridad municipal.",
+
+            "Use únicamente los portales oficiales para consultar obligaciones tributarias."
+        ]
+    },
+
+
+    {
+        title:"Cuidado integral y seguridad del hogar",
+
+        icon:'<i class="fas fa-shield-alt"></i>',
+
+        subtitle:
+            "Prevención y protección del patrimonio",
+
+        intro:
+            "Un hogar seguro combina mantenimiento, prevención de riesgos, ahorro de servicios y cuidado de las instalaciones.",
+
+        tips:[
+
+            "Revise periódicamente cerraduras, iluminación exterior y accesos.",
+
+            "Si percibe olor a gas, ventile el espacio y contacte a la empresa prestadora o a personal autorizado.",
+
+            "Utilice instalaciones eléctricas en buen estado y evite conexiones improvisadas.",
+
+            "Repare fugas de agua y utilice los servicios públicos de forma eficiente.",
+
+            "Respete las normas de convivencia y propiedad horizontal.",
+
+            "Conserve documentos importantes del inmueble en un lugar seguro."
+        ]
+    },
+
+
+    {
+        title:"Humedades e impermeabilización",
+
+        icon:'<i class="fas fa-water"></i>',
+
+        subtitle:
+            "Prevenir filtraciones y problemas de humedad",
+
+        intro:
+            "La humedad puede tener diferentes causas, como filtraciones, condensación o problemas de impermeabilización. Identificar el origen es importante antes de realizar cualquier reparación.",
+
+        tips:[
+
+            "Observe si las manchas aparecen después de lluvias o si aumentan progresivamente.",
+
+            "Mantenga limpios los desagües, canales y bajantes.",
+
+            "Revise periódicamente terrazas y cubiertas para detectar deterioros.",
+
+            "Ventile baños, cocinas y zonas de lavado para disminuir la condensación.",
+
+            "No pinte sobre una mancha de humedad sin solucionar primero el origen.",
+
+            "Si la humedad proviene de una zona común o de otra vivienda, informe a la administración correspondiente."
+        ]
+    }
+
+];
+
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+function alternarMenu(){
+
+    document
+        .getElementById("mobile-menu")
+        .classList
+        .toggle("open");
+
+}
+
+
+
+/* =========================================================
+   MOSTRAR GUIA
+========================================================= */
+
+function mostrarGuia(i){
+
+    const guia = datosGuias[i];
+
+    document
+        .getElementById("m-icon")
+        .innerHTML = guia.icon;
+
+    document
+        .getElementById("m-title")
+        .textContent = guia.title;
+
+    document
+        .getElementById("m-sub")
+        .textContent = guia.subtitle;
+
+
+    let html =
+        '<p style="margin:0 0 1rem;color:#374151">' +
+        guia.intro +
+        '</p>';
+
+
+    html +=
+        '<p style="' +
+        'font-size:.7rem;' +
+        'font-weight:700;' +
+        'color:var(--primary);' +
+        'text-transform:uppercase;' +
+        'letter-spacing:.05em;' +
+        'margin:0 0 .65rem' +
+        '">' +
+        'Puntos clave' +
+        '</p>';
+
+
+    guia.tips.forEach(function(tip,n){
+
+        html +=
+            '<div class="tip">' +
+
+                '<div class="tip-n">' +
+                    (n + 1) +
+                '</div>' +
+
+                '<div>' +
+                    tip +
+                '</div>' +
+
+            '</div>';
+
+    });
+
+
+    html +=
+        '<p style="' +
+        'margin:1rem 0 0;' +
+        'font-size:.75rem;' +
+        'color:#9CA3AF;' +
+        'border-top:1px solid var(--border);' +
+        'padding-top:.7rem' +
+        '">' +
+
+        'Información de carácter educativo y general. ' +
+        'No sustituye asesoría profesional ni normas municipales vigentes.' +
+
+        '</p>';
+
+
+    document
+        .getElementById("m-body")
+        .innerHTML = html;
+
+
+    document
+        .getElementById("topic-modal")
+        .classList
+        .add("open");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* =========================================================
+   OCULTAR GUIA
+========================================================= */
+
+function ocultarGuia(){
+
+    document
+        .getElementById("topic-modal")
+        .classList
+        .remove("open");
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+/* =========================================================
+   LEGALES
+========================================================= */
+
+function mostrarLegal(tipo){
+
+    document
+        .getElementById(tipo + "-modal")
+        .classList
+        .add("open");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function ocultarLegal(tipo){
+
+    document
+        .getElementById(tipo + "-modal")
+        .classList
+        .remove("open");
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+/* =========================================================
+   REDIRECCION
+========================================================= */
+
+function redirigirGoogle(){
+
+    window.location.href =
+        "https://jelp-conjun.onrender.com/";
+
+}
+
+
+
+/* =========================================================
+   TECLA ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            ocultarGuia();
+
+            ocultarLegal("politicas");
+
+            ocultarLegal("terminos");
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
