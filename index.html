@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <meta name="description" content="Guía gratuita y educativa sobre mantenimiento, limpieza, remodelación y cuidado del hogar en Colombia.">
-    <meta name="theme-color" content="#6B2FB9">
+    <meta name="description" content="AdminCasaConjuntos: información y orientación sobre mantenimiento, limpieza, remodelación, propiedad horizontal y cuidado del hogar en Colombia.">
+    <meta name="theme-color" content="#6d28d9">
 
-    <title>AdminCasa • Guía Gratuita de Cuidado del Hogar</title>
+    <title>AdminCasaConjuntos • Cuidado del Hogar y Conjuntos</title>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet"
@@ -15,22 +15,21 @@
 
     <style>
         :root {
-            --primary: #6B2FB9;
-            --primary-dark: #4B1F83;
-            --primary-light: #8B4DD8;
-            --primary-soft: #EDE3FA;
-            --primary-verysoft: #F7F2FC;
-            --accent: #A86CF0;
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --primary-soft: #ede9fe;
+            --primary-verysoft: #f5f3ff;
+            --accent: #a855f7;
 
-            --hero-start: #54219A;
-            --hero-mid: #702FC2;
-            --hero-end: #35145E;
+            --hero-start: #7c3aed;
+            --hero-mid: #6d28d9;
+            --hero-end: #3b0764;
 
-            --border: #E5E7EB;
-            --bg: #F8F7FA;
+            --border: #e2e8f0;
+            --bg: #f8fafc;
 
-            --text: #1F2937;
-            --muted: #64748B;
+            --text: #1e293b;
+            --text-light: #475569;
         }
 
         *,
@@ -46,14 +45,8 @@
 
         body {
             margin: 0;
-            font-family: system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
-
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.55;
@@ -87,7 +80,7 @@
 
         /* =========================
            NAV
-        ========================= */
+        ========================== */
 
         .nav {
             background: #fff;
@@ -101,39 +94,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 68px;
+            height: 64px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: .6rem;
-
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: #1F2937;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #0f172a;
         }
 
         .logo-icon {
             width: 38px;
             height: 38px;
-
             background: linear-gradient(
                 135deg,
                 var(--primary),
-                var(--primary-light)
+                var(--accent)
             );
-
-            border-radius: 11px;
-
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-
             color: #fff;
-
-            box-shadow:
-                0 5px 12px rgba(107, 47, 185, .25);
+            box-shadow: 0 5px 15px rgba(109, 40, 217, .25);
         }
 
         .logo span {
@@ -142,9 +128,9 @@
 
         .nav-links {
             display: none;
-            gap: 1.65rem;
+            gap: 1.75rem;
             font-size: .875rem;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .nav-links a {
@@ -164,12 +150,9 @@
         .btn-ghost {
             background: none;
             border: none;
-
             padding: .45rem .9rem;
-
             font-size: .875rem;
             color: #475569;
-
             border-radius: 10px;
         }
 
@@ -180,26 +163,20 @@
 
         .menu-btn {
             display: flex;
-
             width: 42px;
             height: 42px;
-
             align-items: center;
             justify-content: center;
-
             background: none;
             border: none;
-
             color: #475569;
             font-size: 1.15rem;
         }
 
         .mobile-menu {
             display: none;
-
             border-top: 1px solid var(--border);
             background: #fff;
-
             padding: .75rem 1.25rem 1rem;
         }
 
@@ -211,27 +188,19 @@
         .mobile-menu button {
             display: block;
             width: 100%;
-
             text-align: left;
-
             padding: .7rem .75rem;
-
             color: #475569;
-
             font-size: .9rem;
-            font-weight: 600;
-
+            font-weight: 500;
             background: none;
             border: none;
-
             border-radius: 10px;
         }
 
         .mobile-menu a:hover,
         .mobile-menu button:hover {
             background: var(--primary-verysoft);
-            color: var(--primary);
-
             text-decoration: none;
         }
 
@@ -248,14 +217,14 @@
 
         /* =========================
            HERO
-        ========================= */
+        ========================== */
 
         .hero {
             background:
                 radial-gradient(
-                    circle at 85% 20%,
-                    rgba(255,255,255,.14),
-                    transparent 25%
+                    circle at top right,
+                    rgba(168, 85, 247, .4),
+                    transparent 35%
                 ),
                 linear-gradient(
                     135deg,
@@ -265,92 +234,79 @@
                 );
 
             color: #fff;
-
-            padding: 4rem 0 4.5rem;
-
+            padding: 3.5rem 0 4rem;
             position: relative;
             overflow: hidden;
         }
 
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.05);
+            right: -100px;
+            top: -100px;
+        }
+
         .hero::after {
             content: "";
-
             position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            right: -100px;
-            bottom: -150px;
-
-            background: rgba(255,255,255,.08);
-
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
+            background: rgba(255,255,255,.04);
+            left: -80px;
+            bottom: -90px;
+        }
+
+        .hero .wrap {
+            position: relative;
+            z-index: 2;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: .45rem;
-
             background: rgba(255,255,255,.12);
-
-            border: 1px solid rgba(255,255,255,.22);
-
-            padding: .3rem .9rem;
-
+            border: 1px solid rgba(255,255,255,.2);
+            padding: .3rem .85rem;
             border-radius: 999px;
-
             font-size: .72rem;
             font-weight: 600;
-
-            color: #F1E8FF;
-
+            color: #f3e8ff;
             letter-spacing: .04em;
-
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.1rem;
         }
 
         .badge-dot {
             width: 7px;
             height: 7px;
-
-            background: #D8B4FE;
-
+            background: #d8b4fe;
             border-radius: 50%;
-
-            box-shadow: 0 0 0 4px rgba(216,180,254,.12);
+            box-shadow: 0 0 10px #d8b4fe;
         }
 
         .hero h1 {
             margin: 0 0 1rem;
-
-            font-size: clamp(
-                2rem,
-                5vw,
-                3.3rem
-            );
-
-            font-weight: 800;
-
-            line-height: 1.1;
-
-            letter-spacing: -.03em;
+            font-size: clamp(1.85rem, 5vw, 3.1rem);
+            font-weight: 750;
+            line-height: 1.15;
+            letter-spacing: -.025em;
         }
 
         .hero h1 em {
             font-style: normal;
-            color: #E9D5FF;
+            color: #e9d5ff;
         }
 
         .hero p {
-            margin: 0 0 1.8rem;
-
+            margin: 0 0 1.75rem;
             font-size: 1.05rem;
-
-            color: rgba(255,255,255,.88);
-
-            max-width: 34rem;
+            color: rgba(245,243,255,.92);
+            max-width: 38rem;
         }
 
         .btn-row {
@@ -362,181 +318,119 @@
         .btn-white {
             display: inline-flex;
             align-items: center;
-            gap: .45rem;
-
+            gap: .4rem;
             background: #fff;
-
             color: var(--primary-dark);
-
-            font-weight: 700;
+            font-weight: 650;
             font-size: .875rem;
-
             padding: 0 1.5rem;
-
             height: 46px;
-
             border-radius: 12px;
-
             border: none;
-
-            box-shadow:
-                0 8px 20px rgba(0,0,0,.12);
+            transition: .2s;
         }
 
         .btn-white:hover {
-            background: #F5F0FA;
-
+            background: #f5f3ff;
             text-decoration: none;
-
             color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
             display: inline-flex;
             align-items: center;
-
             background: transparent;
-
             color: #fff;
-
-            font-weight: 600;
+            font-weight: 500;
             font-size: .875rem;
-
             padding: 0 1.5rem;
-
             height: 46px;
-
             border-radius: 12px;
-
-            border: 1px solid rgba(255,255,255,.4);
+            border: 1px solid rgba(255,255,255,.35);
         }
 
         .btn-outline:hover {
-            background: rgba(255,255,255,.12);
-
+            background: rgba(255,255,255,.1);
             text-decoration: none;
-
             color: #fff;
         }
 
         /* =========================
            DISCLAIMER
-        ========================= */
+        ========================== */
 
         .disclaimer {
-            background:
-                linear-gradient(
-                    135deg,
-                    #FFF7ED,
-                    #FFFBEB
-                );
-
-            border: 1px solid #FED7AA;
-
-            border-left: 5px solid #F59E0B;
-
+            background: linear-gradient(135deg, #fefce8, #fffbeb);
+            border: 1px solid #fde68a;
+            border-left: 5px solid #d97706;
             border-radius: 14px;
-
             padding: 1.15rem 1.35rem;
-
             margin-top: -1.1rem;
-
             position: relative;
-
             z-index: 5;
-
-            box-shadow:
-                0 5px 15px rgba(0,0,0,.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
         }
 
         .disclaimer h3 {
             margin: 0 0 .35rem;
-
             font-size: .95rem;
-
-            color: #78350F;
+            color: #78350f;
         }
 
         .disclaimer p {
             margin: 0;
-
             font-size: .85rem;
-
-            color: #92400E;
-
+            color: #92400e;
             line-height: 1.55;
         }
 
         /* =========================
            SECTIONS
-        ========================= */
+        ========================== */
 
         .section {
-            padding: 3.5rem 0;
+            padding: 3.25rem 0;
         }
 
         .label {
             display: inline-block;
-
             background: var(--primary-verysoft);
-
             color: var(--primary-dark);
-
             font-size: .7rem;
-
             font-weight: 700;
-
             letter-spacing: .06em;
-
-            padding: .28rem .75rem;
-
+            padding: .25rem .75rem;
             border-radius: 999px;
-
             margin-bottom: .65rem;
         }
 
         .title {
             margin: 0 0 .65rem;
-
-            font-size: clamp(
-                1.6rem,
-                3.5vw,
-                2.1rem
-            );
-
-            font-weight: 800;
-
-            color: #111827;
-
-            letter-spacing: -.025em;
+            font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -.02em;
         }
 
         .title::after {
             content: "";
-
             display: block;
-
-            width: 52px;
+            width: 48px;
             height: 3px;
-
-            background:
-                linear-gradient(
-                    to right,
-                    var(--primary),
-                    var(--accent)
-                );
-
+            background: linear-gradient(
+                to right,
+                var(--primary),
+                var(--accent)
+            );
             border-radius: 3px;
-
-            margin-top: .5rem;
+            margin-top: .45rem;
         }
 
         .desc {
-            color: #64748B;
-
-            max-width: 30rem;
-
-            margin: 0 auto 2.3rem;
+            color: #475569;
+            max-width: 32rem;
+            margin: 0 auto 2.25rem;
         }
 
         .center {
@@ -550,9 +444,7 @@
 
         .grid {
             display: grid;
-
             grid-template-columns: 1fr;
-
             gap: 1.1rem;
         }
 
@@ -564,168 +456,128 @@
 
         @media (min-width: 1024px) {
             .grid-3 {
-                grid-template-columns:
-                    1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
         /* =========================
            CARDS
-        ========================= */
+        ========================== */
 
         .card {
             background: #fff;
-
             border: 1px solid var(--border);
-
-            border-radius: 17px;
-
-            padding: 1.4rem;
-
+            border-radius: 16px;
+            padding: 1.35rem;
             cursor: pointer;
-
             transition:
                 transform .2s ease,
                 box-shadow .2s ease,
                 border-color .2s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .card:hover,
         .card:active {
             transform: translateY(-4px);
-
-            box-shadow:
-                0 16px 30px -10px
-                rgba(107,47,185,.18);
-
-            border-color: #D8B4FE;
+            box-shadow: 0 16px 24px -6px rgba(109,40,217,.14);
+            border-color: #ddd6fe;
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
-
+            width: 46px;
+            height: 46px;
             background: var(--primary-verysoft);
-
-            border-radius: 13px;
-
+            border-radius: 12px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             color: var(--primary);
-
             font-size: 1.15rem;
-
             margin-bottom: .9rem;
         }
 
         .card h3 {
             margin: 0 0 .4rem;
-
             font-size: 1.05rem;
-
-            font-weight: 700;
-
-            color: #111827;
+            font-weight: 650;
+            color: #0f172a;
         }
 
         .card p {
             margin: 0;
-
             font-size: .85rem;
-
-            color: #64748B;
-
+            color: #475569;
             line-height: 1.5;
         }
 
         /* =========================
            SOFT SECTION
-        ========================= */
+        ========================== */
 
         .bg-soft {
             background:
                 linear-gradient(
-                    180deg,
-                    #F8F3FC,
-                    #F5EFFA
+                    135deg,
+                    #faf5ff,
+                    #f5f3ff
                 );
-
-            border-top: 1px solid #E9D5FF;
-
-            border-bottom: 1px solid #E9D5FF;
+            border-top: 1px solid #ede9fe;
+            border-bottom: 1px solid #ede9fe;
         }
 
         .value {
             background: #fff;
+            border: 1px solid #e9d5ff;
+            border-radius: 16px;
+            padding: 1.35rem;
+            transition: .2s;
+        }
 
-            border: 1px solid #E9D5FF;
-
-            border-radius: 17px;
-
-            padding: 1.4rem;
+        .value:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(109,40,217,.08);
         }
 
         .value-icon {
-            width: 42px;
-            height: 42px;
-
+            width: 40px;
+            height: 40px;
             background: var(--primary-soft);
-
-            border-radius: 11px;
-
+            border-radius: 10px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             color: var(--primary);
-
             margin-bottom: .85rem;
         }
 
         /* =========================
            ABOUT
-        ========================= */
+        ========================== */
 
         .about-grid {
             display: grid;
-
             grid-template-columns: 1fr;
-
             gap: 2rem;
         }
 
         @media (min-width: 768px) {
             .about-grid {
                 grid-template-columns: 1fr 1fr;
-
                 align-items: center;
             }
         }
 
         .check-box {
-            background:
-                linear-gradient(
-                    135deg,
-                    #F8F5FB,
-                    #F5F3F7
-                );
-
+            background: #f8fafc;
             border: 1px solid var(--border);
-
-            border-radius: 17px;
-
+            border-radius: 16px;
             padding: 1.5rem;
         }
 
         .check-item {
             display: flex;
-
             gap: .7rem;
-
             margin-bottom: 1.1rem;
         }
 
@@ -736,146 +588,105 @@
         .check-icon {
             width: 30px;
             height: 30px;
-
             background: var(--primary-soft);
-
             border-radius: 8px;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             color: var(--primary);
-
             flex-shrink: 0;
-
             font-size: .75rem;
         }
 
         /* =========================
            CONTACT
-        ========================= */
+        ========================== */
 
         .contact-row {
             display: flex;
-
             align-items: flex-start;
-
             gap: .7rem;
-
             margin-bottom: 1rem;
-
             font-size: .875rem;
         }
 
         .contact-icon {
             width: 36px;
             height: 36px;
-
             background: var(--primary-verysoft);
-
-            border-radius: 9px;
-
+            border-radius: 8px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             color: var(--primary);
-
             flex-shrink: 0;
         }
 
         /* =========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
-            background: #1E1230;
-
-            color: #C4B5D4;
-
-            padding: 2.5rem 0;
-
+            background: #1e1235;
+            color: #c4b5fd;
+            padding: 2.25rem 0;
             font-size: .85rem;
         }
 
         footer a {
-            color: #C4B5D4;
+            color: #c4b5fd;
         }
 
         footer a:hover {
             color: #fff;
-
             text-decoration: none;
         }
 
         .footer-grid {
             display: flex;
-
             flex-direction: column;
-
             gap: 1.75rem;
         }
 
         @media (min-width: 768px) {
             .footer-grid {
                 flex-direction: row;
-
                 justify-content: space-between;
             }
         }
 
         .footer-bottom {
             margin-top: 2rem;
-
             padding-top: 1.25rem;
-
-            border-top: 1px solid #38234E;
-
+            border-top: 1px solid #33204f;
             display: flex;
-
             flex-direction: column;
-
             gap: .4rem;
-
             font-size: .75rem;
         }
 
         @media (min-width: 768px) {
             .footer-bottom {
                 flex-direction: row;
-
                 justify-content: space-between;
             }
         }
 
         /* =========================
-           MODAL
-        ========================= */
+           MODALS
+        ========================== */
 
         .modal-bg {
             display: none;
-
             position: fixed;
-
             inset: 0;
-
             z-index: 60;
-
-            background:
-                rgba(24,12,36,.62);
-
+            background: rgba(15, 23, 42, .6);
             -webkit-backdrop-filter: blur(5px);
-
             backdrop-filter: blur(5px);
-
             align-items: center;
             justify-content: center;
-
             padding: 1rem;
-
             overflow-y: auto;
         }
 
@@ -885,107 +696,65 @@
 
         .modal-box {
             background: #fff;
-
             width: 100%;
-
             max-width: 36rem;
-
             max-height: 90vh;
-
             overflow: hidden;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 25px 60px
-                rgba(0,0,0,.25);
-
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,.3);
             display: flex;
-
             flex-direction: column;
-
             margin: auto;
         }
 
         .modal-head {
             padding: 1.15rem 1.35rem .9rem;
-
             border-bottom: 1px solid var(--border);
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: flex-start;
-
             gap: .7rem;
         }
 
         .modal-body {
             padding: 1.35rem;
-
             overflow-y: auto;
-
             font-size: .875rem;
-
             color: #475569;
-
             line-height: 1.6;
-
             -webkit-overflow-scrolling: touch;
         }
 
         .modal-foot {
             padding: .7rem 1.35rem;
-
-            background: #FAF9FB;
-
+            background: #f8fafc;
             border-top: 1px solid var(--border);
-
             text-align: right;
         }
 
         .modal-x {
             background: none;
-
             border: none;
-
             font-size: 1.6rem;
-
-            color: #CBD5E1;
-
+            color: #cbd5e1;
             line-height: 1;
-
             padding: 0;
-
             min-width: 36px;
             min-height: 36px;
         }
 
         .modal-x:hover {
-            color: #64748B;
+            color: #64748b;
         }
 
         .btn-modal {
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-light)
-                );
-
+            background: var(--primary);
             color: #fff;
-
             border: none;
-
-            font-weight: 700;
-
+            font-weight: 600;
             font-size: .875rem;
-
             padding: .55rem 1.35rem;
-
-            border-radius: 11px;
-
+            border-radius: 12px;
             min-height: 42px;
         }
 
@@ -995,81 +764,51 @@
 
         .tip {
             display: flex;
-
             gap: .7rem;
-
-            background: #FAF9FB;
-
-            border: 1px solid #F1EDF5;
-
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
             padding: .85rem;
-
             border-radius: 12px;
-
             margin-bottom: .55rem;
         }
 
         .tip-n {
             width: 22px;
             height: 22px;
-
             border-radius: 50%;
-
             background: var(--primary-soft);
-
             color: var(--primary);
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             font-size: .7rem;
-
-            font-weight: 800;
-
+            font-weight: 700;
             flex-shrink: 0;
         }
 
         /* =========================
            COOKIES
-        ========================= */
+        ========================== */
 
         .cookies-buttons {
             display: flex;
-
             gap: .75rem;
-
             justify-content: flex-end;
-
             margin-top: 1rem;
         }
 
         .btn-cookie {
             padding: .6rem 1.5rem;
-
             border-radius: 10px;
-
-            font-weight: 700;
-
+            font-weight: 600;
             font-size: .875rem;
-
             border: none;
-
             cursor: pointer;
-
-            transition:
-                background .2s,
-                transform .2s;
-        }
-
-        .btn-cookie:hover {
-            transform: translateY(-1px);
+            transition: background .2s;
         }
 
         .btn-cookie-accept {
             background: var(--primary);
-
             color: #fff;
         }
 
@@ -1078,16 +817,37 @@
         }
 
         .btn-cookie-reject {
-            background: #E5E7EB;
-
-            color: #1F2937;
+            background: #e2e8f0;
+            color: #1e293b;
         }
 
         .btn-cookie-reject:hover {
-            background: #D1D5DB;
+            background: #cbd5e1;
         }
 
+        /* =========================
+           SMALL DEVICES
+        ========================== */
+
         @media (max-width: 480px) {
+            .hero {
+                padding: 2.75rem 0 3.25rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn-row {
+                flex-direction: column;
+            }
+
+            .btn-white,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+
             .cookies-buttons {
                 flex-direction: column-reverse;
             }
@@ -1102,33 +862,33 @@
 <body>
 
 <!-- =========================
-     NAV
-========================= -->
+     NAVBAR
+========================== -->
 
 <nav class="nav">
 
     <div class="wrap nav-inner">
 
         <div class="logo">
-
             <div class="logo-icon">
                 <i class="fas fa-house"></i>
             </div>
 
-            Admin<span>Casa</span>
-
+            Admin<span>CasaConjuntos</span>
         </div>
 
         <div class="nav-links">
 
-            <a href="#temas">Guías</a>
+            <a href="#temas">
+                Guías
+            </a>
 
             <a href="#porque-gratis">
-                Por qué es gratis
+                Información
             </a>
 
             <a href="#sobre-el-proyecto">
-                Sobre el proyecto
+                Sobre el sitio
             </a>
 
             <a href="#contacto">
@@ -1143,18 +903,14 @@
                 type="button"
                 class="btn-ghost"
                 onclick="mostrarLegal('politicas')">
-
                 Políticas
-
             </button>
 
             <button
                 type="button"
                 class="btn-ghost"
                 onclick="mostrarLegal('terminos')">
-
                 Términos
-
             </button>
 
         </div>
@@ -1178,11 +934,11 @@
         </a>
 
         <a href="#porque-gratis" onclick="alternarMenu()">
-            Por qué es gratis
+            Información
         </a>
 
         <a href="#sobre-el-proyecto" onclick="alternarMenu()">
-            Sobre el proyecto
+            Sobre el sitio
         </a>
 
         <a href="#contacto" onclick="alternarMenu()">
@@ -1192,17 +948,13 @@
         <button
             type="button"
             onclick="mostrarLegal('politicas'); alternarMenu();">
-
             Políticas
-
         </button>
 
         <button
             type="button"
             onclick="mostrarLegal('terminos'); alternarMenu();">
-
             Términos
-
         </button>
 
     </div>
@@ -1212,7 +964,7 @@
 
 <!-- =========================
      HERO
-========================= -->
+========================== -->
 
 <header class="hero">
 
@@ -1222,24 +974,23 @@
 
             <span class="badge-dot"></span>
 
-            PROYECTO EDUCATIVO • INFORMACIÓN GRATUITA
+            INFORMACIÓN PARA HOGARES Y CONJUNTOS
 
         </div>
 
         <h1>
 
-            Cuida tu hogar.<br>
+            AdminCasaConjuntos.<br>
 
-            <em>Con información clara.</em>
+            <em>Información para cuidar mejor tu hogar.</em>
 
         </h1>
 
         <p>
 
-            Guía gratuita sobre mantenimiento,
-            limpieza, remodelación y cuidado del hogar
-            en Colombia. Información práctica, clara y
-            de fácil acceso.
+            Información práctica sobre mantenimiento,
+            limpieza, remodelación, propiedad horizontal,
+            seguridad y cuidado de viviendas en Colombia.
 
         </p>
 
@@ -1259,10 +1010,10 @@
             </a>
 
             <a
-                href="#porque-gratis"
+                href="#sobre-el-proyecto"
                 class="btn-outline">
 
-                ¿Por qué es gratis?
+                Conocer el sitio
 
             </a>
 
@@ -1274,40 +1025,25 @@
 
 
 <!-- =========================
-     DISCLAIMER
-========================= -->
+     AVISO
+========================== -->
 
 <div class="wrap">
 
     <div class="disclaimer">
 
         <h3>
-            ⚠ AVISO IMPORTANTE — SOLO EDUCATIVO
+            ⚠ AVISO IMPORTANTE
         </h3>
 
         <p>
 
-            Esta página es
-            <strong>educativa e informativa</strong>.
-
-            No se ofrecen servicios de mantenimiento,
-            limpieza ni remodelación desde este sitio.
-
-            La información es de carácter general y no
-            reemplaza el consejo de profesionales
-            calificados.
-
-            <br>
-
-            <span
-                style="
-                    font-size:.75rem;
-                    font-weight:600;
-                ">
-
-                Responsable: MARIA JOSE CASTILLA GARCIA
-
-            </span>
+            Este sitio ofrece información general y educativa
+            relacionada con el cuidado del hogar, viviendas y
+            conjuntos residenciales. La información no constituye
+            asesoría profesional, jurídica, técnica ni financiera.
+            Para situaciones específicas se recomienda consultar
+            con profesionales o entidades oficiales.
 
         </p>
 
@@ -1317,10 +1053,12 @@
 
 
 <!-- =========================
-     TEMAS
-========================= -->
+     GUÍAS
+========================== -->
 
-<section id="temas" class="section">
+<section
+    id="temas"
+    class="section">
 
     <div class="wrap">
 
@@ -1340,8 +1078,9 @@
 
             <p class="desc">
 
-                Orientaciones claras para cuidar mejor
-                tu vivienda en el contexto colombiano.
+                Orientaciones sencillas para ayudarte a conocer,
+                mantener y cuidar mejor tu vivienda o conjunto
+                residencial.
 
             </p>
 
@@ -1364,8 +1103,9 @@
                 </h3>
 
                 <p>
-                    Revisiones de techos, tuberías,
-                    pintura y sistemas eléctricos.
+                    Recomendaciones para revisar techos,
+                    tuberías, pintura, puertas, ventanas
+                    e instalaciones del hogar.
                 </p>
 
             </div>
@@ -1384,8 +1124,9 @@
                 </h3>
 
                 <p>
-                    Hábitos para reducir humedad,
-                    plagas y polvo.
+                    Hábitos sencillos para mantener espacios
+                    limpios, organizados y reducir humedad,
+                    polvo y plagas.
                 </p>
 
             </div>
@@ -1404,8 +1145,8 @@
                 </h3>
 
                 <p>
-                    Planificación, presupuesto,
-                    permisos y materiales.
+                    Ideas para planificar mejoras, presupuestos,
+                    materiales y trabajos dentro de viviendas.
                 </p>
 
             </div>
@@ -1424,8 +1165,8 @@
                 </h3>
 
                 <p>
-                    Información general sobre predial,
-                    fechas y pagos.
+                    Información general sobre el impuesto predial,
+                    avalúo, fechas de pago y consultas oficiales.
                 </p>
 
             </div>
@@ -1436,16 +1177,16 @@
                 onclick="mostrarGuia(4)">
 
                 <div class="card-icon">
-                    <i class="fas fa-shield-halved"></i>
+                    <i class="fas fa-building"></i>
                 </div>
 
                 <h3>
-                    Cuidado y seguridad
+                    Propiedad horizontal
                 </h3>
 
                 <p>
-                    Prevención, ahorro de servicios
-                    y protección del patrimonio.
+                    Información general sobre conjuntos,
+                    zonas comunes, administración y convivencia.
                 </p>
 
             </div>
@@ -1456,7 +1197,7 @@
                 onclick="mostrarGuia(5)">
 
                 <div class="card-icon">
-                    <i class="fas fa-droplet"></i>
+                    <i class="fas fa-water"></i>
                 </div>
 
                 <h3>
@@ -1464,8 +1205,8 @@
                 </h3>
 
                 <p>
-                    Prevención de filtraciones,
-                    moho y condensación.
+                    Cómo identificar filtraciones, condensación,
+                    moho y problemas relacionados con la humedad.
                 </p>
 
             </div>
@@ -1478,8 +1219,8 @@
 
 
 <!-- =========================
-     POR QUÉ GRATIS
-========================= -->
+     INFORMACIÓN
+========================== -->
 
 <section
     id="porque-gratis"
@@ -1493,7 +1234,7 @@
                 class="label"
                 style="background:#fff">
 
-                TRANSPARENCIA
+                INFORMACIÓN
 
             </div>
 
@@ -1501,14 +1242,15 @@
                 class="title"
                 style="display:inline-block">
 
-                ¿Por qué es gratis?
+                Un espacio de orientación
 
             </h2>
 
             <p class="desc">
 
-                Porque el conocimiento práctico sobre
-                el hogar debe estar al alcance de todos.
+                AdminCasaConjuntos reúne información general
+                para facilitar el acceso a contenidos relacionados
+                con el cuidado y administración de viviendas.
 
             </p>
 
@@ -1517,10 +1259,7 @@
 
         <div
             class="grid grid-3"
-            style="
-                max-width:56rem;
-                margin:0 auto;
-            ">
+            style="max-width:56rem;margin:0 auto">
 
 
             <div class="value">
@@ -1530,56 +1269,18 @@
                 </div>
 
                 <h3
-                    style="
-                        margin:0 0 .4rem;
-                        font-size:1rem;
-                    ">
+                    style="margin:0 0 .4rem;font-size:1rem">
 
-                    Solo información
+                    Información clara
 
                 </h3>
 
                 <p
-                    style="
-                        margin:0;
-                        font-size:.85rem;
-                        color:#475569;
-                    ">
+                    style="margin:0;font-size:.85rem;color:#475569">
 
-                    El objetivo es compartir
-                    conocimiento útil sobre
-                    el hogar.
-
-                </p>
-
-            </div>
-
-
-            <div class="value">
-
-                <div class="value-icon">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-
-                <h3
-                    style="
-                        margin:0 0 .4rem;
-                        font-size:1rem;
-                    ">
-
-                    Acceso gratuito
-
-                </h3>
-
-                <p
-                    style="
-                        margin:0;
-                        font-size:.85rem;
-                        color:#475569;
-                    ">
-
-                    El contenido está disponible
-                    gratuitamente para los visitantes.
+                    Contenido organizado para facilitar
+                    la consulta de temas relacionados
+                    con el hogar.
 
                 </p>
 
@@ -1593,25 +1294,41 @@
                 </div>
 
                 <h3
-                    style="
-                        margin:0 0 .4rem;
-                        font-size:1rem;
-                    ">
+                    style="margin:0 0 .4rem;font-size:1rem">
 
-                    Pensado para Colombia
+                    Enfoque residencial
 
                 </h3>
 
                 <p
-                    style="
-                        margin:0;
-                        font-size:.85rem;
-                        color:#475569;
-                    ">
+                    style="margin:0;font-size:.85rem;color:#475569">
 
-                    Contenido relacionado con vivienda,
-                    clima y situaciones comunes
-                    en Colombia.
+                    Temas relacionados con viviendas,
+                    apartamentos y conjuntos residenciales.
+
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <div class="value-icon">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+
+                <h3
+                    style="margin:0 0 .4rem;font-size:1rem">
+
+                    Contexto colombiano
+
+                </h3>
+
+                <p
+                    style="margin:0;font-size:.85rem;color:#475569">
+
+                    Información pensada para situaciones
+                    habituales en Colombia.
 
                 </p>
 
@@ -1625,8 +1342,8 @@
 
 
 <!-- =========================
-     SOBRE EL PROYECTO
-========================= -->
+     SOBRE
+========================== -->
 
 <section
     id="sobre-el-proyecto"
@@ -1636,6 +1353,7 @@
 
         <div class="about-grid">
 
+
             <div>
 
                 <div class="label">
@@ -1643,46 +1361,37 @@
                 </div>
 
                 <h2 class="title">
-                    Un espacio educativo
+                    AdminCasaConjuntos
                 </h2>
 
                 <p
-                    style="
-                        color:#475569;
-                        margin:0 0 .9rem;
-                    ">
+                    style="color:#475569;margin:0 0 .9rem">
 
-                    AdminCasa es un proyecto informativo
-                    creado para compartir conocimiento
-                    práctico sobre el cuidado del hogar
-                    en Colombia.
+                    AdminCasaConjuntos es un sitio web dedicado
+                    a reunir y presentar información relacionada
+                    con el cuidado, mantenimiento y administración
+                    de viviendas y conjuntos residenciales.
 
                 </p>
 
                 <p
-                    style="
-                        color:#475569;
-                        margin:0 0 .9rem;
-                    ">
+                    style="color:#475569;margin:0 0 .9rem">
 
-                    Publicamos orientaciones sobre
-                    mantenimiento preventivo, limpieza,
-                    remodelación, impuesto predial,
-                    seguridad y cuidado de viviendas.
+                    El contenido aborda temas como mantenimiento
+                    preventivo, limpieza, remodelación, humedad,
+                    seguridad, propiedad horizontal e información
+                    general sobre obligaciones relacionadas con
+                    los inmuebles.
 
                 </p>
 
                 <p
-                    style="
-                        color:#64748b;
-                        font-size:.85rem;
-                        margin:0;
-                    ">
+                    style="color:#64748b;font-size:.85rem;margin:0">
 
-                    La información es de carácter general
-                    y educativo. No sustituye el consejo
-                    de técnicos, abogados ni entidades
-                    oficiales.
+                    La información publicada es de carácter general.
+                    Para asuntos técnicos, jurídicos o administrativos
+                    específicos se recomienda consultar las fuentes
+                    oficiales y profesionales correspondientes.
 
                 </p>
 
@@ -1701,24 +1410,16 @@
                     <div>
 
                         <div
-                            style="
-                                font-weight:700;
-                                font-size:.875rem;
-                                color:#0f172a;
-                            ">
+                            style="font-weight:600;font-size:.875rem;color:#0f172a">
 
-                            Contenido gratuito
+                            Información organizada
 
                         </div>
 
                         <div
-                            style="
-                                font-size:.8rem;
-                                color:#475569;
-                            ">
+                            style="font-size:.8rem;color:#475569">
 
-                            Información disponible
-                            para los visitantes.
+                            Contenido dividido por temas.
 
                         </div>
 
@@ -1736,24 +1437,16 @@
                     <div>
 
                         <div
-                            style="
-                                font-weight:700;
-                                font-size:.875rem;
-                                color:#0f172a;
-                            ">
+                            style="font-weight:600;font-size:.875rem;color:#0f172a">
 
-                            Información educativa
+                            Orientación general
 
                         </div>
 
                         <div
-                            style="
-                                font-size:.8rem;
-                                color:#475569;
-                            ">
+                            style="font-size:.8rem;color:#475569">
 
-                            Contenido de orientación
-                            general.
+                            Información de carácter educativo.
 
                         </div>
 
@@ -1771,30 +1464,24 @@
                     <div>
 
                         <div
-                            style="
-                                font-weight:700;
-                                font-size:.875rem;
-                                color:#0f172a;
-                            ">
+                            style="font-weight:600;font-size:.875rem;color:#0f172a">
 
-                            Enfoque colombiano
+                            Hogar y conjuntos
 
                         </div>
 
                         <div
-                            style="
-                                font-size:.8rem;
-                                color:#475569;
-                            ">
+                            style="font-size:.8rem;color:#475569">
 
-                            Información pensada para
-                            viviendas en Colombia.
+                            Temas relacionados con viviendas
+                            y propiedad horizontal.
 
                         </div>
 
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -1807,19 +1494,16 @@
 
 <!-- =========================
      CONTACTO
-========================= -->
+========================== -->
 
 <section
     id="contacto"
     class="section"
-    style="
-        background:#fff;
-        border-top:1px solid #F1F5F9;
-    ">
+    style="background:#fff;border-top:1px solid #f1f5f9">
 
     <div class="wrap">
 
-        <div style="max-width:28rem">
+        <div style="max-width:32rem">
 
             <div class="label">
                 CONTACTO
@@ -1830,42 +1514,33 @@
             </h2>
 
             <p
-                style="
-                    color:#475569;
-                    margin:0 0 1.75rem;
-                ">
+                style="color:#475569;margin:0 0 1.75rem">
 
-                Puedes escribir si tienes dudas
-                sobre el contenido educativo.
+                Puedes utilizar este sitio para consultar
+                información general sobre vivienda, conjuntos
+                residenciales, mantenimiento y cuidado del hogar.
 
             </p>
-
 
             <div class="contact-row">
 
                 <div class="contact-icon">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-globe"></i>
                 </div>
 
                 <div>
 
                     <div
-                        style="
-                            font-size:.7rem;
-                            color:#94a3b8;
-                        ">
+                        style="font-size:.7rem;color:#94a3b8">
 
-                        Responsable
+                        Sitio web
 
                     </div>
 
                     <div
-                        style="
-                            font-weight:700;
-                            color:#0f172a;
-                        ">
+                        style="font-weight:600;color:#0f172a">
 
-                        MARIA JOSE CASTILLA GARCIA
+                        admincasaconjuntos.vercel.app
 
                     </div>
 
@@ -1877,28 +1552,25 @@
             <div class="contact-row">
 
                 <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-circle-info"></i>
                 </div>
 
                 <div>
 
                     <div
-                        style="
-                            font-size:.7rem;
-                            color:#94a3b8;
-                        ">
+                        style="font-size:.7rem;color:#94a3b8">
 
-                        Correo electrónico
+                        Información
 
                     </div>
 
-                    <a
-                        href="mailto:kimberlywrigh54@gmail.com"
-                        style="font-weight:600">
+                    <div
+                        style="font-weight:500;color:#475569">
 
-                        kimberlywrigh54@gmail.com
+                        Contenido general sobre hogares
+                        y conjuntos residenciales.
 
-                    </a>
+                    </div>
 
                 </div>
 
@@ -1913,7 +1585,7 @@
 
 <!-- =========================
      FOOTER
-========================= -->
+========================== -->
 
 <footer>
 
@@ -1921,14 +1593,12 @@
 
         <div class="footer-grid">
 
+
             <div>
 
                 <div
                     class="logo"
-                    style="
-                        color:#fff;
-                        margin-bottom:.65rem;
-                    ">
+                    style="color:#fff;margin-bottom:.65rem">
 
                     <div class="logo-icon">
 
@@ -1939,18 +1609,16 @@
 
                     </div>
 
-                    Admin<span>Casa</span>
+                    Admin<span>CasaConjuntos</span>
 
                 </div>
 
                 <p
-                    style="
-                        margin:0;
-                        max-width:17rem;
-                    ">
+                    style="margin:0;max-width:18rem">
 
-                    Proyecto educativo sobre
-                    el cuidado del hogar en Colombia.
+                    Información y orientación general
+                    sobre el cuidado del hogar y
+                    conjuntos residenciales en Colombia.
 
                 </p>
 
@@ -1958,41 +1626,31 @@
 
 
             <div
-                style="
-                    display:flex;
-                    flex-wrap:wrap;
-                    gap:2.5rem;
-                ">
+                style="display:flex;flex-wrap:wrap;gap:2.5rem">
 
 
                 <div>
 
                     <div
-                        style="
-                            font-weight:700;
-                            color:#fff;
-                            margin-bottom:.45rem;
-                            font-size:.7rem;
-                            letter-spacing:.05em;
-                        ">
+                        style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem;letter-spacing:.05em">
 
                         ENLACES
 
                     </div>
 
                     <div
-                        style="
-                            display:flex;
-                            flex-direction:column;
-                            gap:.3rem;
-                        ">
+                        style="display:flex;flex-direction:column;gap:.3rem">
 
                         <a href="#temas">
                             Guías
                         </a>
 
                         <a href="#porque-gratis">
-                            Por qué es gratis
+                            Información
+                        </a>
+
+                        <a href="#sobre-el-proyecto">
+                            Sobre el sitio
                         </a>
 
                         <a href="#contacto">
@@ -2007,31 +1665,18 @@
                 <div>
 
                     <div
-                        style="
-                            font-weight:700;
-                            color:#fff;
-                            margin-bottom:.45rem;
-                            font-size:.7rem;
-                            letter-spacing:.05em;
-                        ">
+                        style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem;letter-spacing:.05em">
 
                         LEGAL
 
                     </div>
 
                     <div
-                        style="
-                            display:flex;
-                            flex-direction:column;
-                            gap:.3rem;
-                        ">
+                        style="display:flex;flex-direction:column;gap:.3rem">
 
                         <a
                             href="#"
-                            onclick="
-                                mostrarLegal('politicas');
-                                return false;
-                            ">
+                            onclick="mostrarLegal('politicas');return false;">
 
                             Políticas de Privacidad
 
@@ -2039,10 +1684,7 @@
 
                         <a
                             href="#"
-                            onclick="
-                                mostrarLegal('terminos');
-                                return false;
-                            ">
+                            onclick="mostrarLegal('terminos');return false;">
 
                             Términos y Condiciones
 
@@ -2056,29 +1698,28 @@
                 <div>
 
                     <div
-                        style="
-                            font-weight:700;
-                            color:#fff;
-                            margin-bottom:.45rem;
-                            font-size:.7rem;
-                            letter-spacing:.05em;
-                        ">
+                        style="font-weight:600;color:#fff;margin-bottom:.45rem;font-size:.7rem;letter-spacing:.05em">
 
-                        SITIO WEB
+                        SITIO
 
                     </div>
 
                     <div
-                        style="
-                            color:#C4B5D4;
-                            font-size:.85rem;
-                        ">
+                        style="color:#fff;font-size:.85rem">
 
-                        admincasaconjuntos.vercel.app
+                        AdminCasaConjuntos
+
+                    </div>
+
+                    <div
+                        style="color:#c4b5fd;font-size:.8rem">
+
+                        Colombia
 
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -2088,19 +1729,12 @@
         <div class="footer-bottom">
 
             <div>
-
-                © 2026 MARIA JOSE CASTILLA GARCIA
-                — AdminCasa
-
+                © 2026 AdminCasaConjuntos.
+                Todos los derechos reservados.
             </div>
 
-            <div
-                style="
-                    color:#C084FC;
-                ">
-
-                Información educativa
-
+            <div style="color:#d8b4fe">
+                Información general • Colombia
             </div>
 
         </div>
@@ -2111,57 +1745,37 @@
 
 
 <!-- =========================
-     MODAL DE TEMAS
-========================= -->
+     MODAL DE GUÍAS
+========================== -->
 
 <div
     id="topic-modal"
     class="modal-bg"
-    onclick="
-        if(event.target===this)
-        ocultarGuia()
-    ">
+    onclick="if(event.target===this)ocultarGuia()">
 
     <div class="modal-box">
 
         <div class="modal-head">
 
             <div
-                style="
-                    display:flex;
-                    gap:.7rem;
-                    align-items:flex-start;
-                ">
+                style="display:flex;gap:.7rem;align-items:flex-start">
 
                 <div
                     id="m-icon"
                     class="card-icon"
-                    style="
-                        margin:0;
-                        width:40px;
-                        height:40px;
-                        font-size:1rem;
-                    ">
+                    style="margin:0;width:40px;height:40px;font-size:1rem">
                 </div>
 
                 <div>
 
                     <h3
                         id="m-title"
-                        style="
-                            margin:0;
-                            font-size:1.05rem;
-                            font-weight:700;
-                        ">
+                        style="margin:0;font-size:1.05rem;font-weight:700">
                     </h3>
 
                     <p
                         id="m-sub"
-                        style="
-                            margin:.15rem 0 0;
-                            font-size:.75rem;
-                            color:#94a3b8;
-                        ">
+                        style="margin:.15rem 0 0;font-size:.75rem;color:#94a3b8">
                     </p>
 
                 </div>
@@ -2203,16 +1817,13 @@
 
 
 <!-- =========================
-     POLÍTICAS
-========================= -->
+     MODAL POLÍTICAS
+========================== -->
 
 <div
     id="politicas-modal"
     class="modal-bg"
-    onclick="
-        if(event.target===this)
-        ocultarLegal('politicas')
-    ">
+    onclick="if(event.target===this)ocultarLegal('politicas')">
 
     <div
         class="modal-box"
@@ -2221,11 +1832,7 @@
         <div class="modal-head">
 
             <h3
-                style="
-                    margin:0;
-                    font-size:1.05rem;
-                    font-weight:700;
-                ">
+                style="margin:0;font-size:1.05rem;font-weight:700">
 
                 Políticas de Privacidad
 
@@ -2234,9 +1841,7 @@
             <button
                 type="button"
                 class="modal-x"
-                onclick="
-                    ocultarLegal('politicas')
-                ">
+                onclick="ocultarLegal('politicas')">
 
                 ×
 
@@ -2248,38 +1853,31 @@
 
             <p>
 
-                AdminCasa es un sitio web educativo.
-                La información de contacto únicamente
-                se utiliza cuando una persona decide
-                comunicarse voluntariamente.
+                AdminCasaConjuntos busca proporcionar
+                información general relacionada con viviendas,
+                hogares y conjuntos residenciales.
 
             </p>
 
             <p>
 
-                Los datos proporcionados mediante
-                contacto se utilizan para responder
-                consultas relacionadas con el sitio.
+                Este sitio puede recopilar únicamente la
+                información técnica necesaria para el
+                funcionamiento normal del sitio web, dependiendo
+                de las herramientas utilizadas.
 
             </p>
 
             <p>
 
-                De acuerdo con la
-                <strong>Ley 1581 de 2012</strong>,
-                puedes solicitar actualización,
-                rectificación o eliminación de tus
-                datos escribiendo al correo de contacto.
+                No se debe enviar información personal sensible
+                mediante formularios o mecanismos que no estén
+                expresamente destinados para ello.
 
             </p>
 
             <p
-                style="
-                    font-size:.75rem;
-                    border-top:1px solid var(--border);
-                    padding-top:.7rem;
-                    margin-top:1rem;
-                ">
+                style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem;margin-top:1rem">
 
                 Última actualización: septiembre de 2026.
 
@@ -2292,9 +1890,7 @@
             <button
                 type="button"
                 class="btn-modal"
-                onclick="
-                    ocultarLegal('politicas')
-                ">
+                onclick="ocultarLegal('politicas')">
 
                 Entendido
 
@@ -2308,16 +1904,13 @@
 
 
 <!-- =========================
-     TÉRMINOS
-========================= -->
+     MODAL TÉRMINOS
+========================== -->
 
 <div
     id="terminos-modal"
     class="modal-bg"
-    onclick="
-        if(event.target===this)
-        ocultarLegal('terminos')
-    ">
+    onclick="if(event.target===this)ocultarLegal('terminos')">
 
     <div
         class="modal-box"
@@ -2326,11 +1919,7 @@
         <div class="modal-head">
 
             <h3
-                style="
-                    margin:0;
-                    font-size:1.05rem;
-                    font-weight:700;
-                ">
+                style="margin:0;font-size:1.05rem;font-weight:700">
 
                 Términos y Condiciones
 
@@ -2339,9 +1928,7 @@
             <button
                 type="button"
                 class="modal-x"
-                onclick="
-                    ocultarLegal('terminos')
-                ">
+                onclick="ocultarLegal('terminos')">
 
                 ×
 
@@ -2353,37 +1940,37 @@
 
             <p>
 
-                AdminCasa es un sitio web educativo
-                e informativo.
+                AdminCasaConjuntos es un sitio web
+                destinado a presentar información general
+                relacionada con viviendas, hogares y
+                conjuntos residenciales.
 
             </p>
 
             <p>
 
-                El contenido publicado tiene fines
-                educativos y de orientación general.
-                No constituye asesoría profesional.
+                El contenido publicado tiene carácter
+                informativo y educativo. No constituye
+                asesoría profesional, jurídica, técnica,
+                financiera o administrativa.
 
             </p>
 
             <p>
 
-                El usuario debe verificar la información
-                aplicable a su situación con profesionales
-                calificados y fuentes oficiales cuando
-                corresponda.
+                Los usuarios deben verificar la información
+                que pueda depender de normas, tarifas,
+                fechas, reglamentos o disposiciones vigentes
+                directamente con las entidades correspondientes.
 
             </p>
 
             <p
-                style="
-                    font-size:.75rem;
-                    border-top:1px solid var(--border);
-                    padding-top:.7rem;
-                    margin-top:1rem;
-                ">
+                style="font-size:.75rem;border-top:1px solid var(--border);padding-top:.7rem;margin-top:1rem">
 
-                Última actualización: septiembre de 2026.
+                Al navegar por este sitio aceptas estos
+                términos. Última actualización:
+                septiembre de 2026.
 
             </p>
 
@@ -2394,9 +1981,7 @@
             <button
                 type="button"
                 class="btn-modal"
-                onclick="
-                    ocultarLegal('terminos')
-                ">
+                onclick="ocultarLegal('terminos')">
 
                 Aceptar y cerrar
 
@@ -2411,7 +1996,7 @@
 
 <!-- =========================
      COOKIES
-========================= -->
+========================== -->
 
 <div
     id="cookies-modal"
@@ -2425,11 +2010,7 @@
         <div class="modal-head">
 
             <h3
-                style="
-                    margin:0;
-                    font-size:1.05rem;
-                    font-weight:700;
-                ">
+                style="margin:0;font-size:1.05rem;font-weight:700">
 
                 🍪 Uso de cookies
 
@@ -2440,35 +2021,29 @@
         <div class="modal-body">
 
             <p
-                style="
-                    margin:0 0 .5rem;
-                ">
+                style="margin:0 0 .5rem;">
 
-                Utilizamos cookies para mejorar
-                tu experiencia de navegación.
+                Utilizamos cookies o tecnologías similares
+                únicamente cuando sean necesarias para el
+                funcionamiento del sitio o para mejorar la
+                experiencia de navegación.
 
             </p>
 
             <p
-                style="
-                    font-size:.8rem;
-                    color:#64748b;
-                    margin:0;
-                ">
+                style="font-size:.8rem;color:#64748b;margin:0;">
 
-                Puedes aceptar o rechazar el uso
-                de cookies. Tu decisión se guarda
-                únicamente en este navegador.
+                Puedes continuar navegando por el sitio.
+                Esta ventana no te llevará a ninguna otra página.
 
             </p>
-
 
             <div class="cookies-buttons">
 
                 <button
                     type="button"
                     class="btn-cookie btn-cookie-reject"
-                    onclick="rechazarCookies()">
+                    onclick="cerrarCookies()">
 
                     Rechazar
 
@@ -2496,7 +2071,7 @@
 
 /* =========================
    DATOS DE LAS GUÍAS
-========================= */
+========================== */
 
 const datosGuias = [
 
@@ -2505,26 +2080,27 @@ const datosGuias = [
 
         icon: '<i class="fas fa-tools"></i>',
 
-        subtitle:
-            "Revisiones que ayudan a evitar problemas mayores",
+        subtitle: "Revisiones que pueden ayudar a prevenir daños",
 
         intro:
-            "El mantenimiento preventivo consiste en revisar periódicamente los elementos principales de una vivienda para detectar problemas antes de que se conviertan en reparaciones costosas.",
+        "El mantenimiento preventivo permite detectar pequeños problemas antes de que puedan convertirse en reparaciones mayores. Las revisiones periódicas pueden ayudar a conservar mejor una vivienda.",
 
         tips: [
 
-            "Revise techos, canaletas y bajantes periódicamente, especialmente antes y después de temporadas de lluvia.",
+            "Revise periódicamente techos, canaletas, bajantes y zonas donde puedan aparecer filtraciones.",
 
-            "Compruebe si existen fugas debajo de lavaplatos, lavamanos, sanitarios y conexiones de lavadora.",
+            "Compruebe que no existan fugas debajo de lavaplatos, lavamanos, sanitarios y zonas de lavado.",
 
-            "No sobrecargue tomas eléctricas. Si observa chispas, olor a quemado o breakers que se disparan frecuentemente, solicite revisión profesional.",
+            "No sobrecargue tomas eléctricas ni extensiones. Si observa chispas, olor a quemado o calentamiento anormal, solicite una revisión profesional.",
 
-            "Revise grietas, pintura deteriorada y señales de humedad en paredes y cielorrasos.",
+            "Revise puertas y ventanas para detectar problemas de sellado, humedad o deterioro.",
 
-            "Mantenga limpios los extractores de cocina y baños para favorecer una adecuada ventilación.",
+            "Mantenga limpios los sistemas de ventilación y extractores de baños y cocinas.",
 
-            "Compruebe el estado de puertas, ventanas, cerraduras y sellos para prevenir filtraciones."
+            "Realice las reparaciones importantes con personal técnico calificado cuando corresponda."
+
         ]
+
     },
 
 
@@ -2533,26 +2109,27 @@ const datosGuias = [
 
         icon: '<i class="fas fa-broom"></i>',
 
-        subtitle:
-            "Hábitos sencillos para mantener una vivienda saludable",
+        subtitle: "Hábitos sencillos para mantener los espacios",
 
         intro:
-            "Una rutina de limpieza constante ayuda a conservar mejor los espacios y puede reducir la aparición de polvo, malos olores, humedad y plagas.",
+        "Una rutina de limpieza y organización ayuda a conservar los espacios en mejores condiciones y puede disminuir problemas relacionados con humedad, polvo y plagas.",
 
         tips: [
 
-            "Dedique algunos minutos cada día a recoger objetos, limpiar superficies y ventilar los espacios.",
+            "Ventile las habitaciones diariamente cuando las condiciones del clima lo permitan.",
 
-            "Mantenga los alimentos tapados y limpie rápidamente los restos de comida.",
+            "Mantenga la cocina libre de restos de alimentos y limpie periódicamente superficies y electrodomésticos.",
 
-            "Ventile baños y cocinas después de ducharse o cocinar para disminuir la humedad.",
+            "Evite acumular ropa u objetos húmedos dentro de armarios.",
 
-            "Limpie periódicamente colchones, sofás, cortinas y otras superficies que acumulan polvo.",
+            "Limpie periódicamente baños, juntas, esquinas y zonas donde pueda acumularse humedad.",
 
-            "Organice documentos importantes como recibos, contratos, escrituras y documentos relacionados con la vivienda.",
+            "Organice documentos relacionados con la vivienda, servicios, administración y seguros.",
 
-            "Mantenga limpia el área de residuos y selle posibles puntos de entrada de insectos."
+            "Si existe una infestación importante de plagas, considere acudir a un servicio profesional autorizado."
+
         ]
+
     },
 
 
@@ -2561,113 +2138,114 @@ const datosGuias = [
 
         icon: '<i class="fas fa-paint-roller"></i>',
 
-        subtitle:
-            "Planificar antes de invertir en una mejora",
+        subtitle: "Planificación antes de comenzar una obra",
 
         intro:
-            "Una remodelación bien planificada puede mejorar el confort y funcionalidad de una vivienda. Antes de comenzar, es importante definir el alcance, presupuesto y requisitos de la obra.",
+        "Una remodelación bien planificada puede reducir retrasos, gastos inesperados y problemas durante la ejecución de una obra.",
 
         tips: [
 
-            "Defina claramente qué desea modificar y establezca un presupuesto antes de comenzar.",
+            "Defina claramente qué desea modificar antes de iniciar el trabajo.",
 
-            "Solicite varias cotizaciones y compare materiales, mano de obra, tiempos y garantías.",
+            "Prepare un presupuesto y considere un margen adicional para posibles imprevistos.",
 
-            "Si vive en propiedad horizontal, revise el reglamento y consulte a la administración antes de realizar obras.",
+            "Solicite varias cotizaciones y compare materiales, tiempos y condiciones.",
 
-            "Para trabajos eléctricos, de gas o estructurales, utilice profesionales calificados.",
+            "Si vive en propiedad horizontal, revise el reglamento y consulte con la administración antes de realizar modificaciones.",
 
-            "Reserve un porcentaje del presupuesto para posibles imprevistos.",
+            "Las intervenciones eléctricas, de gas o estructurales deben ser realizadas por personal competente.",
 
-            "Conserve contratos, facturas, fotografías y garantías de los trabajos realizados."
+            "Conserve contratos, facturas, garantías y fotografías del proceso."
+
         ]
+
     },
 
 
     {
         title: "Impuesto predial en Colombia",
 
-        icon:
-            '<i class="fas fa-file-invoice-dollar"></i>',
+        icon: '<i class="fas fa-file-invoice-dollar"></i>',
 
-        subtitle:
-            "Información general para propietarios de inmuebles",
+        subtitle: "Información general sobre obligaciones inmobiliarias",
 
         intro:
-            "El impuesto predial es un tributo relacionado con los bienes inmuebles. Las fechas, tarifas y descuentos pueden variar según el municipio o distrito.",
+        "El impuesto predial es un tributo relacionado con los bienes inmuebles y su gestión corresponde a los municipios o distritos. Las fechas, tarifas y descuentos pueden cambiar cada año.",
 
         tips: [
 
-            "Consulte siempre el calendario de pagos publicado por la alcaldía o entidad oficial correspondiente.",
+            "Consulte siempre el calendario tributario publicado por la alcaldía o entidad oficial correspondiente.",
 
-            "Revise que los datos del inmueble y propietario sean correctos.",
+            "Revise la información catastral de su inmueble cuando sea necesario.",
 
-            "Conserve los comprobantes de pago y documentos relacionados con el inmueble.",
+            "Conserve los comprobantes de pago y documentos relacionados.",
 
-            "Recuerde que el impuesto predial y las cuotas de administración de una propiedad horizontal son obligaciones diferentes.",
+            "No confunda el impuesto predial con las cuotas de administración de un conjunto residencial.",
 
-            "Si tiene dificultades para pagar, consulte directamente con la autoridad tributaria municipal sobre las opciones disponibles.",
+            "Si tiene una deuda tributaria, consulte directamente las opciones de pago ofrecidas por la entidad territorial.",
 
-            "Evite intermediarios que prometan descuentos extraordinarios a cambio de datos personales o pagos por canales no oficiales."
+            "Evite realizar pagos mediante intermediarios no autorizados."
+
         ]
+
     },
 
 
     {
-        title: "Cuidado integral y seguridad del hogar",
+        title: "Propiedad horizontal y conjuntos",
 
-        icon:
-            '<i class="fas fa-shield-halved"></i>',
+        icon: '<i class="fas fa-building"></i>',
 
-        subtitle:
-            "Prevención, seguridad y ahorro",
+        subtitle: "Información general para residentes y propietarios",
 
         intro:
-            "Un hogar seguro requiere pequeñas acciones de prevención relacionadas con accesos, instalaciones, servicios públicos y documentación.",
+        "Los conjuntos y edificios sometidos al régimen de propiedad horizontal tienen reglas específicas para el uso de bienes privados y zonas comunes.",
 
         tips: [
 
-            "Revise periódicamente cerraduras, puertas, ventanas e iluminación exterior.",
+            "Conozca el reglamento de propiedad horizontal de su conjunto.",
 
-            "Si percibe olor a gas, evite utilizar interruptores eléctricos y contacte a la empresa prestadora o personal autorizado.",
+            "Distinga entre bienes privados y bienes comunes.",
 
-            "Repare fugas de agua y utilice iluminación eficiente para reducir el consumo.",
+            "Consulte con la administración antes de realizar obras que puedan afectar zonas comunes, fachada o estructura.",
 
-            "Respete los reglamentos y normas de convivencia cuando viva en propiedad horizontal.",
+            "Conserve las comunicaciones importantes relacionadas con la administración.",
 
-            "Conserve documentos importantes de la vivienda en un lugar seguro.",
+            "Respete las normas de convivencia y horarios establecidos.",
 
-            "Considere las coberturas de seguros de hogar que puedan ser adecuadas para sus necesidades."
+            "Para conflictos legales o administrativos específicos, consulte a un profesional o entidad competente."
+
         ]
+
     },
 
 
     {
         title: "Humedades e impermeabilización",
 
-        icon:
-            '<i class="fas fa-droplet"></i>',
+        icon: '<i class="fas fa-water"></i>',
 
-        subtitle:
-            "Prevención de filtraciones, moho y condensación",
+        subtitle: "Identificación y prevención de problemas de humedad",
 
         intro:
-            "Las humedades pueden tener diferentes causas. Identificar el origen antes de reparar es importante para evitar que el problema reaparezca.",
+        "La humedad puede tener diferentes causas, como filtraciones, condensación, fugas o problemas de impermeabilización. Identificar el origen es fundamental antes de realizar una reparación.",
 
         tips: [
 
-            "Observe si la humedad aparece después de lluvias, cerca de tuberías o en lugares con poca ventilación.",
+            "Observe si las manchas aparecen después de lluvias o en zonas cercanas a tuberías.",
 
-            "Mantenga limpios los desagües, canaletas y bajantes.",
+            "Revise techos, terrazas, balcones, canaletas y bajantes.",
 
-            "Ventile baños, cocinas y zonas de lavado para reducir condensación.",
+            "Mantenga ventilados baños, cocinas y zonas de lavado.",
 
-            "No pinte sobre una mancha de humedad sin solucionar primero la causa.",
+            "No pinte sobre una mancha de humedad sin solucionar primero su causa.",
 
-            "Si la humedad proviene de una zona común o de otro inmueble, comunique el problema a la administración o responsable correspondiente.",
+            "Si la humedad procede de una zona común o de otro inmueble, informe a la administración cuando corresponda.",
 
-            "Cuando exista una humedad extensa o persistente, consulte a un profesional para identificar correctamente su origen."
+            "En casos de humedad persistente o daños importantes, solicite una evaluación profesional."
+
         ]
+
     }
 
 ];
@@ -2675,21 +2253,21 @@ const datosGuias = [
 
 /* =========================
    MENÚ
-========================= */
+========================== */
 
 function alternarMenu() {
 
-    const menu =
-        document.getElementById("mobile-menu");
-
-    menu.classList.toggle("open");
+    document
+        .getElementById("mobile-menu")
+        .classList
+        .toggle("open");
 
 }
 
 
 /* =========================
    MOSTRAR GUÍA
-========================= */
+========================== */
 
 function mostrarGuia(i) {
 
@@ -2712,13 +2290,7 @@ function mostrarGuia(i) {
 
 
     html +=
-        '<p style="' +
-        'font-size:.7rem;' +
-        'font-weight:700;' +
-        'color:var(--primary);' +
-        'text-transform:uppercase;' +
-        'letter-spacing:.05em;' +
-        'margin:0 0 .65rem">' +
+        '<p style="font-size:.7rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .65rem">' +
         'Puntos clave' +
         '</p>';
 
@@ -2726,6 +2298,7 @@ function mostrarGuia(i) {
     guia.tips.forEach(function(tip, n) {
 
         html +=
+
             '<div class="tip">' +
 
                 '<div class="tip-n">' +
@@ -2742,16 +2315,12 @@ function mostrarGuia(i) {
 
 
     html +=
-        '<p style="' +
-        'margin:1rem 0 0;' +
-        'font-size:.75rem;' +
-        'color:#94a3b8;' +
-        'border-top:1px solid var(--border);' +
-        'padding-top:.7rem">' +
 
-        'Información de carácter educativo y general. ' +
-        'No sustituye asesoría profesional ni normas ' +
-        'municipales vigentes.' +
+        '<p style="margin:1rem 0 0;font-size:.75rem;color:#94a3b8;border-top:1px solid var(--border);padding-top:.7rem">' +
+
+        'Información de carácter general y educativo. ' +
+        'Las normas, requisitos y condiciones pueden variar según ' +
+        'el municipio, conjunto o situación particular.' +
 
         '</p>';
 
@@ -2762,24 +2331,25 @@ function mostrarGuia(i) {
 
     document
         .getElementById("topic-modal")
-        .classList.add("open");
+        .classList
+        .add("open");
 
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
 }
 
 
 /* =========================
    OCULTAR GUÍA
-========================= */
+========================== */
 
 function ocultarGuia() {
 
     document
         .getElementById("topic-modal")
-        .classList.remove("open");
+        .classList
+        .remove("open");
 
     document.body.style.overflow = "";
 
@@ -2788,16 +2358,16 @@ function ocultarGuia() {
 
 /* =========================
    LEGAL
-========================= */
+========================== */
 
 function mostrarLegal(tipo) {
 
     document
         .getElementById(tipo + "-modal")
-        .classList.add("open");
+        .classList
+        .add("open");
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
 }
 
@@ -2806,52 +2376,34 @@ function ocultarLegal(tipo) {
 
     document
         .getElementById(tipo + "-modal")
-        .classList.remove("open");
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-/* =========================
-   COOKIES
-   SIN REDIRECCIÓN
-========================= */
-
-function cerrarCookies() {
-
-    document
-        .getElementById("cookies-modal")
-        .classList.remove("open");
+        .classList
+        .remove("open");
 
     document.body.style.overflow = "";
 
 }
 
 
-function aceptarCookies() {
+/* =========================
+   COOKIES
+========================== */
 
-    try {
-        localStorage.setItem(
-            "admincasa_cookies",
-            "accepted"
-        );
-    } catch (e) {}
+function cerrarCookies() {
 
-    cerrarCookies();
+    document
+        .getElementById("cookies-modal")
+        .classList
+        .remove("open");
 
 }
 
 
-function rechazarCookies() {
+function aceptarCookies() {
 
-    try {
-        localStorage.setItem(
-            "admincasa_cookies",
-            "rejected"
-        );
-    } catch (e) {}
+    localStorage.setItem(
+        "adminCasaConjuntosCookies",
+        "accepted"
+    );
 
     cerrarCookies();
 
@@ -2859,56 +2411,47 @@ function rechazarCookies() {
 
 
 /* =========================
-   COMPROBAR COOKIES
-========================= */
+   RECORDAR COOKIES
+========================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-        let decision = null;
+    const cookies =
+        localStorage.getItem(
+            "adminCasaConjuntosCookies"
+        );
 
-        try {
-            decision =
-                localStorage.getItem(
-                    "admincasa_cookies"
-                );
-        } catch (e) {}
+    if (cookies === "accepted") {
 
-        if (decision) {
-
-            document
-                .getElementById("cookies-modal")
-                .classList.remove("open");
-
-        }
+        document
+            .getElementById("cookies-modal")
+            .classList
+            .remove("open");
 
     }
-);
+
+});
 
 
 /* =========================
    ESCAPE
-========================= */
+========================== */
 
-document.addEventListener(
-    "keydown",
-    function(e) {
+document.addEventListener("keydown", function(e) {
 
-        if (e.key === "Escape") {
+    if (e.key === "Escape") {
 
-            ocultarGuia();
+        ocultarGuia();
 
-            ocultarLegal("politicas");
+        ocultarLegal("politicas");
 
-            ocultarLegal("terminos");
+        ocultarLegal("terminos");
 
-            cerrarCookies();
-
-        }
+        cerrarCookies();
 
     }
-);
+
+});
 
 </script>
 
